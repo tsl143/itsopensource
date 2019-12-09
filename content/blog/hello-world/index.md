@@ -2,6 +2,7 @@
 title: Hello Opensource
 date: "2019-12-09T22:12:03.284Z"
 description: "Hello Opensource"
+author: "trishul"
 ---
 
 This is my first post on my new fake blog! How exciting!

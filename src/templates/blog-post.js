@@ -45,7 +45,7 @@ class BlogPostTemplate extends React.Component {
             }}
           />
           <footer>
-            <Bio />
+            <Bio author={post.frontmatter.author} />
           </footer>
         </article>
 
@@ -96,7 +96,8 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        description
+        description,
+        author
       }
     }
   }
