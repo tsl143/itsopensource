@@ -1,7 +1,6 @@
 ---
 title: 'Implementing public, private, and static data members in pre-ES5 Javascript'
-date: '2019-01-10'
-authorName: 'Shivam Singhal'
+date: "2019-12-09"
 slug: '/blog/public-private-static-data-members-in-javascript'
 tags:
   - javascript
