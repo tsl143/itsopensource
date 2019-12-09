@@ -23,6 +23,13 @@ module.exports = {
         name: `assets`,
       },
     },
+    `gatsby-transformer-yaml`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./src/data`,
+      },
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -69,4 +76,7 @@ module.exports = {
       },
     },
   ],
+  mapping: {
+    "MarkdownRemark.frontmatter.author": `AuthorYaml`,
+  },
 }

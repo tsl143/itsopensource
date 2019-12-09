@@ -24,6 +24,7 @@
     "gatsby-source-filesystem": "^2.1.39",
     "gatsby-transformer-remark": "^2.6.38",
     "gatsby-transformer-sharp": "^2.3.6",
+    "gatsby-transformer-yaml": "^2.2.18",
     "prismjs": "^1.17.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
