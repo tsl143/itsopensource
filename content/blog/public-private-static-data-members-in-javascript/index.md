@@ -7,6 +7,7 @@ tags:
   - oops
   - es5
 show: 'true'
+author: shivam
 ---
 
 Today many of you might be saying Javascript is not a very object oriented programming language and that
