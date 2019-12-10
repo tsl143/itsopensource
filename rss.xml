@@ -1,4 +1,125 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource]]></title><description><![CDATA[Yet another blog about opensource.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 10 Dec 2019 14:00:26 GMT</lastBuildDate><item><title><![CDATA[How to create gists from command line]]></title><description><![CDATA[Creating GitHub gists is always a problem if you want to share some changes in your code with someone else. First, you need to copy the…]]></description><link>https://itsopensource.com/how-to-create-gists-from-command-line/</link><guid isPermaLink="false">https://itsopensource.com/how-to-create-gists-from-command-line/</guid><pubDate>Tue, 10 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Creating GitHub gists is always a problem if you want to share some changes in your code with someone else. First, you need to copy the changes from the terminal and then paste in &lt;a href=&quot;https://gist.github.com/&quot;&gt;gist.github.com&lt;/a&gt;. This process is really time taking if you do it very often.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource]]></title><description><![CDATA[Yet another blog about opensource.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 10 Dec 2019 16:45:35 GMT</lastBuildDate><item><title><![CDATA[How to setup IRC and IRC bouncer]]></title><description><![CDATA[What is IRC? Internet Relay Chat - IRC is a protocol that provides a way to communicate in real time with people from all over the world,was…]]></description><link>https://itsopensource.com/how-to-setup-irc-and-irc-bouncer/</link><guid isPermaLink="false">https://itsopensource.com/how-to-setup-irc-and-irc-bouncer/</guid><pubDate>Wed, 11 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;What is IRC?&lt;/h2&gt;
+&lt;p&gt;[Internet Relay Chat] - IRC is a protocol that provides a way to communicate in real time with people from all over the world,was invented before the World Wide Web.  It is very similar to text messaging, but designed around communicating with large groups of users instead of one on one. It consists of various separate networks (or “nets”) of IRC servers, machines that allow users to connect to IRC.&lt;/p&gt;
+&lt;h2&gt;What is IRC Clients?&lt;/h2&gt;
+&lt;p&gt;An IRC client is the vehicle that connects you to the global network of IRC servers. A variety of applications are available, like WeeChat , HexChat , XChat, Chatzilla etc. Personally i am using HexChat. Its awesome and easy to use. We will use HexChat here in this blog for EliteBNC setup. You can download it from here .&lt;/p&gt;
+&lt;p&gt;So if you have used IRC before, you must know that unlike other chat systems, IRC doesn’t keep when you’re offline. In order to be notified of relevant communications you can either look at the channel logs or setup an IRC bouncer.&lt;/p&gt;
+&lt;h2&gt;What is a IRC bouncer or BNC?&lt;/h2&gt;
+&lt;p&gt;An IRC bouncer is a middleman between you and an IRC network. It connects to a network like a normal client and instead of connecting directly to an IRC network we can connect to it.&lt;/p&gt;
+&lt;h2&gt;How to setup IRC Bouncer?&lt;/h2&gt;
+&lt;p&gt;Either you can install it on your own server or get a free BNC from some BNC provider.&lt;/p&gt;
+&lt;p&gt;A list of bouncer software.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;JBouncer for IRC, written in Java. Supports logging.&lt;/li&gt;
+&lt;li&gt;psyBNC is said to be the oldest and most well-known IRC bouncer.It is easy to use, runs on Linux and became popular on FreeBSD, supports IPv4, IPv6, SSL, logging, multiple users and networks etc.&lt;/li&gt;
+&lt;li&gt;bnc is the original IRC bouncer.&lt;/li&gt;
+&lt;li&gt;ZNC  is easy to use, supports SSL connections, IPv6 and logging and offers a web interface. It is extendible by modules and scripts in C++, Python, Perl and Tcl.&lt;/li&gt;
+&lt;li&gt;Matrix and Riot  has a bouncer included, simple solution is to get an account on riot.im as they have client for Android too.&lt;/li&gt;
+&lt;li&gt;EliteBNC is the one which we will setup in this blog. Its awesome and easy to use. I am using it. Its well maintained. Thanks to Robby :)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;How to get Bouncer from EliteBNC?&lt;/h2&gt;
+&lt;p&gt;In HexChat you can setup the EliteBNC by following steps. :)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open HexChat and Join &lt;code class=&quot;language-text&quot;&gt;#elitebnc&lt;/code&gt; channel on Freenode. Command to join any channel on IRC , just type &lt;code class=&quot;language-text&quot;&gt;/join #&lt;/code&gt; .&lt;/li&gt;
+&lt;li&gt;type &lt;code class=&quot;language-text&quot;&gt;!list&lt;/code&gt; it will show all available commands.&lt;/li&gt;
+&lt;li&gt;There are three ways or commands to request BNC, &lt;code class=&quot;language-text&quot;&gt;!request&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;!easyreq&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;!emailreq&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;To get BNC for Freenode, &lt;code class=&quot;language-text&quot;&gt;send !easyreq &amp;lt;email&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now wait for some time to get approval of request. &lt;em&gt;DO NOT&lt;/em&gt; make multiple request else Robby will kick you from EliteBNC :P . Once your request gets approved you will receive an email, go ahead and login to your account. The link would be like &lt;a href=&quot;https://xxxx.elitebnc.org:1338&quot;&gt;https://xxxx.elitebnc.org:1338&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;where xxxx is server name, which will be mentioned in the mail sent by EliteBNC eg. Sigma, Theta.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/7d504be0f78fcef0f17cf86d32da31b8/0e887/1.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 38.74425727411945%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAIABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAIDBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHXsEmF/8QAFRABAQAAAAAAAAAAAAAAAAAAABH/2gAIAQEAAQUCVX//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAQ/9oACAEBAAY/An//xAAZEAEAAgMAAAAAAAAAAAAAAAABABEQkaH/2gAIAQEAAT8hLG+Q1w//2gAMAwEAAgADAAAAEPfP/8QAFREBAQAAAAAAAAAAAAAAAAAAEBH/2gAIAQMBAT8Qp//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABgQAQEBAQEAAAAAAAAAAAAAAAERACFB/9oACAEBAAE/EB0lJKOZ6UAeTAS7/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;1&quot;
+        title=&quot;1&quot;
+        src=&quot;/static/7d504be0f78fcef0f17cf86d32da31b8/88218/1.jpg&quot;
+        srcset=&quot;/static/7d504be0f78fcef0f17cf86d32da31b8/7237a/1.jpg 148w,
+/static/7d504be0f78fcef0f17cf86d32da31b8/0cfdf/1.jpg 295w,
+/static/7d504be0f78fcef0f17cf86d32da31b8/88218/1.jpg 590w,
+/static/7d504be0f78fcef0f17cf86d32da31b8/0e887/1.jpg 653w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Go to ‘Your settings’ and edit the Freenode network, enable the &lt;code class=&quot;language-text&quot;&gt;nickserv&lt;/code&gt; module so that Freenode will identify you.&lt;/p&gt;
+&lt;p&gt;You can edit other details in ‘Your settings’&lt;/p&gt;
+&lt;p&gt;You can use &lt;a href=&quot;https://webchat.freenode.net&quot;&gt;webchat.freenode.net&lt;/a&gt; to join the channel if you don’t have any IRC client.&lt;/p&gt;
+&lt;h2&gt;How to connect HexChat to EliteBNC?&lt;/h2&gt;
+&lt;p&gt;Add new network in HexChat and follow the screenshots.&lt;/p&gt;
+&lt;p&gt;To do that go to HexChat-&gt;Network List or press Ctrl + S .Add new network and Edit it.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 398px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/feb04753f1202aaf8984cecfc43f1c34/40fa0/2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 115.07537688442211%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAIAAACEf/j0AAAACXBIWXMAAAsSAAALEgHS3X78AAADNklEQVQ4y41US28URxCe35XHJSHkEpHIioUBR+RH5BTlQoQAiRxQnIDAJg8vRkbGFgcOufCIgFscOVgBz7t73js7093zXDMzu5NvGIKQ7E2o/bbVU5qa6vrqq5a++vT9hc8+npv75PTi/JdfHD99an7x5OenFuYWF+aOzx87MX/syAfvfPThuwdx9Mh70o2liytXfrj849LytavXl69dX766vn5za3Pj9sb65u1bWxu3Vn/9abD680HALxmE+oHv2pZpmoahGYZeFPmkqerqRV1166SpZ6CRAtdRFNWyLEPT0kTkWWJRgh++REwyHpdlWRwKzmIp8FxT1wjBotm2Ffie69iu49iWhTXPs1nBieAS3tU0Fa9SAjMRaVsUTxalcCZClGU5M3gUBoqsmIauayoCUsEnk0nbttPpFCvK3h+PX+zvHwRqlIaBTwwdaXHsOBqxOPJcF4DByRibVXaXOQTV1PQdmxo6j0YJi1ybgHwPHlPnLNov83GRvUJZ4FM9UJG0vbPzVDP/fCabQVi0bVJP82nbA49pM4XnFaom4Qx1ZWnSbXDs8I8H4fp3oztXRhuX2Nq5NxHf6Fa+dp6vXeCDs/Hm93kqhOCB76MLWZJIfPuBuHkh3lwqty4VgzPF4NtDUa6eSQZnxSgIAk9VFDRZ8FiKGDdsRzFpWdUdye1Ma5oGjKIv6KrveWmKzCxWVUXVdBDbBaNPaNIhaOu65nGM5qOjo3DYsc1YNBwG7VtYVVVZIqBbQq0izwVnEk5i2bbjulBy1TT/EQzBoD3QBaUU5+0y8zjCGFiEUGpVdf1aW731296DzMgG8VNKXhKGzIzbno9KOOf/Q1hdj4vCcxximhkshTz3/vr7yf2dp7uqvOd0wnLACKYl6KbLBpAER8W4YE9MQ5H3NFUxdC0Mh1KkPfPlXcvxkBz3gY2CKAGhroOO4H7QIzAL/ZsGHKgOcKFeSobDoZSkSSZYwcIcEAynyV8CGuw3SSLwf+0pi7xHJ89856FY+Zr8ci5a+WZ8by0tyvzfsB5FngH9HgFIj/H1PA9OyZN3ye93lUe/GQ/vWtuPHae7RGYBwyvvPVfk56oqg5J/AG3gteICyc4AAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;2&quot;
+        title=&quot;2&quot;
+        src=&quot;/static/feb04753f1202aaf8984cecfc43f1c34/40fa0/2.png&quot;
+        srcset=&quot;/static/feb04753f1202aaf8984cecfc43f1c34/00d96/2.png 148w,
+/static/feb04753f1202aaf8984cecfc43f1c34/0b23c/2.png 295w,
+/static/feb04753f1202aaf8984cecfc43f1c34/40fa0/2.png 398w&quot;
+        sizes=&quot;(max-width: 398px) 100vw, 398px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;We will be using port 1338, as it is port for SSL (secured) connection.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 456px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/539d2c7d884669e4a4d41c0d2e0d5c6b/476a8/3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 124.12280701754386%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAZCAIAAAC+dZmEAAAACXBIWXMAAAsSAAALEgHS3X78AAADXklEQVQ4y31USW8URxjtfwcRCtg+REmILIF8gcRScEI4GCNxQWKROLBIJAdEdoM4kByIlCBH8jEIKfIyvVZXr+6tepneprsHm9c1juyYgdGbUk1Nv3rf977va2FlfmZ+4eyZz88vfrV07sKXwBdLFxYvXlxaXl5YXDz1ycezpz/dx2enZz+am/nw2NzsidlTH8ycPC5oz3/WvrtKvr+h/3RLf3iNPLpOfrhJHl7THlzWHqwc4Nsr2t1v1D9WXT+UxYGuE9syheLV2vjFj93fv3brT7p+s9qt/dL9+ah9drf97d4Bfr/fPr09fPlXUTe2QaMwLItcKKtyb29vd3d37/0f/kBZVxCkumZQylgk4AKcvh6Px10LdC3QjPnKN83kHHg97oZpkiaxToi34w6zVPB3HNuywiDQNWWwvSlLA1USpcGWIomUqNiI2z0GWxubG/+ahp6lMQiB7+MWgcUMZNOg+GKlOjGobhoGorMtw7GsmEWMhVEYQCCJGQTzYQYgCiFxqEVURVE0VaWEyLKkyJKqqkTTiIZVhTdg4ukiH4J5GIL7at2UB6bVq9sQN00eh24ZCIMaCF2RdaKlaXKE2ZOHeQ6R7a1NiKgq9BWIB0Ew0ekFJ0G+xezJO/+s6YMNhQcJMVEUscEVUIOriqwQokkSDrUkjo+S48BzbBMEk1LLoJDnziFwPK8iBMhm02LmYWcZUpUl3D5AxLBO5ebhJ7JAPcDkiLPk/4DbnuuavaCCNYoC1JDqOrzCFYyxqiyKIp+KXtnsS0sA13XwG1V1HDsMQ8/z6rpuRqOpaJsGhgrIELlNpJApLuw69GjTtu1oBHo1FfgLxRAsow8SoaKB0OeB5+EuVB2J4KRpRu8jw1b4Cqtcx0EiCYvSBN5mScLwd1VXVVW+DfB5nV3Hdfqm2nFdeIsjWFSVJbIC3pUzACUBQwW3MAMojGPbUeD3RVKUiIWQT9N4KjAhYeALNh8mdDJ/OQyRs8FfFCgSLMD1kxk6Apz3I+naNl4NhrEfNsME+X7MGDLHmud5U9ejw6iquiwA9HyvDMO44cT3PFBNPlIYL72fR9bwih2Q265uO5amYRQJhyOZTA82RZ5x9IP1X3vuI7W0hIpDKqa2Jkzt+HcB5PLxTXrna3LvUrF64w1S4C/v4AEn5QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;3&quot;
+        title=&quot;3&quot;
+        src=&quot;/static/539d2c7d884669e4a4d41c0d2e0d5c6b/476a8/3.png&quot;
+        srcset=&quot;/static/539d2c7d884669e4a4d41c0d2e0d5c6b/00d96/3.png 148w,
+/static/539d2c7d884669e4a4d41c0d2e0d5c6b/0b23c/3.png 295w,
+/static/539d2c7d884669e4a4d41c0d2e0d5c6b/476a8/3.png 456w&quot;
+        sizes=&quot;(max-width: 456px) 100vw, 456px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Finally you have setup an IRC bouncer. Enjoy :)&lt;/p&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How to create gists from command line]]></title><description><![CDATA[Creating GitHub gists is always a problem if you want to share some changes in your code with someone else. First, you need to copy the…]]></description><link>https://itsopensource.com/how-to-create-gists-from-command-line/</link><guid isPermaLink="false">https://itsopensource.com/how-to-create-gists-from-command-line/</guid><pubDate>Tue, 10 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Creating GitHub gists is always a problem if you want to share some changes in your code with someone else. First, you need to copy the changes from the terminal and then paste in &lt;a href=&quot;https://gist.github.com/&quot;&gt;gist.github.com&lt;/a&gt;. This process is really time taking if you do it very often.&lt;/p&gt;
 &lt;p&gt;So, I was looking for some automated method to create gists, I stumbled upon &lt;a href=&quot;https://github.com/scottgonzalez/pretty-diff&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;pretty-diff&lt;/code&gt;&lt;/a&gt;, a single line command that will create a GitHub gist with the changes in your git repository.&lt;/p&gt;
 &lt;h2&gt;Install&lt;/h2&gt;
 &lt;p&gt;Install &lt;a href=&quot;https://www.npmjs.com/package/pretty-diff&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;pretty-diff&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
