@@ -12,6 +12,7 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
+    const tags = post.frontmatter.tags || []
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -39,6 +40,14 @@ class BlogPostTemplate extends React.Component {
               {post.frontmatter.date}
             </p>
           </header>
+          {
+            tags.length &&
+            <div className="tags">
+              {
+                tags.map(t => <Link  className="tag" to={`/tags/${t}`}  key={t} onClick={this.openTags}>{t}</Link>)
+              }
+            </div>
+          }
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
             style={{
@@ -96,6 +105,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        tags
         date(formatString: "MMMM DD, YYYY")
         description,
         author

@@ -1,1 +1,7 @@
 /* Contains all the styles for blog post */
+
+.tag {
+    background: #f8f8f8;
+    padding: 4px 7px;
+    margin-right: 10px;
+}

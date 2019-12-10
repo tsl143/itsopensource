@@ -61,6 +61,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    {
+      resolve: "gatsby-plugin-tags",
+      options: {
+        templatePath: `${__dirname}/src/templates/tag.js`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
