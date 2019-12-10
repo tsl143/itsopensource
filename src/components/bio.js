@@ -7,7 +7,6 @@
 
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-// import Image from "gatsby-image"
 
 import { rhythm } from "../utils/typography"
 
@@ -25,13 +24,6 @@ const authors = {
 const Bio = ({author: postWriter = ''}) => {
   const data = useStaticQuery(graphql`
     query BioQuery {
-      avatar: file(absolutePath: { regex: "/trishul.jpg/" }) {
-        childImageSharp {
-          fixed(width: 50, height: 50) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
       site {
         siteMetadata {
           author
@@ -43,14 +35,20 @@ const Bio = ({author: postWriter = ''}) => {
     }
   `)
 
-  let author, twitter;
+  let author = {
+    slug: '',
+    name: '',
+    twitter: ''
+  };
   if (authors[postWriter]) {
-    author = authors[postWriter].name;
-    twitter = authors[postWriter].twitter;
+    author.name = authors[postWriter].name;
+    author.slug = postWriter;
+    author.twitter = authors[postWriter].twitter;
   } else {
     const { author: blogWriter, social } = data.site.siteMetadata;
-    author = blogWriter;
-    twitter = social.twitter;
+    author.name = blogWriter;
+    author.slug = 'trishul';
+    author.twitter = social.twitter;
   }
 
   return (
@@ -60,27 +58,29 @@ const Bio = ({author: postWriter = ''}) => {
         marginBottom: rhythm(2.5),
       }}
     >
-      {
-        /*
-        <Image
-          fixed={data.avatar.childImageSharp.fixed}
-          alt={author}
+      <div
+        style={{
+          minWidth: 50,
+          minHeight: 50,
+          marginRight: rhythm(1 / 2),
+          marginBottom: 0,
+          overflow: `hidden`
+        }}
+      >
+        <img
+          alt={author.name}
           style={{
-            marginRight: rhythm(1 / 2),
-            marginBottom: 0,
-            minWidth: 50,
+            width: 50,
+            height: `auto`,
             borderRadius: `100%`,
           }}
-          imgStyle={{
-            borderRadius: `50%`,
-          }}
+          src={`/${author.slug}.jpg`}
         />
-        */
-      }
+      </div>
       <p>
-        Written by <strong>{author}</strong> who is a professional frontend developer; writes React code for living and volunteers for Mozilla to justify his existence.
+        Written by <strong>{author.name}</strong> who is a professional frontend developer; writes React code for living and volunteers for Mozilla to justify his existence.
         {` `}
-        <a href={`https://twitter.com/${twitter}`}>
+        <a href={`https://twitter.com/${author.twitter}`}>
           You should follow him on Twitter.
         </a>
       </p>
