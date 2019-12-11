@@ -1,4 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource]]></title><description><![CDATA[Yet another blog about opensource.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 11 Dec 2019 06:49:26 GMT</lastBuildDate><item><title><![CDATA[How to setup IRC and IRC bouncer]]></title><description><![CDATA[What is IRC? Internet Relay Chat - IRC is a protocol that provides a way to communicate in real time with people from all over the world,was…]]></description><link>https://itsopensource.com/how-to-setup-irc-and-irc-bouncer/</link><guid isPermaLink="false">https://itsopensource.com/how-to-setup-irc-and-irc-bouncer/</guid><pubDate>Wed, 11 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;What is IRC?&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource]]></title><description><![CDATA[Yet another blog about opensource.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 11 Dec 2019 18:39:34 GMT</lastBuildDate><item><title><![CDATA[How to fix Python SSL CERTIFICATE_VERIFY_FAILED]]></title><description><![CDATA[Recently after upgrading the python version to , I started getting this error everytime I am running any python script. The reason behind…]]></description><link>https://itsopensource.com/How-to-fix-Python-SSL-CERTIFICATE_VERIFY_FAILED/</link><guid isPermaLink="false">https://itsopensource.com/How-to-fix-Python-SSL-CERTIFICATE_VERIFY_FAILED/</guid><pubDate>Thu, 12 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Recently after upgrading the python version to &lt;code class=&quot;language-text&quot;&gt;3.6&lt;/code&gt;, I started getting this error everytime I am running any python script.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:726)&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The reason behind this is Python 3.6 on MacOS uses an embedded version of OpenSSL, which does not use the system certificate store. More information &lt;a href=&quot;https://bugs.python.org/issue28150&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Quick fix for this problem on MacOS is to open Finder and double clicking &lt;code class=&quot;language-text&quot;&gt;Install Certificates.command&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 311px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/21603b710f58cb7b25a20e0b38499ee5/184f6/1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 61.09324758842444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsSAAALEgHS3X78AAACNElEQVQoz42TbWvTUBTH89V8NdDP4OuBokxh+ACCiEwRJyJVGIiCTDanYH1AnYLvnCC2a9alSdommb1p07R56NImTdKHvyfpujmZuAs/7s25J/97zj33cEzXMYwj8OtLEIo/8DPP49v3DfB8AV63hyAI0O/3jw1nGAaSkXm0hFw+h1qthqqqwmwaUHd20PP9dH88Hh8LTtE0GE0TG0UJpbJCogUIokyIULREMEgj9br+kez+BdexJhECA8T9DhxTRU0toes2yRYnsf2Hw4N7+lXB7IqFc2sWFt5quJWVMbdcxc03Ddz90sHiZweL6zZuf7Jx4z35fLSx8MHCHbJdzbZxdtXE+bUDuHvvZJy4r2Mm08Ds423ML4uYe9HC/ArDmWc1XHxew+WXTVx73cKF1SauvDJxibiebeH0kzpmHjCceshwMjOBc63mQbzDEEHHBPulQKlINFfh2q1/pnfU4JKq9vx+iq4zGKyK4rYAQShBlqk4JWEyCwJym5so8FtkE5Gn4tmOi27P3yvaBK7TcffVbceGZZlQ6NlIJFJvNCCXJVpLJFKC53kIowhhGKYMh0OMRqNDcJ63i4icoiiGQ4JGg9GTKYHf4lGulIkKLNumPQdxHKciUwaDAaI98Sn7gomD67ow6iyNpkCdkswVErQTQdprt9vk41AWVrq26ZCAuiP6I2rO97vpCw/DmO6wTuiolMsQJRGMMbo/CaqqQKOukeUqNE1Nv5ODko5KriD5f5rybyAobEcGXiAeAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;1&quot;
+        title=&quot;1&quot;
+        src=&quot;/static/21603b710f58cb7b25a20e0b38499ee5/184f6/1.png&quot;
+        srcset=&quot;/static/21603b710f58cb7b25a20e0b38499ee5/00d96/1.png 148w,
+/static/21603b710f58cb7b25a20e0b38499ee5/0b23c/1.png 295w,
+/static/21603b710f58cb7b25a20e0b38499ee5/184f6/1.png 311w&quot;
+        sizes=&quot;(max-width: 311px) 100vw, 311px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Or you can do this via terminal by:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;open /Applications/Python\ 3.6/Install\ Certificates.command&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How to setup IRC and IRC bouncer]]></title><description><![CDATA[What is IRC? Internet Relay Chat - IRC is a protocol that provides a way to communicate in real time with people from all over the world,was…]]></description><link>https://itsopensource.com/how-to-setup-irc-and-irc-bouncer/</link><guid isPermaLink="false">https://itsopensource.com/how-to-setup-irc-and-irc-bouncer/</guid><pubDate>Wed, 11 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;What is IRC?&lt;/h2&gt;
 &lt;p&gt;[Internet Relay Chat] - IRC is a protocol that provides a way to communicate in real time with people from all over the world,was invented before the World Wide Web.  It is very similar to text messaging, but designed around communicating with large groups of users instead of one on one. It consists of various separate networks (or “nets”) of IRC servers, machines that allow users to connect to IRC.&lt;/p&gt;
 &lt;h2&gt;What is IRC Clients?&lt;/h2&gt;
 &lt;p&gt;An IRC client is the vehicle that connects you to the global network of IRC servers. A variety of applications are available, like WeeChat , HexChat , XChat, Chatzilla etc. Personally i am using HexChat. Its awesome and easy to use. We will use HexChat here in this blog for EliteBNC setup. You can download it from here .&lt;/p&gt;
