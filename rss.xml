@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource]]></title><description><![CDATA[Yet another blog about opensource.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 10 Dec 2019 19:36:07 GMT</lastBuildDate><item><title><![CDATA[How to setup IRC and IRC bouncer]]></title><description><![CDATA[What is IRC? Internet Relay Chat - IRC is a protocol that provides a way to communicate in real time with people from all over the world,was…]]></description><link>https://itsopensource.com/how-to-setup-irc-and-irc-bouncer/</link><guid isPermaLink="false">https://itsopensource.com/how-to-setup-irc-and-irc-bouncer/</guid><pubDate>Wed, 11 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;What is IRC?&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource]]></title><description><![CDATA[Yet another blog about opensource.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 11 Dec 2019 06:28:16 GMT</lastBuildDate><item><title><![CDATA[How to setup IRC and IRC bouncer]]></title><description><![CDATA[What is IRC? Internet Relay Chat - IRC is a protocol that provides a way to communicate in real time with people from all over the world,was…]]></description><link>https://itsopensource.com/how-to-setup-irc-and-irc-bouncer/</link><guid isPermaLink="false">https://itsopensource.com/how-to-setup-irc-and-irc-bouncer/</guid><pubDate>Wed, 11 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;What is IRC?&lt;/h2&gt;
 &lt;p&gt;[Internet Relay Chat] - IRC is a protocol that provides a way to communicate in real time with people from all over the world,was invented before the World Wide Web.  It is very similar to text messaging, but designed around communicating with large groups of users instead of one on one. It consists of various separate networks (or “nets”) of IRC servers, machines that allow users to connect to IRC.&lt;/p&gt;
 &lt;h2&gt;What is IRC Clients?&lt;/h2&gt;
 &lt;p&gt;An IRC client is the vehicle that connects you to the global network of IRC servers. A variety of applications are available, like WeeChat , HexChat , XChat, Chatzilla etc. Personally i am using HexChat. Its awesome and easy to use. We will use HexChat here in this blog for EliteBNC setup. You can download it from here .&lt;/p&gt;
@@ -273,4 +273,56 @@ console.log(bar.roll, baz.roll);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 we can implement &lt;code class=&quot;language-text&quot;&gt;public&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;private&lt;/code&gt;, and &lt;code class=&quot;language-text&quot;&gt;static&lt;/code&gt; data members in Javascript using functional classes.&lt;/p&gt;
 &lt;p&gt;You can ask your questions or submit feedback in the comments. Also do not forget to try the functional inline code editor
 and compiler in this post.&lt;/p&gt;
-&lt;h3&gt;Thank you!&lt;/h3&gt;</content:encoded></item><item><title><![CDATA[Hello Opensource]]></title><description><![CDATA[This is our first blog post!]]></description><link>https://itsopensource.com/hello-world/</link><guid isPermaLink="false">https://itsopensource.com/hello-world/</guid><pubDate>Sun, 09 Dec 2018 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;This is our first blog post!&lt;/p&gt;</content:encoded></item></channel></rss>
+&lt;h3&gt;Thank you!&lt;/h3&gt;</content:encoded></item><item><title><![CDATA[Handle Cancel Click on File Input]]></title><description><![CDATA[Ever Tried capturing cancel event on Browse file input type in HTML, tbh there is no direct way to do so :( But there is a workaround adding…]]></description><link>https://itsopensource.com/handle-cancel-click-on-file-input/</link><guid isPermaLink="false">https://itsopensource.com/handle-cancel-click-on-file-input/</guid><pubDate>Wed, 01 Mar 2017 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Ever Tried capturing cancel event on Browse file input type in HTML, tbh there is no direct way to do so :(&lt;/p&gt;
+&lt;p&gt;But there is a workaround adding a bit of javascript. We can play with onfocus event of the BODY element.
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/49700d4f1b76ecdc0631b5cf964ee278/723cd/img1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 22.706422018348622%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAIAAADKYVtkAAAACXBIWXMAAAsSAAALEgHS3X78AAAAp0lEQVQY032OTQ+CMAyG9///jxzcRSJn4SB4kgsiElnUsS+2sllHPBl80rxp2r5tiUCkUForpcZx1FpPH4x1zlnLhuHSNF3XYSn8QLJsT+mWUpqmuyTZlGWV53lRHI7VqT7XjLFr2/Z9j2bcNlk7fQEAIiKc8yXBy/M8e+9RATDAGKO1wRa+tsxIKV9csMeThHWiH/xCiBJCVK8M3O5/zTjnVgDncPUbCmgenW/E1KAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;File input&quot;
+        title=&quot;Handle Cancel Click on File Input&quot;
+        src=&quot;/static/49700d4f1b76ecdc0631b5cf964ee278/799d3/img1.png&quot;
+        srcset=&quot;/static/49700d4f1b76ecdc0631b5cf964ee278/00d96/img1.png 148w,
+/static/49700d4f1b76ecdc0631b5cf964ee278/0b23c/img1.png 295w,
+/static/49700d4f1b76ecdc0631b5cf964ee278/799d3/img1.png 590w,
+/static/49700d4f1b76ecdc0631b5cf964ee278/723cd/img1.png 872w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Example -&gt;
+HTML&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;input type=&amp;#39;file&amp;#39; id=&amp;#39;theFile&amp;#39; onclick=&amp;quot;initialize()&amp;quot; /&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Javascript&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;var theFile = document.getElementById(&amp;#39;theFile&amp;#39;);
+function initialize()
+{
+    document.body.onfocus = checkIt;
+    console.log(&amp;#39;initializing&amp;#39;);
+}
+    
+function checkIt()
+{
+    if(theFile.value.length) 
+      alert(&amp;#39;Files Loaded&amp;#39;);
+    else 
+      alert(&amp;#39;Cancel clicked&amp;#39;);
+    document.body.onfocus = null;
+    console.log(&amp;#39;checked&amp;#39;);
+}		&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;See it working &lt;a href=&quot;https://tsl143.github.io/jsDemos/handleFileEvent/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;sub&gt;This blog was first published &lt;a href=&quot;http://trishulgoel.com/handle-cancel-click-on-file-input&quot;&gt;here&lt;/a&gt;&lt;/sub&gt;&lt;/p&gt;</content:encoded></item></channel></rss>
