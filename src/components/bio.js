@@ -17,7 +17,7 @@ const authors = {
     twitter: "trishulgoel"
   },
   shivam: {
-    bio: "who is a full stack developer; GSOC 2019 | LF intern 2019. Writes beautiful code in Javascript and python",
+    bio: "who is a full stack developer; Linux Guy. Mozillian by Heart ❤️",
     name: "Shivam Singhal",
     twitter: "idkhtml"
   },
