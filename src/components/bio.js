@@ -12,10 +12,12 @@ import { rhythm } from "../utils/typography"
 
 const authors = {
   trishul: {
+    bio: "who is a professional frontend developer; writes React code for living and volunteers for Mozilla to justify his existence",
     name: "Trishul Goel",
     twitter: "trishulgoel"
   },
   shivam: {
+    bio: "who is a full stack developer; GSOC 2019 | LF intern 2019. Writes beautiful code in Javascript and python",
     name: "Shivam Singhal",
     twitter: "idkhtml"
   },
@@ -44,6 +46,7 @@ const Bio = ({author: postWriter = ''}) => {
     author.name = authors[postWriter].name;
     author.slug = postWriter;
     author.twitter = authors[postWriter].twitter;
+    author.bio = authors[postWriter].bio;
   } else {
     const { author: blogWriter, social } = data.site.siteMetadata;
     author.name = blogWriter;
@@ -78,10 +81,10 @@ const Bio = ({author: postWriter = ''}) => {
         />
       </div>
       <p>
-        Written by <strong>{author.name}</strong> who is a professional frontend developer; writes React code for living and volunteers for Mozilla to justify his existence.
-        {` `}
-        <a href={`https://twitter.com/${author.twitter}`}>
-          You should follow him on Twitter.
+        Written by <strong>{author.name}</strong> {author.bio}.
+        <br/>
+        <a target="_blank" rel="noreferrer" rel="noopener" href={`https://twitter.com/${author.twitter}`}>
+          @{author.twitter}
         </a>
       </p>
     </div>
