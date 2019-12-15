@@ -2,6 +2,7 @@
 
 .tag {
   background: #f8f8f8;
+  box-shadow: none;
   padding: 4px 7px;
   margin-right: 10px;
 }
