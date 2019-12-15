@@ -18,7 +18,7 @@ The basic lifecycle of service worker is as following:
 ![Service worker lifecycle](sw-lifecycle.png)
 
 ***
-###Setup
+### Setup
 
 **Register Service worker:**  
 We need to check if the [browser supports](https://caniuse.com/#feat=serviceworkers) serviceworkers and then register by providing the path to serviceworker file.
@@ -89,7 +89,7 @@ self.addEventListener('fetch', function (event) {
 ```
 
 ***
-###Caching techniques
+### Caching techniques
 
 *  *Cache only* - This serves the files only and only from cache, it will never make a network request. Use this if you dont want to update your resource frequently  
 
