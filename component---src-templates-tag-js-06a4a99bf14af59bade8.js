@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{ccoC:function(t,a,n){"use strict";n.r(a),n.d(a,"pageQuery",(function(){return i}));var e=n("q1tI"),o=n.n(e),c=n("eWDE"),i="1714567382";a.default=function(t){var a=t.location,n=t.pageContext,e=t.data,i='Posts in tag "'+n.tag+'"';return o.a.createElement(c.a,{location:a,title:i,data:e})}}}]);
-//# sourceMappingURL=component---src-templates-tag-js-06a4a99bf14af59bade8.js.map
