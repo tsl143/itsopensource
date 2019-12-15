@@ -1,12 +1,12 @@
 ---
 title: 'Implementing public, private, and static data members in pre-ES5 Javascript'
 date: "2019-12-09"
-slug: '/blog/public-private-static-data-members-in-javascript'
+slug: 'public-private-static-data-members-in-javascript'
 tags:
   - javascript
   - oops
   - es5
-show: 'true'
+show: true
 author: shivam
 ---
 

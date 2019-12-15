@@ -1,3 +1,4 @@
+const isProd = process.env.NODE_ENV === 'production'
 module.exports = {
   siteMetadata: {
     title: `itsopensource`,
@@ -14,6 +15,7 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+        ignore: isProd ? ['**/_*.md'] : [],
       },
     },
     {

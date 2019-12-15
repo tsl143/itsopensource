@@ -1,11 +1,11 @@
 ---
 title: 'How to create gists from command line'
 date: "2019-12-10"
-slug: '/blog/how-to-create-gists-from-command-line'
+slug: 'how-to-create-gists-from-command-line'
 tags:
   - github
   - gists
-show: 'true'
+show: true
 author: shivam
 ---
 

@@ -5,7 +5,7 @@ slug: 'How-to-fix-Python-SSL-CERTIFICATE_VERIFY_FAILED'
 tags:
   - python
   - ssl
-show: 'true'
+show: true
 author: shivam
 ---
 

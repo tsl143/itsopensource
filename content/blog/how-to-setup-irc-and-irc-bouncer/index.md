@@ -1,11 +1,11 @@
 ---
 title: 'How to setup IRC and IRC bouncer'
 date: "2019-12-11"
-slug: '/blog/how-to-setup-irc-and-irc-bouncer'
+slug: 'how-to-setup-irc-and-irc-bouncer'
 tags:
   - irc
   - bouncer
-show: 'true'
+show: true
 author: shivam
 ---
 
