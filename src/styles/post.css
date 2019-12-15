@@ -6,7 +6,7 @@
     margin-right: 10px;
 }
 
-pre.language-text {
+pre.language-text, pre.language-javascript {
     background: #f4f4f9;
     padding: 10px 20px;
 }
