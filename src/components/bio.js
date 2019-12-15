@@ -83,7 +83,7 @@ const Bio = ({author: postWriter = ''}) => {
       <p>
         Written by <strong>{author.name}</strong> {author.bio}.
         <br/>
-        <a target="_blank" rel="noreferrer" rel="noopener" href={`https://twitter.com/${author.twitter}`}>
+        <a target="_blank" rel="noreferrer noreferrer" href={`https://twitter.com/${author.twitter}`}>
           @{author.twitter}
         </a>
       </p>

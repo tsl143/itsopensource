@@ -5,7 +5,7 @@ import List from "../templates/blog-list"
 
 const CategoryTemplate = ({ location, pageContext, data }) => {
   const { tag } = pageContext
-  const title = `Posts in tag "${tag}"`;
+  const title = `More about "${tag}"`;
   return (
     <List
       location={location}
