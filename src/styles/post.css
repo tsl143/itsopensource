@@ -1,12 +1,35 @@
 /* Contains all the styles for blog post */
 
 .tag {
-    background: #f8f8f8;
-    padding: 4px 7px;
-    margin-right: 10px;
+  background: #f8f8f8;
+  padding: 4px 7px;
+  margin-right: 10px;
 }
 
-pre.language-text, pre.language-javascript {
+.gatsby-highlight[data-language] {
+    position: relative;
+}
+
+.gatsby-highlight[data-language] pre {
     background: #f4f4f9;
-    padding: 10px 20px;
+    padding-top: 1.5em;
+}
+
+.gatsby-highlight[data-language]::before {
+  background: #d9d7e0;
+  color: #444;
+  border-radius: 0px 0px 4px 4px;
+  font-size: 10px;
+  line-height: 1;
+  padding: 4px 7px;
+  position: absolute;
+  text-align: right;
+  text-transform: uppercase;
+  top: 0px;
+  left: 1em;
+  content: attr(data-language);
+}
+
+.gatsby-highlight[data-language="javascript"]::before {
+  background: rgb(247, 223, 30) none repeat scroll 0% 0%;
 }

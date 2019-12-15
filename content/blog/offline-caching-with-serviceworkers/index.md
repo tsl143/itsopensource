@@ -38,19 +38,18 @@ Ideally we should not cache any third party resource but only which are sered fr
 
 ```javascript
 self.addEventListener('install', function (event) {
-    event.waitUntil(
-        caches.open('cache-key').then(function (cache) {
-            return cache.addAll(
-                [
-                    '/css/style.css',
-                    '/js/script.js',
-                    '/index.html'
-                ]
-            );
-        })
-    );
+	event.waitUntil(
+		caches.open('cache-key').then(function (cache) {
+			return cache.addAll(
+				[
+					'/css/style.css',
+					'/js/script.js',
+					'/index.html'
+				]
+			);
+		})
+	);
 });
-
 ```
 
 **Activate Service worker:**  
@@ -58,18 +57,18 @@ In this step we can delete all the unused cache and also bump the cache version 
 <center><sub>In Service worker</sub></center>
 
 ```javascript
-self.addEventListener('activate', function(event) {
-    event.waitUntil(
-        caches.keys().then(function(cacheName) {
-            return Promise.all(
-                cacheName.filter(function(name) {
-                    return name !== 'cache-key';
-                }).map(function(name) {
-                    return caches.delete(name);
-                })
-            )
-        })
-    )
+self.addEventListener('activate', function (event) {
+	event.waitUntil(
+		caches.keys().then(function (cacheName) {
+			return Promise.all(
+				cacheName.filter(function (name) {
+					return name !== 'cache-key';
+				}).map(function (name) {
+					return caches.delete(name);
+				})
+			)
+		})
+	)
 });
 ```
 
@@ -79,12 +78,12 @@ Listen to the fetch event and capture the network request, depending on you cach
 
 ```javascript
 self.addEventListener('fetch', function (event) {
-    event.respondWith(
-        caches.match(event.request).then(function (response) {
-            if (!response) response = fetch(event.request);
-            return response;
-        })
-    );
+	event.respondWith(
+		caches.match(event.request).then(function (response) {
+			if (!response) response = fetch(event.request);
+			return response;
+		})
+	);
 });
 ```
 
@@ -97,7 +96,7 @@ self.addEventListener('fetch', function (event) {
 
 ```javascript
 self.addEventListener('fetch', function(event) {
-    event.respondWith(caches.match(event.request));
+  event.respondWith(caches.match(event.request));
 });
 ```
 
@@ -106,27 +105,27 @@ self.addEventListener('fetch', function(event) {
 <center><sub>In Service worker</sub></center>
 
 ```javascript
-    self.addEventListener('fetch', function (event) {
-        event.respondWith(
-            caches.match(event.request).then(function (response) {
-                if (!response) response = fetch(event.request);
-                return response;
-            })
-        );
-    });
+self.addEventListener('fetch', function (event) {
+	event.respondWith(
+		caches.match(event.request).then(function (response) {
+			if (!response) response = fetch(event.request);
+			return response;
+		})
+	);
+});
 ```
 *  *Network, falbback Cache* - This makes first a network request and if network request fails then it fallbacks to cache response, please note the cahce will be returned only when the network request is completed and gives a failed reponse.  
 
 <center><sub>In Service worker</sub></center>
 
 ```javascript
-    self.addEventListener('fetch', function (event) {
-        event.respondWith(
-            fetch(event.request).catch(function () {
-                return caches.match(event.request);
-            })
-        );
-    });
+self.addEventListener('fetch', function (event) {
+	event.respondWith(
+		fetch(event.request).catch(function () {
+			return caches.match(event.request);
+		})
+	);
+});
 ```
 *  *Cache then network* - The response is first served from the cache in the page, and then network request is made. When the response from network request is recieved then again the response is served and the page is updated (or whatever the logic reuires to do). 
 
@@ -134,32 +133,32 @@ self.addEventListener('fetch', function(event) {
 
 ```javascript
 caches.match('/data.json')
-    .then(response => {
-        updatePage(response);
-        fetch('/data.json').
-            then(result => {
-                updatePage(result);
-            })
-    })
-    .catch(() => {
-        fetch('/data.json').
-            then(response => {
-                updatePage(response);
-            })
-    });
+	.then(response => {
+		updatePage(response);
+		fetch('/data.json').
+			then(result => {
+				updatePage(result);
+			})
+	})
+	.catch(() => {
+		fetch('/data.json').
+			then(response => {
+				updatePage(response);
+			})
+	});
 ```
 <center><sub>In Service worker</sub></center>
 
 ```javascript
 self.addEventListener('fetch', function (event) {
-    event.respondWith(
-        caches.open('cache-key').then(function (cache) {
-            return fetch(event.request).then(function (response) {
-                cache.put(event.request, response.clone());
-                return response;
-            });
-        })
-    );
+	event.respondWith(
+		caches.open('cache-key').then(function (cache) {
+			return fetch(event.request).then(function (response) {
+				cache.put(event.request, response.clone());
+				return response;
+			});
+		})
+	);
 });
 ```
 
@@ -168,24 +167,24 @@ self.addEventListener('fetch', function (event) {
 <center><sub>In Service worker</sub></center>
 
 ```javascript
-    self.addEventListener('fetch', function (event) {
-        event.respondWith(
-            // Try the cache
-            caches.match(event.request).then(function (response) {
-                if (response) {
-                    return response;
-                }
-                return fetch(event.request).then(function (response) {
-                    if (response.status === 404) {
-                        return caches.match('/404.html');
-                    }
-                    return response
-                });
-            }).catch(function () {
-                return caches.match('/offline.html');
-            })
-        );
-    });
+self.addEventListener('fetch', function (event) {
+	event.respondWith(
+		// Try the cache
+		caches.match(event.request).then(function (response) {
+			if (response) {
+				return response;
+			}
+			return fetch(event.request).then(function (response) {
+				if (response.status === 404) {
+					return caches.match('/404.html');
+				}
+				return response
+			});
+		}).catch(function () {
+			return caches.match('/offline.html');
+		})
+	);
+});
 ```
 
 ***
