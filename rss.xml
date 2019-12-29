@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource]]></title><description><![CDATA[Yet another blog about opensource.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 28 Dec 2019 11:25:50 GMT</lastBuildDate><item><title><![CDATA[Offline caching with serviceworkers]]></title><description><![CDATA[Caching always has proven to be winner when it comes to performance.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource]]></title><description><![CDATA[Yet another blog about opensource.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 29 Dec 2019 11:27:53 GMT</lastBuildDate><item><title><![CDATA[Offline caching with serviceworkers]]></title><description><![CDATA[Caching always has proven to be winner when it comes to performance.
 Browser by defaults caches the resources on its end, but to get these…]]></description><link>https://itsopensource.com/offline-caching-with-serviceworkers/</link><guid isPermaLink="false">https://itsopensource.com/offline-caching-with-serviceworkers/</guid><pubDate>Sun, 15 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Caching always has proven to be winner when it comes to &lt;strong&gt;performance&lt;/strong&gt;.
 Browser by defaults caches the resources on its end, but to get these resources it still needs internet. Browser can serve resources from its cache only when a network request is made&lt;/p&gt;
 &lt;p&gt;Service workers provides the way to bypass the network request. It sits between the network and browser, and can decide where to serve resources from.&lt;/p&gt;
@@ -510,23 +510,22 @@ and compiler in this post.&lt;/p&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Example -&gt;
 HTML&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;input type=&amp;#39;file&amp;#39; id=&amp;#39;theFile&amp;#39; onclick=&amp;quot;initialize()&amp;quot; /&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Javascript&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;var theFile = document.getElementById(&amp;#39;theFile&amp;#39;);
-function initialize()
-{
-    document.body.onfocus = checkIt;
-    console.log(&amp;#39;initializing&amp;#39;);
-}
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;input&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&apos;&lt;/span&gt;file&lt;span class=&quot;token punctuation&quot;&gt;&apos;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&apos;&lt;/span&gt;theFile&lt;span class=&quot;token punctuation&quot;&gt;&apos;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;onclick&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;initialize()&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; theFile &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;theFile&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;body&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;onfocus &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; checkIt&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;initializing&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
     
-function checkIt()
-{
-    if(theFile.value.length) 
-      alert(&amp;#39;Files Loaded&amp;#39;);
-    else 
-      alert(&amp;#39;Cancel clicked&amp;#39;);
-    document.body.onfocus = null;
-    console.log(&amp;#39;checked&amp;#39;);
-}		&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;checkIt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;theFile&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; 
+      &lt;span class=&quot;token function&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Files Loaded&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; 
+      &lt;span class=&quot;token function&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Cancel clicked&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;body&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;onfocus &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;checked&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;		&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;See it working &lt;a href=&quot;https://tsl143.github.io/jsDemos/handleFileEvent/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;sub&gt;This blog was first published &lt;a href=&quot;http://trishulgoel.com/handle-cancel-click-on-file-input&quot;&gt;here&lt;/a&gt;&lt;/sub&gt;&lt;/p&gt;</content:encoded></item></channel></rss>

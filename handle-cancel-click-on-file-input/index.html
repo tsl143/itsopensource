@@ -31,23 +31,22 @@
     </span></p>
 <p>Example ->
 HTML</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">&lt;input type=&#39;file&#39; id=&#39;theFile&#39; onclick=&quot;initialize()&quot; /&gt;</code></pre></div>
-<p>Javascript</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">var theFile = document.getElementById(&#39;theFile&#39;);
-function initialize()
-{
-    document.body.onfocus = checkIt;
-    console.log(&#39;initializing&#39;);
-}
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>file<span class="token punctuation">'</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>theFile<span class="token punctuation">'</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>initialize()<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre></div>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> theFile <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'theFile'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">initialize</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>onfocus <span class="token operator">=</span> checkIt<span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'initializing'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
     
-function checkIt()
-{
-    if(theFile.value.length) 
-      alert(&#39;Files Loaded&#39;);
-    else 
-      alert(&#39;Cancel clicked&#39;);
-    document.body.onfocus = null;
-    console.log(&#39;checked&#39;);
-}		</code></pre></div>
+<span class="token keyword">function</span> <span class="token function">checkIt</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>theFile<span class="token punctuation">.</span>value<span class="token punctuation">.</span>length<span class="token punctuation">)</span> 
+      <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'Files Loaded'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span> 
+      <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'Cancel clicked'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>onfocus <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'checked'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>		</code></pre></div>
 <p>See it working <a href="https://tsl143.github.io/jsDemos/handleFileEvent/">here</a>.</p>
 <p><sub>This blog was first published <a href="http://trishulgoel.com/handle-cancel-click-on-file-input">here</a></sub></p></section><hr style="margin-bottom:1.75rem"/><footer><div style="display:flex;margin-bottom:4.375rem"><div style="min-width:50px;min-height:50px;margin-right:0.875rem;margin-bottom:0;overflow:hidden"><img alt="Trishul Goel" style="width:50px;height:auto;border-radius:100%" src="/trishul.jpg"/></div><p>Written by <strong>Trishul Goel</strong> <!-- -->who is a professional frontend developer; writes React code for living and volunteers for Mozilla to justify his existence<!-- -->.<br/><a target="_blank" rel="noopener noreferrer" href="https://twitter.com/trishulgoel">@<!-- -->trishulgoel</a></p></div></footer></article><nav><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li></li><li><a rel="next" href="/public-private-static-data-members-in-javascript/">Implementing public, private, and static data members in pre-ES5 Javascript<!-- --> →</a></li></ul></nav></main></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/handle-cancel-click-on-file-input/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-0192ffe5a5e3e7c19ad3.js"],"component---src-templates-tag-js":["/component---src-templates-tag-js-245da64c80d03479cdd6.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-9445e9c90a4ddf913435.js"],"component---src-pages-404-js":["/component---src-pages-404-js-31a64aa4d0648eac1c8c.js"],"component---src-pages-index-js":["/component---src-pages-index-js-9da3e0373c2124836aca.js"]};/*]]>*/</script><script src="/webpack-runtime-ddd7ea050870eccc0e34.js" async=""></script><script src="/commons-87fea2526b653b5fe15a.js" async=""></script><script src="/styles-05ec49f1e97fde7879c1.js" async=""></script><script src="/component---src-templates-blog-post-js-9445e9c90a4ddf913435.js" async=""></script><script src="/app-0192ffe5a5e3e7c19ad3.js" async=""></script></body></html>
