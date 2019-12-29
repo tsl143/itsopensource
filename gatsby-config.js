@@ -63,5 +63,13 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-matomo',
+      options: {
+        siteId: '1',
+        matomoUrl: 'https://itsopen.000webhostapp.com',
+        siteUrl: 'https://itsopensource.com/M'
+      }
+    }
   ],
 }
