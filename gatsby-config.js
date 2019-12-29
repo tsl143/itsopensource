@@ -63,11 +63,5 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    {
-      resolve: `gatsby-plugin-clicky`,
-      options: {
-        siteId: '101228542'
-      }
-    }
   ],
 }

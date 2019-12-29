@@ -5290,13 +5290,6 @@ gatsby-page-utils@^0.0.33:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-clicky@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-clicky/-/gatsby-plugin-clicky-1.0.0.tgz#7e4ecb87f8d795e31e69fd13f7ac268ab148ecca"
-  integrity sha512-6IQxIECi2iHBD+Yl6/DJC8W20XskwwzQ8Na7KEVsoAAsZ+ywBb1ZzCoLqbCwMYfna5aQeb8mSBo+FHemAzv4pQ==
-  dependencies:
-    "@babel/runtime" "^7.7.2"
-
 gatsby-plugin-feed@^2.3.22:
   version "2.3.23"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-feed/-/gatsby-plugin-feed-2.3.23.tgz#23e954aea89fe7e5094ba64940ccee87a16af3b8"
