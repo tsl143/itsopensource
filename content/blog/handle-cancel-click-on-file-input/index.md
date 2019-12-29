@@ -18,12 +18,11 @@ But there is a workaround adding a bit of javascript. We can play with onfocus e
 Example ->
 HTML
 
-```
+```HTML
 <input type='file' id='theFile' onclick="initialize()" />
 ```
 
-Javascript
-```
+```Javascript
 var theFile = document.getElementById('theFile');
 function initialize()
 {
