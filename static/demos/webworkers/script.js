@@ -1,5 +1,4 @@
 let x = 0;
-let worker;
 let delay = 2000;
 document.getElementById("clickme1")
 	.addEventListener("click", ({ target }) => {
@@ -23,9 +22,10 @@ document.getElementById("clickmew1")
 	.addEventListener("click", ({ target }) => {
 		target.setAttribute('disabled', true);
 		if (typeof(Worker) !== "undefined") {  
-			if (!worker) worker = new Worker("./worker.js");
+			let worker = new Worker("./worker.js");
 			worker.postMessage({ delay });
 			worker.onmessage = e => {
+				worker.terminate();
 				target.nextElementSibling.textContent=e.data;
 				target.removeAttribute('disabled');
 			}
