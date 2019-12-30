@@ -44,7 +44,7 @@ class BlogPostTemplate extends React.Component {
             tags.length > 0 &&
             <div className="tags">
               {
-                tags.map(t => <Link  className="tag" to={`/tags/${t}`}  key={t} onClick={this.openTags}>{t}</Link>)
+                tags.map(t => <Link  className="tag" to={`/tags/${t.toLowerCase()}`}  key={t} onClick={this.openTags}>{t}</Link>)
               }
             </div>
           }
