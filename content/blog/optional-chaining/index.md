@@ -9,7 +9,7 @@ author: trishul
 
 `TypeError: Cannot read property '<property>' of undefined` has bugged every javascript developer enough. While expecting response from APIs, we need to add a number of `&&` to make sure our code don't break. This maybe not a problem while dealing with 2 level nested object, but while dealing with large data objects this can be nightmare. Unnecessary/redundent lines of code, change all occurences if the structure of object changes etc.
 
-But we are now in 2020, the game has been changed with [Optional Chaninig proposal](https://github.com/tc39/proposal-optional-chaining) Stage-4.
+But we are now in 2020, the game has been changed with [Optional Chaining proposal](https://github.com/tc39/proposal-optional-chaining) Stage-4.
 
 Now no more redundent lines, but adding `?` before `.` takes care of everything. This traverse the property chain one by one and returns `undefined` if the property dont exist (instead of throwing `TypeError`), else return the value.
 
