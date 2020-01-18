@@ -1,4 +1,114 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource]]></title><description><![CDATA[Yet another blog about opensource.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 17 Jan 2020 15:40:51 GMT</lastBuildDate><item><title><![CDATA[Get started with web workers]]></title><description><![CDATA[Javascript is single threaded ie. all of the javascript code written is executed in a single thread. All the functions are executed…]]></description><link>https://itsopensource.com/get-started-with-web-wrokers/</link><guid isPermaLink="false">https://itsopensource.com/get-started-with-web-wrokers/</guid><pubDate>Sat, 28 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Javascript is single threaded ie. all of the javascript code written is executed in a single thread. All the functions are executed sequentially. The next function will be exceuted once the previous one has finished its execution. This sometimes leads to unresponsive UI.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource]]></title><description><![CDATA[Yet another blog about opensource.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 18 Jan 2020 13:44:52 GMT</lastBuildDate><item><title><![CDATA[Optional Chaining]]></title><description><![CDATA[has bugged every javascript developer enough. While expecting response from APIs, we need to add a number of  to make sure our code don’t…]]></description><link>https://itsopensource.com/optional-chaining/</link><guid isPermaLink="false">https://itsopensource.com/optional-chaining/</guid><pubDate>Fri, 17 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;TypeError: Cannot read property &amp;#39;&amp;lt;property&amp;gt;&amp;#39; of undefined&lt;/code&gt; has bugged every javascript developer enough. While expecting response from APIs, we need to add a number of &lt;code class=&quot;language-text&quot;&gt;&amp;amp;&amp;amp;&lt;/code&gt; to make sure our code don’t break. This maybe not a problem while dealing with 2 level nested object, but while dealing with large data objects this can be nightmare. Unnecessary/redundent lines of code, change all occurences if the structure of object changes etc.&lt;/p&gt;
+&lt;p&gt;But we are now in 2020, the game has been changed with &lt;a href=&quot;https://github.com/tc39/proposal-optional-chaining&quot;&gt;Optional Chaining proposal&lt;/a&gt; Stage-4.&lt;/p&gt;
+&lt;p&gt;Now no more redundent lines, but adding &lt;code class=&quot;language-text&quot;&gt;?&lt;/code&gt; before &lt;code class=&quot;language-text&quot;&gt;.&lt;/code&gt; takes care of everything. This traverse the property chain one by one and returns &lt;code class=&quot;language-text&quot;&gt;undefined&lt;/code&gt; if the property dont exist (instead of throwing &lt;code class=&quot;language-text&quot;&gt;TypeError&lt;/code&gt;), else return the value.&lt;/p&gt;
+&lt;p&gt;Consider following JSON object&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  solar_system&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    earth&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      asia&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        india&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+          delhi&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            good_food&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
+          &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The javascript code would look like&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; data &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&amp;lt;above JSON object&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; hasGoodFood &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; 
+  data&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;solar_system &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;
+  data&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;solar_system&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;earth &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;
+  data&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;solar_system&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;earth&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;asia &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;
+  data&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;solar_system&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;earth&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;asia&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;india &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;
+  data&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;solar_system&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;earth&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;asia&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;india&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;delhi &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;
+  data&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;solar_system&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;earth&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;asia&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;india&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;delhi&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;good_food&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;But with optional chaining the whole code can be put into 1 line&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; data &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&amp;lt;above JSON object&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; hasGoodFood &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; data&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;solar_system&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;earth&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;asia&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;india&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;delhi&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;good_food&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// true;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Also&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; data &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&amp;lt;above JSON object&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; hasGoodFood &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; data&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;solar_system&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;earth&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;asia&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;philippines&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;delhi&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;good_food&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// undefined;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The object don’t have &lt;code class=&quot;language-text&quot;&gt;philippines&lt;/code&gt;, instead of throwing &lt;code class=&quot;language-text&quot;&gt;TypeError&lt;/code&gt; it returns &lt;code class=&quot;language-text&quot;&gt;undefined&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This is a &lt;a href=&quot;https://tc39.es/process-document&quot;&gt;TC39&lt;/a&gt; stage-4 proposal. This means &lt;code class=&quot;language-text&quot;&gt;The addition will be included in the soonest practical standard revision.&lt;/code&gt; in all the modern browsers.&lt;/p&gt;
+&lt;p&gt;But if you do not want wait for using this already into your code, you can include the &lt;a href=&quot;https://babeljs.io/docs/en/next/babel-plugin-proposal-optional-chaining.html&quot;&gt;Babel&lt;/a&gt; plugin in your project to support this already.&lt;/p&gt;
+&lt;p&gt;If you want to see this in action, this can be enabled in chrome browser with following steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Go to &lt;code class=&quot;language-text&quot;&gt;chrome://flags&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Search for &lt;code class=&quot;language-text&quot;&gt;experimental javascript&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Toggle the feature to &lt;code class=&quot;language-text&quot;&gt;enable&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Relaunch the browser.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;*Always keep an eye on &lt;a href=&quot;https://github.com/tc39/proposals&quot;&gt;TC39&lt;/a&gt; proposals for amazing additions to our beloved Javascript&lt;/p&gt;
+&lt;hr&gt;
+&lt;center&gt;&lt;sub&gt;Somethings never change&lt;/sub&gt;&lt;/center&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/8d45801f7ca6af8e832660b3687cee02/2c602/withoutOC.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 20.97516099356026%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAvUlEQVQY052NTQuCQBCGV5SUQKyD5Qd2cDe1WvMjFezDUxB069z//x1vs1ERHTs87Mzz7sywLE1RbTvkmxoylyiLAkshwDmH+AOWSomqaZBXJTa0TGQZeJKA0yFFrGoi/uKT/3hBjvXRAkPK0UY+tvM55GyG0veRv+o6CFB4Hipyyr97latXuSYMn37lumAn00I3MnGdTHEjobjTh4vj4GzbGMZjtIaBg2WhN81PX2gadrqOPc0fKVP5mjE8ABW+b90BNomzAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Without Optional chaining&quot;
+        title=&quot;Without Optional chaining&quot;
+        src=&quot;/static/8d45801f7ca6af8e832660b3687cee02/799d3/withoutOC.png&quot;
+        srcset=&quot;/static/8d45801f7ca6af8e832660b3687cee02/00d96/withoutOC.png 148w,
+/static/8d45801f7ca6af8e832660b3687cee02/0b23c/withoutOC.png 295w,
+/static/8d45801f7ca6af8e832660b3687cee02/799d3/withoutOC.png 590w,
+/static/8d45801f7ca6af8e832660b3687cee02/2a3d6/withoutOC.png 885w,
+/static/8d45801f7ca6af8e832660b3687cee02/ae92f/withoutOC.png 1180w,
+/static/8d45801f7ca6af8e832660b3687cee02/2c602/withoutOC.png 2174w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;center&gt;&lt;sub&gt;Somethings do :) &lt;/sub&gt;&lt;/center&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/22edb0a64a66506bbbd32a1d51673ee0/5d098/withOC.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 23.761467889908257%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAYUlEQVQY062O2w2AIBAEqYXjFZHTOwT7r2wVSkA/Jpvsx2SMcMd53MhlR62KLWd47xFCWMKICFQUfDBSSlPmnFvGtEvRmyK/ZUT0STaFpRQwM8bGGOc5KlcxRA7W2skfhQ9//ZA4Pi9sqAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;With Optional chaining&quot;
+        title=&quot;With Optional chaining&quot;
+        src=&quot;/static/22edb0a64a66506bbbd32a1d51673ee0/799d3/withOC.png&quot;
+        srcset=&quot;/static/22edb0a64a66506bbbd32a1d51673ee0/00d96/withOC.png 148w,
+/static/22edb0a64a66506bbbd32a1d51673ee0/0b23c/withOC.png 295w,
+/static/22edb0a64a66506bbbd32a1d51673ee0/799d3/withOC.png 590w,
+/static/22edb0a64a66506bbbd32a1d51673ee0/2a3d6/withOC.png 885w,
+/static/22edb0a64a66506bbbd32a1d51673ee0/ae92f/withOC.png 1180w,
+/static/22edb0a64a66506bbbd32a1d51673ee0/5d098/withOC.png 2180w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Get started with web workers]]></title><description><![CDATA[Javascript is single threaded ie. all of the javascript code written is executed in a single thread. All the functions are executed…]]></description><link>https://itsopensource.com/get-started-with-web-wrokers/</link><guid isPermaLink="false">https://itsopensource.com/get-started-with-web-wrokers/</guid><pubDate>Sat, 28 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Javascript is single threaded ie. all of the javascript code written is executed in a single thread. All the functions are executed sequentially. The next function will be exceuted once the previous one has finished its execution. This sometimes leads to unresponsive UI.
 Consider this example,
 In part 1 when we click on button 1, the UI freezes for 2 seconds as main thread is performing some CPU intensive operarions. Until this execution is finished the button 2 is not clickable at all.
 &lt;img src=&quot;/cbe34008c8f618242f64c4ee52c55340/part1.gif&quot; alt=&quot;part1&quot;&gt; The functionality of button 2 is independent from button 1 but still its unusable until button 1’s job is finished. This is a very common problem faced by javascript intensive web apps.&lt;/p&gt;
