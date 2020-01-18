@@ -1,7 +1,6 @@
 ---
 title: 'How to open files always in a new tab in Visual Studio Code'
 date: "2020-01-18"
-slug: 'how-to-open-files-always-in-a-new-tab-in-visual-studio-code'
 description: Solution to open files always in a new tab in Visual Studio Code
   - vscode
   - tricks
