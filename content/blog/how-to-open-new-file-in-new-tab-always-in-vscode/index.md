@@ -2,6 +2,8 @@
 title: 'How to always keep open files in Visual Studio Code'
 date: "2020-01-18"
 description: Solution to open files always in a new tab in Visual Studio Code
+slug: 'how-to-always-keep-open-files-in-visual-studio-code'
+tags:
   - vscode
   - tricks
 show: true
@@ -20,4 +22,4 @@ The solution is way simpler than expected, just add the following line to your  
 "workbench.editor.enablePreview": false
 ```
 
-Cheers
+---
