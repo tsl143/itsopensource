@@ -62,7 +62,7 @@ This is a [TC39](https://tc39.es/process-document) stage-4 proposal. This means 
 But if you do not want wait for using this already into your code, you can include the [Babel](https://babeljs.io/docs/en/next/babel-plugin-proposal-optional-chaining.html) plugin in your project to support this already.
 
 If you want to see this in action, this can be enabled in chrome browser with following steps:
-1. Goto `chrome://flags`
+1. Go to `chrome://flags`
 2. Search for `experimental javascript`
 3. Toggle the feature to `enable`
 4. Relaunch the browser.
