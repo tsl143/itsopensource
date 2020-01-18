@@ -1,6 +1,7 @@
 ---
 title: 'Optional Chaining'
 date: "2020-01-17"
+description: TypeError has bugged every Javascript developer enough. While expecting response from APIs, we need to add a number of && to make sure our code don't break
 tags:
   - javascript
 show: true
