@@ -1,5 +1,9 @@
 /* Contains all the styles for blog post */
 
+.tags {
+  margin-bottom: 10px;
+}
+
 .tag {
   background: #f8f8f8;
   box-shadow: none;
