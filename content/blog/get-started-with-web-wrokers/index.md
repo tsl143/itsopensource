@@ -1,6 +1,7 @@
 ---
 title: 'Get started with web workers'
 date: "2019-12-28"
+description: 'Web Workers in Javascript'
 tags:
   - webworkers
   - performance

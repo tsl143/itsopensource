@@ -1,6 +1,7 @@
 ---
 title: 'How to create gists from command line'
 date: "2019-12-10"
+description: 'Create Gists from Command Line to make sharing the code easy'
 slug: 'how-to-create-gists-from-command-line'
 tags:
   - github

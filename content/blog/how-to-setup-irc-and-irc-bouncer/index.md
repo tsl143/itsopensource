@@ -2,6 +2,7 @@
 title: 'How to setup IRC and IRC bouncer'
 date: "2019-12-11"
 slug: 'how-to-setup-irc-and-irc-bouncer'
+desciption: 'Tutorial to start with IRC and settting up IRC Bouncer to save logs'
 tags:
   - irc
   - bouncer

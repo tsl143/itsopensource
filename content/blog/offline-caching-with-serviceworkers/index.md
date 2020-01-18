@@ -1,6 +1,7 @@
 ---
 title: 'Offline caching with serviceworkers'
 date: "2019-12-15"
+description: 'Get started with Offline caching with serviceworkers in Javascript'
 tags:
   - PWA
   - servcieworkers

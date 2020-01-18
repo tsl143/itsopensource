@@ -1,6 +1,7 @@
 ---
 title: 'How to fix Python SSL CERTIFICATE_VERIFY_FAILED'
 date: "2019-12-12"
+description: 'Solution to fix Python SSL CERTIFICATE_VERIFY_FAILED error'
 slug: 'How-to-fix-Python-SSL-CERTIFICATE_VERIFY_FAILED'
 tags:
   - python
