@@ -10,7 +10,7 @@ author: trishul
 
 There are times while writing javascript, when we might want to halt the execution of Javascript for small period say 2 seconds. May be while writing test cases, or avoiding race condition, etc. Javascript provides (natively) no way to do this, but we can write our own `sleep` function.
 
-To do this we will use `Promise` / `await`, `setTimeout` (let's just face it no one wants to use callbacks anymore 🤐).
+To do this we will use `Promise` / `await`, `setTimeout` (let's just face it no one wants to use `callbacks` anymore 🤐).
 
 <center><sub>The sleep function</sub></center>
 
