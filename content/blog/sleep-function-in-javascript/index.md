@@ -1,7 +1,7 @@
 ---
 title: 'Sleep function in Javascript'
 date: "2020-02-16"
-description: A simple sleep function in Javscript to halt he execution of Javascript for small time
+description: A simple sleep function in Javscript to halt the execution of Javascript for small time
 tags:
   - javascript
 show: true
