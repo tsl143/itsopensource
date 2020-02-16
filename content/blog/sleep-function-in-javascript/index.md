@@ -18,9 +18,7 @@ To do this we will use `Promise` / `await`, `setTimeout` (let's just face it no 
 const sleep = (sec = 2) => {
   const ms = sec * 1000;
   return new Promise(resolve => {
-    setTimeout(() => {
-      resolve();
-    }, ms)
+    setTimeout(resolve, ms)
   });
 }
 ```
