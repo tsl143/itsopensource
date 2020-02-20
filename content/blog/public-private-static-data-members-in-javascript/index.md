@@ -28,7 +28,7 @@ methods in Javascript.
 Let us take a look at the ES5 classes. Nothing special but just plane class format as in most of the languages.
 
 
-```
+```javascript
 class foo {
   constructor(bar){
     this.bar = bar;
@@ -47,7 +47,7 @@ baz.print();
 Let us see how we could have implemented this same class before es5 came and learn how the classes works under the hood.
 So in the below code you will see implementation of the same `foo` class from above using a function.
 
-```
+```javascript
 function foo (bar) {
   // constructor code starts
   this.bar = bar;
@@ -76,7 +76,7 @@ The data members or member functions of an object are all public. Any other part
 There are two ways to add public data member and member function in an object. The first way is to create it in the
 constructor fucntion.
 
-```
+```javascript
 function foo() {
   // inside constructor function
   this.bar = 'initial data';  
@@ -97,7 +97,7 @@ the constructor functions most of the time to initialise data for the new object
 members is to attach it to the contructor's prototype. This is used to add member functions for inheritance while conserving
 memory. Any property which is not available at the object is checked in the prototype chain.
 
-```
+```javascript
 // constructor function
 function foo(bar) {
   this.bar = bar;
@@ -117,7 +117,7 @@ Well this is something new we have to learn. ES5 classes do not provide function
 member functions. Data abstraction is a key phenomenon of object oriented programming. But it is not something
 you cannot do with Javascript. Let us learn how we can achieve data abstraction with creating `private` data members.
 
-```
+```javascript
 // constructor function
 function tesla() {
   // private data member
@@ -166,7 +166,7 @@ it. But you cannot do that from outside of the `car` object.
 Now lets learn how we can implement `static` data members in functional classes. The `static` data members belong to the
 constructor function rather than the objects. Let us build a simple objects counter.
 
-```
+```javascript
 const foo = function() {
   function foo() {
     foo.count++;

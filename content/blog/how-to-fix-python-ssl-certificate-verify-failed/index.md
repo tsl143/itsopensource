@@ -11,7 +11,7 @@ author: shivam
 
 Recently after upgrading the python version to `3.6`, I started getting this error everytime I am running any python script.
 
-```
+```bash
 [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:726)>
 ```
 
@@ -23,7 +23,7 @@ Quick fix for this problem on MacOS is to open Finder and double clicking `Insta
 
 Or you can do this via terminal by:
 
-```
+```bash
 open /Applications/Python\ 3.6/Install\ Certificates.command
 ```
 

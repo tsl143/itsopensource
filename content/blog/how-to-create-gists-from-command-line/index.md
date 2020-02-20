@@ -17,20 +17,20 @@ So, I was looking for some automated method to create gists, I stumbled upon [`p
 
 Install [`pretty-diff`](https://www.npmjs.com/package/pretty-diff)
 
-```
+```bash
 npm i -g pretty-diff
 ```
 
 Now create a [Personal Access Token](https://github.com/settings/tokens) (make sure to check "Create gist"). After that run this command:
 
-```
+```bash
 git config --global gist-diff.token "AccessToken"
 ```
 
 Now you are ready to use `pretty-diff` and share the git changes.
 Just run this command and it will upload the changes to github gist.
 
-```
+```bash
 gist-diff
 ```
 
