@@ -19,6 +19,7 @@ export const pageQuery = graphql`
   query TagPage($tag: String) {
     allMarkdownRemark(
       limit: 1000
+      sort: { fields: [frontmatter___date], order: DESC }
       filter: { fields: { tags: { in: [$tag] } } }
     ) {
       totalCount
