@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{ccoC:function(t,a,e){"use strict";e.r(a),e.d(a,"pageQuery",(function(){return r}));var n=e("q1tI"),o=e.n(n),c=e("eWDE"),r="1714567382";a.default=function(t){var a=t.location,e=t.pageContext,n=t.data,r='More about "'+e.tag+'"';return o.a.createElement(c.a,{location:a,title:r,data:n})}}}]);
-//# sourceMappingURL=component---src-templates-tag-js-245da64c80d03479cdd6.js.map
