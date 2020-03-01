@@ -188,4 +188,4 @@ self.addEventListener('fetch', function (event) {
 ```
 
 ***
-While most of the time service workers are constrained to progressive web apps, but these are also used to make websites more performant and better user experience.  
+While most of the time serviceworkers are constrained to progressive web apps, but these are also used to make websites more performant and better user experience.  
