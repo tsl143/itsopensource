@@ -32,7 +32,7 @@ while (Date.now() - time <= delay) {
 self.postMessage(counter);
 ```
 <br>
-This will be executed as soon as the worker is created we can adjust this to be called only when required via post message.
+This will be executed as soon as the worker is created we can adjust this to be called only when required via `postmessage`.
 
 ```javascript
 // worker.js
