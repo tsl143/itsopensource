@@ -32,7 +32,7 @@ if ('serviceWorker' in navigator) {
 ```
 
 **Install Service worker:**  
-When the service worker is installed (initiated by the script from website), we need to define the resources which we wish to cache, These are cached and linked to specific `Cache` key.  
+When the serviceworker is installed (initiated by the script from website), we need to define the resources which we wish to cache, These are cached and linked to specific `Cache` key.  
 Ideally, we should not cache any third-party resource but only of which are served from the same domain.
 <center><sub>In Service worker</sub></center>
 
