@@ -14,7 +14,7 @@ Consider this example,
 In part 1 when we click on button 1, the UI freezes for 2 seconds as the main thread is performing some CPU intensive operations. Until this execution is finished the button 2 is not clickable at all.
 ![part1](./part1.gif) The functionality of button 2 is independent of button 1 but still it's unusable until button 1's job is finished. This is a very common problem faced by javascript intensive web apps.
 
-The solution to this is **Web Workers** (*not Service workers*)
+The solution to this is **Web Workers** (*not Serviceworkers*)
 
 A web worker is a process that executes code independent of the main thread. Workers do not have access to DOM and eventually do not have access to a lot of web APIs. They communicate with the main thread script with `postMessage`.
 A worker should be home for all CPU intensive operations which can't be done asynchronously otherwise. It would be an overkill to put a fetch operation in the worker which is already async.
