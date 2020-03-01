@@ -104,4 +104,4 @@ The output looks something like this
 
 All the CPU intensive operations are happening in the worker while the UI is free and responsive. The complete code can be found [here](https://github.com/tsl143/itsopensource/tree/master/static/demos/webworkers).
 
-When it comes to loading time workers may not be making your web app load fast, but it ensures the main thread is free and the UI is not frozen. One of the rules I follow is; All UI updates should be done in the main thread and use workers for everything else.
+When it comes to loading time, workers may not be making your web app load fast, but it ensures the main thread is free and the UI is not frozen. One of the rules I follow is; All UI updates should be done in the main thread and use workers for everything else.
