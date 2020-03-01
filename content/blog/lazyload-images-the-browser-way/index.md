@@ -9,7 +9,7 @@ show: true
 author: trishul
 ---
 
-One of the biggest performance win for image extensive webpages is `lazy loading`. Normally browser fetches all the required resources from the server as soon as possible. When the website has lots of images this goes against the speed and performance of website. Consider a page loading 100s of [dog images](https://itsopensource.com/demos/lazyload/), there will be 100 asynchronous http requests. More the http requests, slower the website.
+One of the biggest performance wins for image extensive webpages is `lazy loading`. Normally browser fetches all the required resources from the server as soon as possible. When the website has lots of images this goes against the speed and performance of website. Consider a page loading 100s of [dog images](https://itsopensource.com/demos/lazyload/), there will be 100 asynchronous http requests. More the http requests, slower the website.
 
 All the images are required for the functionality of the website, but all the images might NOT be required at FIRST load. Here `Lazy loading` does the magic, the images will be fetched only when they are required for the content in current view port. So for a long image extensive page, the images which are required by the top part of website will be initially fetched on load and as website is scrolled down, the respective images are fetched.
 
@@ -22,7 +22,7 @@ The list goes on. But the good news is the specification for native image lazylo
 
 Official specs - <a target="_blank" href="https://html.spec.whatwg.org/multipage/urls-and-fetching.html#lazy-loading-attributes" >https://html.spec.whatwg.org/multipage/urls-and-fetching.html#lazy-loading-attributes</a>
 
-WIth this we no more need any lazy loading libraries and all we need to do is following:
+With this we no more need any lazy loading libraries and all we need to do is following:
 
 ```HTML
 <img loading="lazy" src="https://placedog.net/400/400/random" alt="doggo">
