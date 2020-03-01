@@ -28,13 +28,12 @@ git config --global gist-diff.token "AccessToken"
 ```
 
 Now you are ready to use `pretty-diff` and share the git changes.
-Just run this command and it will upload the changes to github gist.
+Just run this command and it will upload the changes to GitHub gist.
 
 ```bash
 gist-diff
 ```
 
-`gist-diff` will create a gist and then opens browser to URL of the gist.
-
+`gist-diff` will create a gist and then opens the browser to the URL of the gist.
 
 Happy sharing the code.

@@ -9,19 +9,19 @@ show: true
 author: trishul
 ---
 
-Caching always has proven to be winner when it comes to **performance**.
-Browser by defaults caches the resources on its end, but to get these resources it still needs internet. Browser can serve resources from its cache only when a network request is made
+Caching always has proven to be the winner when it comes to **performance**.
+Browser by default caches the resources on its end, but to get these resources it still needs the internet. A browser can serve resources from its cache only when a network request is made
 
-Service workers provides the way to bypass the network request. It sits between the network and browser, and can decide where to serve resources from.
+Service workers provide a way to bypass the network request. It sits between the network and browser and can decide where to serve resources from.
 
-The basic lifecycle of service worker is as following:
+The basic lifecycle of the service worker is as follows:
 ![Service worker lifecycle](sw-lifecycle.png)
 
 ***
 ### Setup
 
 **Register Service worker:**  
-We need to check if the [browser supports](https://caniuse.com/#feat=serviceworkers) serviceworkers and then register by providing the path to serviceworker file.
+We need to check if the [browser supports](https://caniuse.com/#feat=serviceworkers) service workers and then register by providing the path to the serviceworker file.
 
 <center><sub>In Page</sub></center>
 
@@ -32,8 +32,8 @@ if ('serviceWorker' in navigator) {
 ```
 
 **Install Service worker:**  
-When the serviceworker is installed (initiated by script from website), we need to define teh resources wich we wish to cache, These are cached and linked to specific `Cache` key.  
-Ideally we should not cache any third party resource but only which are sered from same domain.
+When the serviceworker is installed (initiated by the script from website), we need to define the resources which we wish to cache, These are cached and linked to specific `Cache` key.  
+Ideally, we should not cache any third-party resource but only of which are served from the same domain.
 <center><sub>In Service worker</sub></center>
 
 ```javascript
@@ -73,7 +73,7 @@ self.addEventListener('activate', function (event) {
 ```
 
 **Handle network request:**  
-Listen to the fetch event and capture the network request, depending on you cache strategy handle and return the response.
+Listen to the fetch event and capture the network request, depending on your cache strategy handle and return the response.
 <center><sub>In Service worker</sub></center>
 
 ```javascript
@@ -90,7 +90,7 @@ self.addEventListener('fetch', function (event) {
 ***
 ### Caching techniques
 
-*  *Cache only* - This serves the files only and only from cache, it will never make a network request. Use this if you dont want to update your resource frequently  
+*  *Cache only* - This serves the files only and only from the cache, it will never make a network request. Use this if you don't want to update your resource frequently  
 
 <center><sub>In Service worker</sub></center>
 
@@ -100,7 +100,7 @@ self.addEventListener('fetch', function(event) {
 });
 ```
 
-*  *Cache, fallback Network* - This serves the files from cache, if the file fails to load from cache it will make a network request.  
+*  *Cache, fallback Network* - This serves the files from the cache if the file fails to load from the cache it will make a network request.  
 
 <center><sub>In Service worker</sub></center>
 
@@ -114,7 +114,7 @@ self.addEventListener('fetch', function (event) {
 	);
 });
 ```
-*  *Network, falbback Cache* - This makes first a network request and if network request fails then it fallbacks to cache response, please note the cahce will be returned only when the network request is completed and gives a failed reponse.  
+*  *Network, fallback Cache* - This makes first a network request and if network request fails then it fallbacks to cache response, please note the cache will be returned only when the network request is completed and gives a failed response.
 
 <center><sub>In Service worker</sub></center>
 
@@ -127,7 +127,7 @@ self.addEventListener('fetch', function (event) {
 	);
 });
 ```
-*  *Cache then network* - The response is first served from the cache in the page, and then network request is made. When the response from network request is recieved then again the response is served and the page is updated (or whatever the logic reuires to do). 
+*  *Cache then network* - The response is first served from the cache on the page, and then network request is made. When the response from network request is received then again the response is served and the page is updated (or whatever the logic required to do). 
 
 <center><sub>In Page</sub></center>
 
@@ -162,7 +162,7 @@ self.addEventListener('fetch', function (event) {
 });
 ```
 
-*  *Serving custom response* - This can be best way to notify user for an offline connection or some other custom pages.  
+*  *Serving custom response* - This can be the best way to notify the user for an offline connection or some other custom pages.  
 
 <center><sub>In Service worker</sub></center>
 
@@ -188,4 +188,4 @@ self.addEventListener('fetch', function (event) {
 ```
 
 ***
-While most of the times serviceworkers are constrained tp prgressive web apps, but these are also used to make websites more performant and better user experience.  
+While most of the time serviceworkers are constrained to progressive web apps, but these are also used to make websites more performant and better user experience.  

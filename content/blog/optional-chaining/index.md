@@ -8,11 +8,11 @@ show: true
 author: trishul
 ---
 
-`TypeError: Cannot read property '<property>' of undefined` has bugged every javascript developer enough. While expecting response from APIs, we need to add a number of `&&` to make sure our code don't break. This maybe not a problem while dealing with 2 level nested object, but while dealing with large data objects this can be nightmare. Unnecessary/redundent lines of code, change all occurences if the structure of object changes etc.
+`TypeError: Cannot read property '<property>' of undefined` has bugged every javascript developer enough. While expecting a response from APIs, we need to add several `&&` to make sure our code doesn’t break. This may be not a problem while dealing with 2 levels of the nested object, but while dealing with large data objects this can be a nightmare. Unnecessary/redundant lines of code, change all occurrences if the structure of object changes, etc.
 
 But we are now in 2020, the game has been changed with [Optional Chaining proposal](https://github.com/tc39/proposal-optional-chaining) Stage-4.
 
-Now no more redundent lines, but adding `?` before `.` takes care of everything. This traverse the property chain one by one and returns `undefined` if the property dont exist (instead of throwing `TypeError`), else return the value.
+Now no more redundant lines, but adding `?` before `.` takes care of everything. This traverse the property chain one by one and returns `undefined` if the property doesn't exist (instead of throwing `TypeError`), else return the value.
 
 Consider following JSON object
 ```json
@@ -60,9 +60,9 @@ The object don't have `philippines`, instead of throwing `TypeError` it returns 
 
 This is a [TC39](https://tc39.es/process-document) stage-4 proposal. This means `The addition will be included in the soonest practical standard revision.` in all the modern browsers.
 
-But if you do not want wait for using this already into your code, you can include the [Babel](https://babeljs.io/docs/en/next/babel-plugin-proposal-optional-chaining.html) plugin in your project to support this already.
+But if you do not want to wait for using this already into your code, you can include the [Babel](https://babeljs.io/docs/en/next/babel-plugin-proposal-optional-chaining.html) plugin in your project to support this already.
 
-If you want to see this in action, this can be enabled in chrome browser with following steps:
+If you want to see this in action, this can be enabled in chrome browser with the following steps:
 1. Go to `chrome://flags`
 2. Search for `experimental javascript`
 3. Toggle the feature to `enable`
