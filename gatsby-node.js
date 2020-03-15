@@ -98,7 +98,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value,
     })
     tags.forEach(t => {
-      console.log(t)
       createNodeField({
         name: `tags`,
         node,
