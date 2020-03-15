@@ -56,6 +56,13 @@ module.exports = {
         templatePath: `${__dirname}/src/templates/tag.js`,
       },
     },
+    {
+      resolve: "gatsby-plugin-authors",
+      options: {
+        prefix: "/author/",
+        templatePath: `${__dirname}/src/templates/author.js`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,

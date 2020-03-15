@@ -5290,6 +5290,14 @@ gatsby-page-utils@^0.0.33:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
+gatsby-plugin-authors@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-authors/-/gatsby-plugin-authors-1.0.1.tgz#fe4d8934c1234f48b028d16694e4250096bcfa1c"
+  integrity sha512-5x5XofPmhH5DlV4u+oL5qnnCMbeZcn3DMoBQ7Yetsr10V2LNS+z46kW///C++8k4C7L/yKlVW+6AlLM+NcRIWQ==
+  dependencies:
+    lodash "^4.17.15"
+    slug "^1.1.0"
+
 gatsby-plugin-feed@^2.3.22:
   version "2.3.23"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-feed/-/gatsby-plugin-feed-2.3.23.tgz#23e954aea89fe7e5094ba64940ccee87a16af3b8"
@@ -5300,11 +5308,6 @@ gatsby-plugin-feed@^2.3.22:
     fs-extra "^8.1.0"
     lodash.merge "^4.6.2"
     rss "^1.2.2"
-
-gatsby-plugin-matomo@^0.7.2:
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-matomo/-/gatsby-plugin-matomo-0.7.2.tgz#c8588fff7267ddf121c37ee67f4d9d73810737c2"
-  integrity sha512-49KAdNhvkRWyJ/jHE4dOoXuYB9PDA01rPjWLmrmklsB3cl401Tm7tEvBd7sYrDy99fzeFUQt0qyDKLxW1hH0Hg==
 
 gatsby-plugin-page-creator@^2.1.33:
   version "2.1.33"

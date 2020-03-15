@@ -6,18 +6,18 @@
  */
 
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 import { rhythm } from "../utils/typography"
 
 const authors = {
   trishul: {
-    bio: "who is a professional frontend developer; writes React code for living and volunteers for Mozilla to justify his existence",
+    bio: " is a professional frontend developer; writes React code for living and volunteers for Mozilla to justify his existence",
     name: "Trishul Goel",
     twitter: "trishulgoel"
   },
   shivam: {
-    bio: "who is a full stack developer; Linux Guy. Mozillian by Heart ❤️",
+    bio: " is a student, full stack developer, Linux Guy, Mozillian by Heart ❤️",
     name: "Shivam Singhal",
     twitter: "idkhtml"
   },
@@ -61,13 +61,15 @@ const Bio = ({author: postWriter = ''}) => {
         marginBottom: rhythm(2.5),
       }}
     >
-      <div
+      <Link
+        to={`/author/${author.slug}`}
         style={{
           minWidth: 50,
           minHeight: 50,
           marginRight: rhythm(1 / 2),
           marginBottom: 0,
-          overflow: `hidden`
+          overflow: `hidden`,
+          boxShadow: 'none'
         }}
       >
         <img
@@ -79,9 +81,9 @@ const Bio = ({author: postWriter = ''}) => {
           }}
           src={`/${author.slug}.jpg`}
         />
-      </div>
+      </Link>
       <p>
-        Written by <strong>{author.name}</strong> {author.bio}.
+        <strong>{author.name}</strong> {author.bio}.
         <br/>
         <a target="_blank" rel="noopener noreferrer" href={`https://twitter.com/${author.twitter}`}>
           @{author.twitter}
