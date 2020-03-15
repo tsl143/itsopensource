@@ -30,7 +30,6 @@ export const pageQuery = graphql`
         node {
           fields {
             slug
-            tags
           }
           excerpt
           timeToRead

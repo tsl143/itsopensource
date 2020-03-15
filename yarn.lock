@@ -5290,14 +5290,6 @@ gatsby-page-utils@^0.0.33:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-authors@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-authors/-/gatsby-plugin-authors-1.0.1.tgz#fe4d8934c1234f48b028d16694e4250096bcfa1c"
-  integrity sha512-5x5XofPmhH5DlV4u+oL5qnnCMbeZcn3DMoBQ7Yetsr10V2LNS+z46kW///C++8k4C7L/yKlVW+6AlLM+NcRIWQ==
-  dependencies:
-    lodash "^4.17.15"
-    slug "^1.1.0"
-
 gatsby-plugin-feed@^2.3.22:
   version "2.3.23"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-feed/-/gatsby-plugin-feed-2.3.23.tgz#23e954aea89fe7e5094ba64940ccee87a16af3b8"
@@ -5354,14 +5346,6 @@ gatsby-plugin-sharp@^2.3.5:
     sharp "^0.23.3"
     svgo "1.3.2"
     uuid "^3.3.3"
-
-gatsby-plugin-tags@^2.3.7:
-  version "2.3.7"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-tags/-/gatsby-plugin-tags-2.3.7.tgz#1dc55b9a71c9a59a444897e2ccf33e3b72019fd2"
-  integrity sha512-L/M0938G90FBPgMrMDaxI1phNxyu10OLQU94Tfoj7RL4h9USbLxY2yAHjfW4bPRN+XsSMc5nHxVKVyj7JHd00A==
-  dependencies:
-    lodash "^4.17.15"
-    slug "^1.1.0"
 
 gatsby-plugin-typography@^2.3.18:
   version "2.3.18"
@@ -11195,13 +11179,6 @@ slice-ansi@^3.0.0:
     astral-regex "^2.0.0"
     is-fullwidth-code-point "^3.0.0"
 
-slug@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/slug/-/slug-1.1.0.tgz#73eef5710416f515077bdf70c683bde4915913c9"
-  integrity sha512-NuIOjDQeTMPm+/AUIHJ5636mF3jOsYLFnoEErl9Tdpt4kpt4fOrAJxscH9mUgX1LtPaEqgPCawBg7A4yhoSWRg==
-  dependencies:
-    unicode ">= 0.3.1"
-
 slugify@^1.3.6:
   version "1.3.6"
   resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.3.6.tgz#ba5fd6159b570fe4811d02ea9b1f4906677638c3"
@@ -12347,11 +12324,6 @@ unicode-property-aliases-ecmascript@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/unicode-property-aliases-ecmascript/-/unicode-property-aliases-ecmascript-1.0.5.tgz#a9cc6cc7ce63a0a3023fc99e341b94431d405a57"
   integrity sha512-L5RAqCfXqAwR3RriF8pM0lU0w4Ryf/GgzONwi6KnL1taJQa7x1TCxdJnILX59WIGOwR57IVxn7Nej0fz1Ny6fw==
-
-"unicode@>= 0.3.1":
-  version "12.1.0"
-  resolved "https://registry.yarnpkg.com/unicode/-/unicode-12.1.0.tgz#7ee53a7a0ca5539b353419432823d8da58bbbf33"
-  integrity sha512-Ty6+Ew21DiYTWLYtd05RF/X4c1ekOvOgANyHbBj0h3MaXpfaGr2Rdmc0hMFuGQLyPLb9cU4ArNxl0bTF5HSzXw==
 
 unified@^6.0.0, unified@^6.2.0:
   version "6.2.0"

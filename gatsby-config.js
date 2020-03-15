@@ -50,19 +50,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-feed`,
-    {
-      resolve: "gatsby-plugin-tags",
-      options: {
-        templatePath: `${__dirname}/src/templates/tag.js`,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-authors",
-      options: {
-        prefix: "/author/",
-        templatePath: `${__dirname}/src/templates/author.js`,
-      },
-    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
