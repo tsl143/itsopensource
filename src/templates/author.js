@@ -8,7 +8,7 @@ import List from "../templates/blog-list"
 
 const AuthorView = ({ location, pageContext, data }) => {
   const { author } = pageContext
-  const title = `More by "${author}"`;
+  const title = `Blogs by "${author}"`;
   return (
     <Layout location={location} title={title}>
       <SEO title={title} />
