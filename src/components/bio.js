@@ -21,6 +21,11 @@ const authors = {
     name: "Shivam Singhal",
     twitter: "idkhtml"
   },
+  sonia: {
+    bio: " is an outreachy intern with Mozilla 🦊, FOSS enthusiast and open web ❤️",
+    name: "Sonia Singla",
+    twitter: "soniasinglas"
+  },
 }
 
 const Bio = ({author: postWriter = ''}) => {
