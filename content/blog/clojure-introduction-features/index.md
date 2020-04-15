@@ -74,7 +74,7 @@ All the above features supported by Clojure make it a dialect of it.
 2. Multimethods: Clojure supports sophisticated runtime polymorphism through a multimethod system that supports dispatching on types, values, attributes and metadata of, and relationships between, one or more arguments.
 3. Protocols: These are a group of functions that have different implementations for different data types.
 
-***5. Concurrent Programming:*** Clojure greatly supports concurrency, which is the ability to deal with multiple tasks at once, such as leveraging the power of multicore CPUs. Immutable data structures can easily be shared across multiple threads.
+***5. Concurrent Programming:*** Concurrency is the ability to deal with multiple tasks at once, such as leveraging the power of multicore CPUs. Immutable data structures can easily be shared across multiple threads. Clojure widely supports concurrency.
 
 
 **What is Clojure useful for?**
