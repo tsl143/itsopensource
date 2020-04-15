@@ -59,7 +59,7 @@ Since Clojure is functional the code is `robust`, we can control `functions` wit
 -> 6
 ```
 
-***3. Lisp and hosted on JVM:*** Clojure is often called **“functional LISP for the JVM”** and it’s a dialect of LISP for the JVM. Now, many of you wonder what does it mean to be a dialect of it? There are certain features supported by Clojure :
+***3. Hosted on JVM:*** Clojure is often called **“functional LISP for the JVM”** . It’s a dialect of LISP for the JVM which allows Clojure to support following features:
 
 1. Powerful macro-system
 2. shares with Lisp the code-as-data philosophy
