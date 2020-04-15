@@ -22,7 +22,7 @@ Clojure is designed based on LISP programming language and has compilers that ma
 - machine-independent
 - macro-facility
 
-***For Ex: Perform mathematical expression (4+2) in LISP :***
+For Ex: Perform mathematical expression (4+2) in LISP :
 
 ```Clojure
 >> USER(1) (+ 4 2)
@@ -94,4 +94,3 @@ Apart from this, we can build systems from the ground up in Clojure without ever
 ---
 I hope you find Clojure's combination of facilities elegant, powerful, practical and fun to use.
 ---
-
