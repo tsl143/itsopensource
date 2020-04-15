@@ -67,7 +67,7 @@ Since Clojure is functional the code is `robust`, we can control `functions` wit
 
 All the above features supported by Clojure make it a dialect of it.
 
-***4. Runtime Polymorphism:*** Note that Polymorphism isn’t just for object-oriented programming (OOP) languages. The systems which support runtime polymorphism are easier to change, extend and also, handles different data-types with a uniform interface. Clojure supports polymorphism in different ways :
+***4. Runtime Polymorphism:***  The systems which support runtime polymorphism are easier to change, extend and are able to handle different data-types with a uniform interface. Polymorphism isn’t just for object-oriented programming (OOP) languages. Clojure supports polymorphism in different ways :
 
 1. Proxy: It supports the generation of implementations of Java Interfaces in Clojure.
 2. Multimethods: Clojure supports sophisticated runtime polymorphism through a multimethod system that supports dispatching on types, values, attributes and metadata of, and relationships between, one or more arguments.
