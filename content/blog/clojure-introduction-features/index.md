@@ -81,7 +81,6 @@ All the above features supported by Clojure make it a dialect of it.
 
 Clojure has a better support framework, tools, and a lot of language constructs: closures, functional programming, etc. then what real-world Applications are people using Clojure for?And could be that its future is as a language that is embedded in other systems?
 
-The answer to the above question is YES. It could be used for :
 1. Building websites
 2. Shell Scripts
 3. Scraping web pages
