@@ -47,7 +47,7 @@ When you write a function, you don’t have to specify the types of the function
 
 Clojure program is not something that you can compile and run, but something with which you can interact.
 
-***2. Functional Programming:*** Clojure is a functional programming language. It provides functions as first-class objects, uses immutable data structures to avoid mutable data structures, and also, emphasizes on recursive iteration.
+***2. Functional Programming:*** Clojure is a functional programming language. It provides functions as first-class objects, uses immutable data structures, and also, emphasizes on recursive iteration.
 
 In Clojure, we can manipulate function with the same freedom as we manipulate data. Since the programs are functional and we all know, the more programs are functional are more robust.
 
