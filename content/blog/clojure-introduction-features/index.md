@@ -28,9 +28,6 @@ For Ex: Perform mathematical expression (4+2) in LISP :
 >> USER(1) (+ 4 2)
 ```
 
-That’s it about LISP and I hope now you can have a better understanding of the useful features that define Clojure language.
-
-
 **Clojure Features:**
 
 
