@@ -48,7 +48,7 @@ Clojure program is not something that you can compile and run, but something wit
 
 ***2. Functional Programming:*** Clojure is a functional programming language. It provides functions as first-class objects, uses immutable data structures, and also, emphasizes on recursive iteration.
 
-In Clojure, we can manipulate function with the same freedom as we manipulate data. Since the programs are functional and we all know, the more programs are functional are more robust.
+Since Clojure is functional the code is `robust`, we can control `functions` with the same freedom as we control `data`.
 
 ```Clojure
 (defn rec-add-fn? [x]
