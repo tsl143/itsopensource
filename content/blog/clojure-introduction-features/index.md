@@ -8,13 +8,6 @@ show: true
 author: sonia
 ---
 
-The goal for the series is to introduce you to the fundamentals of the programming language,Clojure. This will be an ongoing and ever-evolving series as Clojure will continue to come out with more features.
-
-My aim is to make this series digestible and easy for everyone to understand, whether you’re a complete beginner to coding or preparing for some interviews.
-
-
-**What is Clojure?**
-
 Clojure is a `general-purpose`, `dynamic`, `compiled`, and predominantly `functional programming language` from the Lisp family tree. It is completely dynamic, every feature supported by Clojure is supported during runtime.
 
 Clojure is designed based on LISP programming language and has compilers that make it run on both `Java` and `.Net` runtime environment. LISP is the `second-oldest` high-level programming language after Fortran. Some features make LISP really likable:
