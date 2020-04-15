@@ -33,7 +33,9 @@ For Ex: Perform mathematical expression (4+2) in LISP :
 
 ***1. Dynamic Development:*** Clojure is a dynamic programming language. Values have a type and their types are determined at run time. The type doesn't have to be explicitly specified.
 
-When you write a function, you don’t have to specify the types of the function arguments. For example, here is an expression that defines a function named add-num that receive three numbers as arguments and return their sum:
+While writing a function, we don’t have to specify the types of the function arguments. For example, 
+Consider an expression that defines a function named `add-num` which receives three numeric arguments and returns their sum:
+
 
 ```Clojure
 (defn add-num [a b c]
