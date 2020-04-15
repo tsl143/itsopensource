@@ -17,9 +17,10 @@ My aim is to make this series digestible and easy for everyone to understand, wh
 
 Clojure is a `general-purpose`, `dynamic`, `compiled`, and predominantly `functional programming language` from the Lisp family tree. It is completely dynamic, every feature supported by Clojure is supported during runtime.
 
-Clojure is designed based on LISP programming language and has compilers that make it run on both `Java` and `.Net` runtime environment. Before I go in the detailed description of Clojure, I want to discuss the LISP programming language.
-
-LISP is the second-oldest high-level programming language after Fortran. Having almost no syntax, machine-independent, macro-facility, and certain other features that help us to bend LISP to meet our design instead of doing it in any other way. 
+Clojure is designed based on LISP programming language and has compilers that make it run on both `Java` and `.Net` runtime environment. LISP is the `second-oldest` high-level programming language after Fortran. Some features make LISP really likable:
+- almost no syntax
+- machine-independent
+- macro-facility
 
 ***For Ex: Perform mathematical expression (4+2) in LISP :***
 
@@ -93,5 +94,4 @@ Apart from this, we can build systems from the ground up in Clojure without ever
 ---
 I hope you find Clojure's combination of facilities elegant, powerful, practical and fun to use.
 ---
-
 
