@@ -65,8 +65,6 @@ Since Clojure is functional the code is `robust`, we can control `functions` wit
 2. shares with Lisp the code-as-data philosophy
 3. REPL environment that integrates with IDEs (Integrated development environments)
 
-All the above features supported by Clojure make it a dialect of it.
-
 ***4. Runtime Polymorphism:***  The systems which support runtime polymorphism are easier to change, extend and are able to handle different data-types with a uniform interface. Polymorphism isn’t just for object-oriented programming (OOP) languages. Clojure supports polymorphism in different ways :
 
 1. Proxy: It supports the generation of implementations of Java Interfaces in Clojure.
