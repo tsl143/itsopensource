@@ -1,6 +1,7 @@
 ---
 title: 'An Introduction to Clojure, features, and usability'
 date: "2020-04-14"
+description: "Clojure is a general-purpose, dynamic, compiled, and predominantly functional programming language from the Lisp family tree."
 tags:
   - clojure
   - programming
