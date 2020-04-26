@@ -5,6 +5,7 @@ slug: 'how-to-create-gists-from-command-line'
 tags:
   - github
   - gists
+  - how-to
 show: true
 author: shivam
 ---
