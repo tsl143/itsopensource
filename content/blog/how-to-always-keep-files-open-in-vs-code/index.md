@@ -6,6 +6,7 @@ slug: 'how-to-always-keep-files-open-in-visual-studio-code'
 tags:
   - vscode
   - tricks
+  - how-to
 show: true
 author: shivam
 ---

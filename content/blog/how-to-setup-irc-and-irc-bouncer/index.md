@@ -5,6 +5,7 @@ slug: 'how-to-setup-irc-and-irc-bouncer'
 tags:
   - irc
   - bouncer
+  - how-to
 show: true
 author: shivam
 ---
