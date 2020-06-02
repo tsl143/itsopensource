@@ -28,7 +28,7 @@ This command push changes to `.gitconfig` file and after execution `.gitconfig` 
   
 ...
 
-You can directly append in git config too.
+We can directly modify in `.gitconfig` too.
 
 After this, all you need to do is:
 
