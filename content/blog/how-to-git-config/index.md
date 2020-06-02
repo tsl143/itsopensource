@@ -37,7 +37,7 @@ git push origin
 ```
 
 
-**Note** - If you do this inside a git repo, this will only be available for that repo, if you want to do it globally and add ``--global`` flag:
+**Note** - If this is done inside a git repo, the change will only be available for that repo, if you want to do it globally then add ``--global`` flag:
 
 ```bash
 git config --global push.default current
