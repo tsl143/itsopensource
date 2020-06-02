@@ -9,7 +9,10 @@ show: true
 author: shivam
 ---
 
-We always type `git push origin master`, while working on feature branch we type `git push origin JIRA-1`, sometimes the names of the feature branch is not easy then we use `git push origin this-branch-will-do-something` to push the code over GitHub or any other hosting service. In each case, we are doing redundant work of copy-pasting or typing branch name which is redundant and annoying as you have to remember the branch name exactly or you might end up pushing the code to the wrong branch. This can be handled by just with one command,
+While working with git, we always type `git push origin master` to push commit the to remote branch, while working on a feature branch we type `git push origin JIRA-1`, sometimes the name of the feature branch can be big, say `git push origin this-branch-will-do-something`.  
+In each case, we are copy-pasting or typing branch name which is redundant and annoying as we have to remember the branch name exactly or we might end up pushing the code to the wrong branch.  
+
+This can be handled by just with one command,
 
 ```bash
 git config push.default current
