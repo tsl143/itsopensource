@@ -17,14 +17,16 @@ git config push.default current
 
 This command push changes to `.gitconfig` file and after execution `.gitconfig` file looks like this:
 
-```bash
+```vi
+...
 [user]
   name = author
   email = author@itsopensource.com
 
 [push]
   default = current
-```
+  
+...
 
 You can directly append in git config too.
 
