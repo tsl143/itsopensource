@@ -45,4 +45,3 @@ git config --global push.default current
 This will make these changes to be set globally across all the git repos you are using.
 
 Happy git!
-https://twitter.com/dan_abramov/status/1267544361929256966
