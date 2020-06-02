@@ -15,7 +15,7 @@ We always type `git push origin master`, while working on feature branch we type
 git config push.default current
 ```
 
-So this command push changes to `.gitconfig` file and after change git config file looks like this:
+This command push changes to `.gitconfig` file and after execution `.gitconfig` file looks like this:
 
 ```bash
 [user]
