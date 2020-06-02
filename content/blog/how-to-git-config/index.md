@@ -33,7 +33,7 @@ This command push changes to `.gitconfig` file and after execution `.gitconfig` 
 
 We can directly modify in `.gitconfig` too.
 
-After this, all you need to do is:
+Post this, every time while pushing change, all we need to do is:
 
 ```bash
 git push origin
