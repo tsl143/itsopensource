@@ -23,7 +23,7 @@ This panel is not by default visible in devtools, following is how it can be use
 1. Go to the command panel (command/Ctrl + shift + P)  ![coverage-1](./coverage-1.png) <br>
 2. Once the command panel is up, type `coverage`  ![coverage-3](./coverage-3.png) <br>
 3. This will open the coverage panel. Click the reload button in coverage panel.  ![coverage-4](./coverage-4.png) <br>
-4. Each resource is detailed with resource url, type, size, and used/unused bytes/percentage and a small bar graph of the same.  ![coverage-5](./coverage-5.png)
+4. Each resource is detailed with resource URL, type, size, and used/unused bytes/percentage and a small bar graph of the same.  ![coverage-5](./coverage-5.png)
 
 This just helps us to visualize how much code/CSS is unused at the given page, we need to optimize the code by ourselves ;) For Javascript this is a bit difficult to achieve this via any tool, its more of structuring the code while development and review cycles. For CSS there are few tools that can help to achieve this, some of them can be integrated into the build process.  
 Examples :
