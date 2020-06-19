@@ -1,4 +1,138 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource]]></title><description><![CDATA[Yet another blog about opensource.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 02 Jun 2020 14:38:34 GMT</lastBuildDate><item><title><![CDATA[How to get rid of branch name from git push origin master]]></title><description><![CDATA[We always type , while working on feature branch we type , sometimes the names of the feature branch is not easy then we use  to push the…]]></description><link>https://itsopensource.com/how-to-get-rid-of-branch-name-from-git-push-origin-master/</link><guid isPermaLink="false">https://itsopensource.com/how-to-get-rid-of-branch-name-from-git-push-origin-master/</guid><pubDate>Mon, 01 Jun 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;We always type &lt;code class=&quot;language-text&quot;&gt;git push origin master&lt;/code&gt;, while working on feature branch we type &lt;code class=&quot;language-text&quot;&gt;git push origin JIRA-1&lt;/code&gt;, sometimes the names of the feature branch is not easy then we use &lt;code class=&quot;language-text&quot;&gt;git push origin this-branch-will-do-something&lt;/code&gt; to push the code over GitHub or any other hosting service. In each case, we are doing redundant work of copy-pasting or typing branch name which is redundant and annoying as you have to remember the branch name exactly or you might end up pushing the code to the wrong branch. This can be handled by just with one command,&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource]]></title><description><![CDATA[Yet another blog about opensource.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 19 Jun 2020 16:40:39 GMT</lastBuildDate><item><title><![CDATA[Resource coverage in the browser]]></title><description><![CDATA[One of the performance wins for the websites is the deferred loading of JS or CSS which are not required at the first load.
+While starting a…]]></description><link>https://itsopensource.com/resource-coverage-in-the-browser/</link><guid isPermaLink="false">https://itsopensource.com/resource-coverage-in-the-browser/</guid><pubDate>Wed, 17 Jun 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;One of the performance wins for the websites is the deferred loading of JS or CSS which are not required at the first load.
+While starting a project it’s easy to maintain this, over the period of time when there are consistent developments and multiple devs contributing to the project, it may not be that smooth.&lt;br&gt;
+The unused code in general results in slower websites.  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Unused CSS or JS are generally render blocking resources, which are executed even though they do not make any impact on the loading of the page.  &lt;/li&gt;
+&lt;li&gt;Unnecessary data usage impacts more if user is on cellular data.  &lt;/li&gt;
+&lt;li&gt;It results in reduced maintainability.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Chrome&lt;/strong&gt; devtools have a coverage panel, where we can observe all the loaded resources(CSS/JS). It displays all the downloaded resources and displays used and unused bytes.  &lt;/p&gt;
+&lt;p&gt;This panel is not by default visible in devtools, following is how it can be used:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Go to the command panel (command/Ctrl + shift + P)  &lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 215px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/92660c35313e16b5c08162416d21a171/96fee/coverage-1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 106.04651162790697%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAYAAABG1c6oAAAACXBIWXMAAAsSAAALEgHS3X78AAADlUlEQVQ4y5VUW28bVRDeZ55R1T/AM0IqP4B3hPgFCPHAayWegniDp4AoVEJVG6kEEJagtKlUQaTUTWunpalva8eXeL32+p71Ze09u+tdX9qmHzPH2SRIAcLD6Mw5c87MN9/MHEUIgf8j/X4flUoFjuNgNBrBsiyp93o92LYNZTKZ4Dziui5834emaYhEIrT3YJFDDsDnqqouHXKE8XgsN7yeJWxjdKwzmiGjEjYceyRR8lmIWAkhDwYD+TB8HK5s4zvdbleetVotcjyCORRomGwX6HQ6EikHlA4ZcnYvjweP4kgk00imMtjcisKoNzCfzxGPxxGLxdBut3Fn4y7Mdg33Mg4+v7tEGo3ex87ODjzPO0HIq0nEDgZD9Akt65wCo2R0vaN9q9WGPbbQJHT5OqV9yi4Rcqqs8EOfC0BRZAGOdM9zTxXHQxAEGNtL/ibu+JhDRsegTlLO5fHk6TOZekWvIpPNIa1msZtIIZcvIJVWkSR5RpTIrCioTSA4eL1eR7FYlDwqgyGn7MFoNKHpNVSNBhqtDvY1HaVyBYWSJs9KZR35YhnlSpXahTrCdqTYwkWnewC9auDA7EHxHQuvFhPo5SJSiT9RyKVh6CV5huc+8MI/0idS5/XFVOBw7kIMO6juZzGxib9+i/ZdKJuZIX5XHWw8PcD3WwbWo038HDexkRQkDm4nyJZycSfp4jbJb0nvSHz8uusg8tjCrYSHX3b5ngPlndU+3vhshA9/DHD51gLvX5/h48gCH/00wwfrU9LnePfaDBdXprj46QwXVuZ4fWWB1z55jktfHeK9NeDNVeDtK8Bbq4dQ1mND3HgkcG2rj5sPh1jbHuFGtI/rtK4/9vDDEw9rMQ9Xox6+jU7wDcmV+z6+3vJx9UGA7x4GWP1D4It7Al9uCiiBa0lumLed2DaKexnk1CTKhSxeEk+LQCw5m/1dXpG8nNqkO6jtqxh2q3CtzrLKgqpcb7ah1+pod010DkxZabNH4yi4mgIjquhZMpargEHv+f5xH3LPRbdjSGVUJFJpqecLJdmw4UyfJWzjO9zDzWZrOSnc7Z78npYTwdPBk8KfAdvOI67rnEwKO9kvaxKRVtFRM+rUyNrxWJ3n4w2DHztkR2puTzpdjlySRmkgR+vfUg4DTqdTWu3QoYdqzZDcMQ8zMgbEa3j5v1Ayh8x9i7436ZAPGuSIB5+RMp+nP9h/Qhg6ZP7KWgWmaeIvU2zzeDYsB3sAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;coverage-1&quot;
+        title=&quot;coverage-1&quot;
+        src=&quot;/static/92660c35313e16b5c08162416d21a171/96fee/coverage-1.png&quot;
+        srcset=&quot;/static/92660c35313e16b5c08162416d21a171/00d96/coverage-1.png 148w,
+/static/92660c35313e16b5c08162416d21a171/96fee/coverage-1.png 215w&quot;
+        sizes=&quot;(max-width: 215px) 100vw, 215px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt; &lt;br&gt;&lt;/li&gt;
+&lt;li&gt;Once the command panel is up, type &lt;code class=&quot;language-text&quot;&gt;coverage&lt;/code&gt;  &lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 504px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/631c59bf394a27efd83c7a6da2b834c2/929d9/coverage-3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 33.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsSAAALEgHS3X78AAABIUlEQVQoz3WRTU+EMBCG+9M9efLuybvr3zBxY1bWg0bD8rVgYJEWEPkSCrx2urLRjdvkSafTmUnft4wLjiAI4DgO0jSF7/twXRee5yHjCSzzFc7Whoh3sDcb2LYNzjnCMPzTQ3nKMfk1Ypwm9H0PWuM4ous6zaTOfS8h5aDjTtVQnmqGYdjXqF4ppY5pZ8bbPT4/BIosR5IkyPMcTdOgbVtUVXWgLEvUda2Zc8cxwS5WN7h+vMPaNOFYFlwllWRkWaYLafhcfDzwP9j5wwpnxhK3gYdSDUn43lOiKAptxQzJmq05tdjl0xJXz2sYwRapkvz+I5uIoghxHOvXCiH0Z9BOvp0cuHhZwN/Rj6a6mSBzyXhqJCj+Dd0Th5crGzRK8jfXwBOG2Zp6qQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;coverage-3&quot;
+        title=&quot;coverage-3&quot;
+        src=&quot;/static/631c59bf394a27efd83c7a6da2b834c2/929d9/coverage-3.png&quot;
+        srcset=&quot;/static/631c59bf394a27efd83c7a6da2b834c2/00d96/coverage-3.png 148w,
+/static/631c59bf394a27efd83c7a6da2b834c2/0b23c/coverage-3.png 295w,
+/static/631c59bf394a27efd83c7a6da2b834c2/929d9/coverage-3.png 504w&quot;
+        sizes=&quot;(max-width: 504px) 100vw, 504px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt; &lt;br&gt;&lt;/li&gt;
+&lt;li&gt;This will open the coverage panel. Click the reload button in coverage panel.  &lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c62ab92e0e9b6d9d745ce813fb181353/f6062/coverage-4.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 45.893223819301845%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAAApUlEQVQoz62S4QrDIAyEff+3HAx1P9wYqBW13kxcXXFtGXSBrw1pcuRChVIKWmtIKWHMHZfrDebxhPce1lrGGMNQ7QjqFSEElFIqM7/nAqbVGjlnZl3bQ6SUQFH6s/FpQo/14FawYIzxq3lvYBze3HAUXPJULdK3TnXC1Ly7GhY4FJzqba11cM7D1YM713KqeT/9Lnja8rL+v0KQlfS+zRlIg37BF5mOxkkstlDfAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;coverage-4&quot;
+        title=&quot;coverage-4&quot;
+        src=&quot;/static/c62ab92e0e9b6d9d745ce813fb181353/799d3/coverage-4.png&quot;
+        srcset=&quot;/static/c62ab92e0e9b6d9d745ce813fb181353/00d96/coverage-4.png 148w,
+/static/c62ab92e0e9b6d9d745ce813fb181353/0b23c/coverage-4.png 295w,
+/static/c62ab92e0e9b6d9d745ce813fb181353/799d3/coverage-4.png 590w,
+/static/c62ab92e0e9b6d9d745ce813fb181353/2a3d6/coverage-4.png 885w,
+/static/c62ab92e0e9b6d9d745ce813fb181353/f6062/coverage-4.png 974w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt; &lt;br&gt;&lt;/li&gt;
+&lt;li&gt;Each resource is detailed with resource URL, type, size, and used/unused bytes/percentage and a small bar graph of the same.  &lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ebdcba2c535ba9a579fa2e4e89413081/f1abf/coverage-5.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 45.98765432098765%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAABVUlEQVQoz31Sy07EMAzs//8WBy4rhBAHxG5Zlr6TvpM02+dgd0npcsCSNXbsjCdWvKIsUWQZ5OWCvKxwOgeENYzRaNoWWmtIKSGEWONWKXTGQHUWjb1Ck5u+h7UWHdW9OEmQyxwyE8iLEtpYKlITXUrSFFVdQxFJEEaQeY4oilFUNSr/CPH4gOL1Bfb0hjiKEJQNvJAaLkGIgJAvTdMENkZByuqmWXMmZsVMLmhw+3yAeDpg1gqwHQZS2dMdzz9/4v3ow/844/IVYhzHjZAHJGm2xkrfVtDR0+I4QZMmuOJmC37Ny4REnKRg5P0oddtTTxNlXqzn12tPTvvSBsuyoCXiQhmM00xsy3rm3JvneUtYiXM+Z18VUI1jtw7Oh5F6lmXLl5/4jnBvjsQ93+Ub7obdKcQ/5obslf5V9Nc803W3P9TZFZ3zDnlvwzCs6HLGfc3lru8bcwy5VJJx9BUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;coverage-5&quot;
+        title=&quot;coverage-5&quot;
+        src=&quot;/static/ebdcba2c535ba9a579fa2e4e89413081/799d3/coverage-5.png&quot;
+        srcset=&quot;/static/ebdcba2c535ba9a579fa2e4e89413081/00d96/coverage-5.png 148w,
+/static/ebdcba2c535ba9a579fa2e4e89413081/0b23c/coverage-5.png 295w,
+/static/ebdcba2c535ba9a579fa2e4e89413081/799d3/coverage-5.png 590w,
+/static/ebdcba2c535ba9a579fa2e4e89413081/2a3d6/coverage-5.png 885w,
+/static/ebdcba2c535ba9a579fa2e4e89413081/f1abf/coverage-5.png 972w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This just helps us to visualize how much code/CSS is unused at the given page, we need to optimize the code by ourselves ;) For Javascript this is a bit difficult to achieve this via any tool, its more of structuring the code while development and review cycles. For CSS there are few tools that can help to achieve this, some of them can be integrated into the build process.&lt;br&gt;
+Examples :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://purgecss.com/&quot;&gt;purgeCSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/purifycss/purifycss&quot;&gt;purifycss&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/uncss/uncss&quot;&gt;uncss&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[How to get rid of branch name from git push origin master]]></title><description><![CDATA[We always type , while working on feature branch we type , sometimes the names of the feature branch is not easy then we use  to push the…]]></description><link>https://itsopensource.com/how-to-get-rid-of-branch-name-from-git-push-origin-master/</link><guid isPermaLink="false">https://itsopensource.com/how-to-get-rid-of-branch-name-from-git-push-origin-master/</guid><pubDate>Mon, 01 Jun 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;We always type &lt;code class=&quot;language-text&quot;&gt;git push origin master&lt;/code&gt;, while working on feature branch we type &lt;code class=&quot;language-text&quot;&gt;git push origin JIRA-1&lt;/code&gt;, sometimes the names of the feature branch is not easy then we use &lt;code class=&quot;language-text&quot;&gt;git push origin this-branch-will-do-something&lt;/code&gt; to push the code over GitHub or any other hosting service. In each case, we are doing redundant work of copy-pasting or typing branch name which is redundant and annoying as you have to remember the branch name exactly or you might end up pushing the code to the wrong branch. This can be handled by just with one command,&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; config push.default current&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;So this command push changes to &lt;code class=&quot;language-text&quot;&gt;.gitconfig&lt;/code&gt; file and after change git config file looks like this:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;user&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
