@@ -8,7 +8,7 @@ show: true
 author: trishul
 ---
 
-While building a data driven web-app, the frontend needs to consume various APIs and we require to mock the data somehow generally, we tend to launch a different local server to serve static response.
+While building a data driven web-app, the frontend needs to consume various APIs and we require to mock the data somehow generally, we tend to launch a different local server to serve a static response.
 Webpack provides a super easy and efficient way to handle this. Webpack launches a devserver to serve the app, which can also be used to serve the API response.  
 
 We need to add a `devServer` entry to the webpack config, which would look something like this:
@@ -82,4 +82,4 @@ The `app` param of `before` function can be considered as `express` object and b
 
 Here I fetch the remote URL on the server rather than the browser, so there is no CORS restriction and then serve on the response on the same server hence, eliminating CORS.
 
-I highly recommend to look into [devserver options](https://webpack.js.org/configuration/dev-server/), this can save a lot of our efforts 😊
+I highly recommend to look into [devserver options](https://webpack.js.org/configuration/dev-server/), this can save a lot of your efforts 😊
