@@ -8,8 +8,7 @@ show: true
 author: trishul
 ---
 
-While building a data driven web-app, the frontend needs to consume various APIs and we require to mock the data somehow generally, we tend to launch a different local server to serve static response.
-Webpack provides a super easy and efficient way to handle this. Webpack launches a devserver to serve the app, which can also be used to serve the API response.  
+While developing a data driven web-app, the frontend may need to fetch data from various APIs provided by backend which may not be ready at the given time. In this case, we need to mock the response and serve it via dummy server, either local or remote. With Webpack this can be achieved without any dummy server. Webpack devserver allows custom handlers which can be used to serve the API response.  
 
 We need to add a `devServer` entry to the webpack config, which would look something like this:
 
