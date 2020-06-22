@@ -81,4 +81,4 @@ The `app` param of `before` function can be considered as `express` object and b
 
 Here I fetch the remote URL on the server rather than the browser, so there is no CORS restriction and then serve on the response on the same server hence, eliminating CORS.
 
-I highly recommend to look into [devserver options](https://webpack.js.org/configuration/dev-server/), this can save a lot of our efforts 😊
+I highly recommend to look into [devserver options](https://webpack.js.org/configuration/dev-server/), this can save a lot of your efforts 😊
