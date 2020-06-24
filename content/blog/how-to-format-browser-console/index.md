@@ -1,6 +1,7 @@
 ---
 title: 'How to format browser console'
 date: "2020-06-24"
+description: This blog lists some useful console commands which can help to format and declutter console panel for more meaningful console messages.
 tags:
   - javascript
   - debugging
@@ -9,7 +10,7 @@ show: true
 author: trishul
 ---
 
-`console.log` is the most widely used debugging technique used by Javascript developers. While debugging `console.log` is sprinkled almost anywhere in the code, after code execution, console panel is full of console messages, this blog mentions some useful console commands which can help to format and declutter console panel for more meaningful console messages.
+`console.log` is the most widely used debugging technique used by Javascript developers. While debugging `console.log` is sprinkled almost anywhere in the code, after code execution, console panel is full of console messages, this blog lists some useful console commands which can help to format and declutter console panel for more meaningful console messages.
 
 ###<center> console.(log/info/warn/error) </center>
 #### Basic usage
