@@ -73,7 +73,7 @@ checkTime();
 
 ---
 ###<center> console.(count/countReset) </center>
-There are times where we want to count how many times a function is called, we need to create a dummy counter just for logginf, `console.count` handles this, everytime it is called it increments by 1 and consoles the value against the passed `label` or `default`. We can use multiple counters in same code with different labels. Any counter can be reset with `console.countRest` passing respective label or nothing in case of `default`.
+There are times where we want to count how many times a function is called, we need to create a dummy counter just for logging, `console.count` handles this, every time it is called it increments by 1 and consoles the value against the passed `label` or `default`. We can use multiple counters in the same code with different labels. Any counter can be reset with `console.countRest` passing respective label or nothing in case of `default`.
 
 ```Javascript
 console.count("myCounter");
