@@ -1,5 +1,5 @@
 ---
-title: 'How to format and declutter browser console'
+title: 'How to format browser console'
 date: "2020-06-24"
 tags:
   - javascript
