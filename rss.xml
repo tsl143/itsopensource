@@ -1,4 +1,197 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource]]></title><description><![CDATA[Yet another blog about opensource.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 22 Jun 2020 18:58:28 GMT</lastBuildDate><item><title><![CDATA[How to serve an API locally with webpack]]></title><description><![CDATA[While developing a data driven web-app, the frontend may need to fetch data from various APIs provided by backend which may not be ready at…]]></description><link>https://itsopensource.com/how-to-serve-api-locally-with-webpack/</link><guid isPermaLink="false">https://itsopensource.com/how-to-serve-api-locally-with-webpack/</guid><pubDate>Mon, 22 Jun 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;While developing a data driven web-app, the frontend may need to fetch data from various APIs provided by backend which may not be ready at the given time. In this case, we need to mock the response and serve it via dummy server, either local or remote. With Webpack this can be achieved without any dummy server. Webpack devserver allows custom handlers which can be used to serve the API response.  &lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource]]></title><description><![CDATA[Yet another blog about opensource.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 24 Jun 2020 10:18:10 GMT</lastBuildDate><item><title><![CDATA[How to format browser console]]></title><description><![CDATA[is the most widely used debugging technique used by Javascript developers. While debugging  is sprinkled almost anywhere in the code, after…]]></description><link>https://itsopensource.com/how-to-format-browser-console/</link><guid isPermaLink="false">https://itsopensource.com/how-to-format-browser-console/</guid><pubDate>Wed, 24 Jun 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;console.log&lt;/code&gt; is the most widely used debugging technique used by Javascript developers. While debugging &lt;code class=&quot;language-text&quot;&gt;console.log&lt;/code&gt; is sprinkled almost anywhere in the code, after code execution, console panel is full of console messages, this blog mentions some useful console commands which can help to format and declutter console panel for more meaningful console messages.&lt;/p&gt;
+&lt;h3&gt;&lt;center&gt; console.(log/info/warn/error) &lt;/center&gt;&lt;/h3&gt;
+&lt;h4&gt;Basic usage&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 123&lt;/span&gt;
+
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;abc&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// abc 123&lt;/span&gt;
+
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;abc&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// Array(3) [ 1, 2, 3 ] abc 123&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;Substitution in console&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;This is a %s example also accept %d number, and %o object too&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;substitution&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;33&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0c8ee580f41c12f778b419b6b2269061/969f4/substitution-console.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 16.623711340206185%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsSAAALEgHS3X78AAAAhElEQVQI102NiQ7DIAxD+f//3CQQK+U+gxdYWy3SkxPHSkT0CU4lKKMhPxb68HjJk3sPqd3mrSwOyxlbcYaGVAZs7DDcr7xxFjFn0CAIooFSM1prTH3o/Td39vvSsY5kxBRQS9nMSVe24y4RMn9M6THnZP71ho1JxLmxjy8lnnduXnvmCzLn6i/RKfwmAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;substitution-console&quot;
+        title=&quot;substitution-console&quot;
+        src=&quot;/static/0c8ee580f41c12f778b419b6b2269061/799d3/substitution-console.png&quot;
+        srcset=&quot;/static/0c8ee580f41c12f778b419b6b2269061/00d96/substitution-console.png 148w,
+/static/0c8ee580f41c12f778b419b6b2269061/0b23c/substitution-console.png 295w,
+/static/0c8ee580f41c12f778b419b6b2269061/799d3/substitution-console.png 590w,
+/static/0c8ee580f41c12f778b419b6b2269061/969f4/substitution-console.png 776w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;em&gt;Please take care of the sequence of params&lt;/em&gt;&lt;/p&gt;
+&lt;h4&gt;Styling in console&lt;/h4&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;console&lt;/code&gt; accepts CSS styles we can use &lt;code class=&quot;language-text&quot;&gt;%c&lt;/code&gt; to pass CSS styles 😎. Styles apply to whatever text is after &lt;code class=&quot;language-text&quot;&gt;%c&lt;/code&gt;. It can be mixed with substitutions too, but again make sure of the sequence of parameters.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;This is some %cShow off console message&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;font-size:30px; color: #fff; background: #3d7e9a&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b51a12408365feff4d934e102ecbff7b/fd398/styled-console.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 16.558018252933508%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsSAAALEgHS3X78AAAAqElEQVQI15WMTQuCQBRF/f//oNpEC6ldlAVtapFUkB+JLSKdNkElWGnq4DjO3KaiRcsOHHj3wrtanlEklxynOIK5O2Joh+ivA0y8AwZW8M5jlyhDjByiMoHhhAjOd2SU45oyJHmFOC3B6xqakAIVZ2CsguHu0Z5v0JzZaE4tNJTdpY+O6aGlOl3dvdUW+sIHiW74IPFFSgntUZSgBVWjHH+hnoX49TX4BFeh3Z88XZ4kAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;styled-console&quot;
+        title=&quot;styled-console&quot;
+        src=&quot;/static/b51a12408365feff4d934e102ecbff7b/799d3/styled-console.png&quot;
+        srcset=&quot;/static/b51a12408365feff4d934e102ecbff7b/00d96/styled-console.png 148w,
+/static/b51a12408365feff4d934e102ecbff7b/0b23c/styled-console.png 295w,
+/static/b51a12408365feff4d934e102ecbff7b/799d3/styled-console.png 590w,
+/static/b51a12408365feff4d934e102ecbff7b/fd398/styled-console.png 767w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;&lt;center&gt; console.assert &lt;/center&gt;&lt;/h3&gt;
+&lt;p&gt;This is generally used for conditional logging, accepts a &lt;code class=&quot;language-text&quot;&gt;condition&lt;/code&gt; as the first param, and logs the next params only if the given condition is false with &lt;code class=&quot;language-text&quot;&gt;Assertion failed&lt;/code&gt; error.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;assert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;a is not equal to 1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;//undefined&lt;/span&gt;
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;assert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;a is not equal to 2&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// Assertion failed: a is not equal to 2&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 492px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d6749a94989266cd09be0d34b0ce7ca1/275e0/assert-console.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 37.398373983739845%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsSAAALEgHS3X78AAABB0lEQVQoz3WRa2/CMAxF+/9/3j6gMcHYVIkBLWmb5v3omdt9YxDpyIml2PfazWxG/FXoNErPxBCAKmRY8l98RPLLC5ogBSY1o64T/aCw2RFCIqZCylViJcSKDWW7r/lSqnzmKY21Bt07prPnpjo6f0OPM8Z4rM/MLjGaRDcGtJW3jaSUWM8iFR5pXAyMyjBcDN1wZ8wT1gV8yHhRtGJCRbuyqTTSIOf8uqB5e8fsvrD7H9TpRPe5R+0O6PaC/j4zHFvUoeX20WL6CTdZ0myo0rQ6/48mjVos9/TXC/N9gCjDjZFFbG1RZrxCirIPUVaK7KRQU35Kc7diw8dNbqky7NXKK55YfOQXOIch984MCCwAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;assert-console&quot;
+        title=&quot;assert-console&quot;
+        src=&quot;/static/d6749a94989266cd09be0d34b0ce7ca1/275e0/assert-console.png&quot;
+        srcset=&quot;/static/d6749a94989266cd09be0d34b0ce7ca1/00d96/assert-console.png 148w,
+/static/d6749a94989266cd09be0d34b0ce7ca1/0b23c/assert-console.png 295w,
+/static/d6749a94989266cd09be0d34b0ce7ca1/275e0/assert-console.png 492w&quot;
+        sizes=&quot;(max-width: 492px) 100vw, 492px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;&lt;center&gt; console.(time/timeLog/timeEnd) &lt;/center&gt;&lt;/h3&gt;
+&lt;p&gt;When we try to measure the performance of a website or a function we use to add &lt;code class=&quot;language-text&quot;&gt;console.log(Date.now)&lt;/code&gt; before and after a function and do the maths to get execution time. Javascript has a native way to achieve this. &lt;code class=&quot;language-text&quot;&gt;console.time&lt;/code&gt; marks the start of time, &lt;code class=&quot;language-text&quot;&gt;console.timeEnd&lt;/code&gt; stops the timer and gives the total time taken. &lt;code class=&quot;language-text&quot;&gt;console.time&lt;/code&gt; takes label as a parameter in case you want to use multiple timers. &lt;code class=&quot;language-text&quot;&gt;console.timeLog&lt;/code&gt; can be used anywhere in between to check time elapsed till then.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;checkTime&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;checkTime&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;300000000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;15000000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;timeLog&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;checkTime&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+	console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;timeEnd&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;checkTime&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;checkTime&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// checkTime: 24ms&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// checkTime: 396ms - timer ended&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 484px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2e483794c9918a1dcb5c155c9498d05d/68a6d/time-console.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAABJ0lEQVQoz42Sy26DMBBF+f8v67ZZtIoUpYU8DDE2Nn5hjLm1SUk3bQPS0UhYc7gzplBaw/UW/jzAHRwqbrBrBN4vBpT3UHZEjBOePfM8L7VYX/g2QB8tOiJw6mp8XjXKWuHljeJ1z3C+OnRSgfUt3Ojg/PRNSB+MD2mxmuOUDju3iKmSIJxif+qxOwqQqwUrPXgnUakSjbqh6YY73GIcxx/hXRYTM0yTpRMaWy+N0qRUKuAmPYx320aeUjKle4i+g/X6aVOc41L/olBKQVEHUQ3gJ53ih/sKcuMiWZk3UeSFciZQfVxALg0IIRBCLIvOu8mEELYLcxrGGcqqBKkJKKVgjMEYs9S2bSGlfIz8VDgMA3T6F3NTrsDvI+bEWyjySOsNbU3xH19wzQ2S0PzGIwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;time-console&quot;
+        title=&quot;time-console&quot;
+        src=&quot;/static/2e483794c9918a1dcb5c155c9498d05d/68a6d/time-console.png&quot;
+        srcset=&quot;/static/2e483794c9918a1dcb5c155c9498d05d/00d96/time-console.png 148w,
+/static/2e483794c9918a1dcb5c155c9498d05d/0b23c/time-console.png 295w,
+/static/2e483794c9918a1dcb5c155c9498d05d/68a6d/time-console.png 484w&quot;
+        sizes=&quot;(max-width: 484px) 100vw, 484px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;&lt;center&gt; console.(count/countReset) &lt;/center&gt;&lt;/h3&gt;
+&lt;p&gt;There are times where we want to count how many times a function is called, we need to create a dummy counter just for logging, &lt;code class=&quot;language-text&quot;&gt;console.count&lt;/code&gt; handles this, every time it is called it increments by 1 and consoles the value against the passed &lt;code class=&quot;language-text&quot;&gt;label&lt;/code&gt; or &lt;code class=&quot;language-text&quot;&gt;default&lt;/code&gt;. We can use multiple counters in the same code with different labels. Any counter can be reset with &lt;code class=&quot;language-text&quot;&gt;console.countRest&lt;/code&gt; passing respective label or nothing in case of &lt;code class=&quot;language-text&quot;&gt;default&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;myCounter&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// myCounter: 1&lt;/span&gt;
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;myCounter&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// myCounter: 2&lt;/span&gt;
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;myCounter&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// myCounter: 3&lt;/span&gt;
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;countReset&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;myCounter&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// myCounter: 0&lt;/span&gt;
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;myCounter&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// myCounter: 1&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 515px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/df10483a24aee1f15b0d6815cdbc403b/20978/count-console.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 67.57281553398059%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsSAAALEgHS3X78AAABEUlEQVQ4y6WS25KDIBBE/f+v3I14CcwIQ0RRox00m9TuPkWlqp8oTk1zJrNVC/cdUXIN5RUKHaBMD207TNMd61mW5eNkbAmqymEbCzzf/zl7YBtQqIXUAeQYLjqwRDS3Ee4Wtwl3A6myqL8IxbUCB4a0I2wChn7EPM/7gU4SUNfw4lO/c3WflesOXo2blOL2ktK9pewGaqNxyS8gQ7hP8+/5Dk2aeQ6bFJYGFAnUGUjo0fhVzIBhnFbi58BGCyh3uLJB6Utwz/AhJti4CdoN5IZRlAWYGct9OV9ZrquUAbXVqEKF0oQkqIc5KoWJoXIFIkr1hrR7y5YjK/Ozhx4igrZt1696X7zAe5PFYTq1yP/zAIF1S30OeJtzAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;count-console&quot;
+        title=&quot;count-console&quot;
+        src=&quot;/static/df10483a24aee1f15b0d6815cdbc403b/20978/count-console.png&quot;
+        srcset=&quot;/static/df10483a24aee1f15b0d6815cdbc403b/00d96/count-console.png 148w,
+/static/df10483a24aee1f15b0d6815cdbc403b/0b23c/count-console.png 295w,
+/static/df10483a24aee1f15b0d6815cdbc403b/20978/count-console.png 515w&quot;
+        sizes=&quot;(max-width: 515px) 100vw, 515px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How to serve an API locally with webpack]]></title><description><![CDATA[While developing a data driven web-app, the frontend may need to fetch data from various APIs provided by backend which may not be ready at…]]></description><link>https://itsopensource.com/how-to-serve-api-locally-with-webpack/</link><guid isPermaLink="false">https://itsopensource.com/how-to-serve-api-locally-with-webpack/</guid><pubDate>Mon, 22 Jun 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;While developing a data driven web-app, the frontend may need to fetch data from various APIs provided by backend which may not be ready at the given time. In this case, we need to mock the response and serve it via dummy server, either local or remote. With Webpack this can be achieved without any dummy server. Webpack devserver allows custom handlers which can be used to serve the API response.  &lt;/p&gt;
 &lt;p&gt;We need to add a &lt;code class=&quot;language-text&quot;&gt;devServer&lt;/code&gt; entry to the webpack config, which would look something like this:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; data &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;./data.json&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
