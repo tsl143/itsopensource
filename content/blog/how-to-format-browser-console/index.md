@@ -1,5 +1,5 @@
 ---
-title: 'How to format browser console'
+title: 'How to use console command effectively'
 date: "2020-06-24"
 description: This blog lists some useful console commands which can help to format and declutter console panel for more meaningful console messages.
 tags:
