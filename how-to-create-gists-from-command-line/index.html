@@ -21,6 +21,7 @@ Just run this command and it will upload the changes to GitHub gist.</p>
               query += "&aip=1"; //anonymize IP
               query += "&z=" + ts; //to avoid caching of data
               query += "&ul=" + navigator.language;
+              query += "&ua=" + encodeURIComponent(navigator.userAgent);
               query += "&dl=" + encodeURIComponent(document.location.origin + document.location.pathname);
               // query += "&dh=" + encodeURIComponent(document.location.origin);
               // query += "&dp=" + encodeURIComponent(document.location.pathname);

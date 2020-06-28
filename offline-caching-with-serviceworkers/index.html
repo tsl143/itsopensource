@@ -182,6 +182,7 @@ Listen to the fetch event and capture the network request, depending on your cac
               query += "&aip=1"; //anonymize IP
               query += "&z=" + ts; //to avoid caching of data
               query += "&ul=" + navigator.language;
+              query += "&ua=" + encodeURIComponent(navigator.userAgent);
               query += "&dl=" + encodeURIComponent(document.location.origin + document.location.pathname);
               // query += "&dh=" + encodeURIComponent(document.location.origin);
               // query += "&dp=" + encodeURIComponent(document.location.pathname);
