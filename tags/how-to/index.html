@@ -8,8 +8,8 @@
               query += "&aip=1"; //anonymize IP
               query += "&z=" + Date.now().toString(); //to avoid caching of data
               query += "&ul=" + navigator.language;
-              query += "&dh=" + document.location.origin;
-              query += "&dp=" + document.location.pathname;
+              query += "&dh=" + encodeURIComponent(document.location.origin);
+              query += "&dp=" + encodeURIComponent(document.location.pathname);
               query += "&t=pageview"; //event type
               const request = new XMLHttpRequest();
               request.open("POST", "https://www.google-analytics.com/collect", true);
