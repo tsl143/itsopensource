@@ -12,26 +12,6 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         {props.headComponents}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              const conf = {siteID: 'itsopensource'};
-              window.onload = function() {
-                if (navigator.doNotTrack != '1') {
-                    var urlDetails = {
-                        origin: document.location.host,
-                        protocol: document.location.protocol,
-                        href: document.location.href,
-                        ref: document.referrer
-                    };
-                    conf.urlDetails = urlDetails;
-                    const probeWindow = document.getElementById("green-analytics").contentWindow;
-                    probeWindow.postMessage(conf, 'https://green-analytic.herokuapp.com/collect');
-                }
-              };
-            `,
-          }}
-        />
       </head>
 
       <body {...props.bodyAttributes}>
@@ -45,8 +25,33 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
-        <iframe id='green-analytics' src='https://green-analytic.herokuapp.com/frame' style={{display: 'none'}}/>
       </body>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            const ts = Date.now().toString();
+            window.onload = function() {
+              // Analytics
+              let query = "v=1";
+              query += "&tid=UA-155141542-1"; // tracking ID
+              query += "&cid=" + ts; // client ID -> faking as timestamp
+              if (document.referrer) query += "&dr="+ encodeURIComponent(document.referrer);
+              query += "&ds=web"; // event from
+              query += "&aip=1"; //anonymize IP
+              query += "&z=" + ts; //to avoid caching of data
+              query += "&ul=" + navigator.language;
+              query += "&ua=" + encodeURIComponent(navigator.userAgent);
+              query += "&dl=" + encodeURIComponent(document.location.origin + document.location.pathname);
+              // query += "&dh=" + encodeURIComponent(document.location.origin);
+              // query += "&dp=" + encodeURIComponent(document.location.pathname);
+              query += "&t=pageview"; //event type
+              const request = new XMLHttpRequest();
+              request.open("POST", "https://www.google-analytics.com/collect", true);
+              request.send(query);
+            };
+          `,
+        }}
+      />
     </html>
   )
 }
