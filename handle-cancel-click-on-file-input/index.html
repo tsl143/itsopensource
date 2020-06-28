@@ -50,14 +50,16 @@ HTML</p>
 <span class="token punctuation">}</span>		</code></pre></div>
 <p>See it working <a href="https://tsl143.github.io/jsDemos/handleFileEvent/">here</a>.</p>
 <p><sub>This blog was first published <a href="http://trishulgoel.com/handle-cancel-click-on-file-input">here</a></sub></p></section><hr style="margin-bottom:1.75rem"/><footer><div style="display:flex;margin-bottom:4.375rem"><a style="min-width:50px;min-height:50px;margin-right:0.875rem;margin-bottom:0;overflow:hidden;box-shadow:none" href="/author/trishul"><img alt="Trishul Goel" style="width:50px;height:auto;border-radius:100%" src="/trishul.jpg"/></a><p><strong>Trishul Goel</strong> <!-- --> is a professional frontend developer; writes React code for living and volunteers for Mozilla to justify his existence<!-- -->.<br/><a target="_blank" rel="noopener noreferrer" href="https://twitter.com/trishulgoel">@<!-- -->trishulgoel</a></p></div></footer></article><nav><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li></li><li><a rel="next" href="/public-private-static-data-members-in-javascript/">Implementing public, private, and static data members in pre-ES5 Javascript<!-- --> →</a></li></ul></nav></main></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/handle-cancel-click-on-file-input/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-36c40d557a24116c35d3.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-c835e51e58eb4a584384.js"],"component---src-templates-tag-js":["/component---src-templates-tag-js-2028c4a698f639ea9d62.js"],"component---src-templates-author-js":["/component---src-templates-author-js-3654f3d625b77d995b50.js"],"component---src-pages-404-js":["/component---src-pages-404-js-31a64aa4d0648eac1c8c.js"],"component---src-pages-index-js":["/component---src-pages-index-js-243a263376f386d41bfe.js"]};/*]]>*/</script><script src="/webpack-runtime-a1149194a4172c23bb6d.js" async=""></script><script src="/commons-c911fb3ff286546f301a.js" async=""></script><script src="/styles-05ec49f1e97fde7879c1.js" async=""></script><script src="/component---src-templates-blog-post-js-c835e51e58eb4a584384.js" async=""></script><script src="/app-36c40d557a24116c35d3.js" async=""></script></body><script>
+            const ts = Date.now().toString();
             window.onload = function() {
               // Analytics
               let query = "v=1";
               query += "&tid=UA-155141542-1"; // tracking ID
+              query += "&cid=" + ts; // client ID -> faking as timestamp
               if (document.referrer) query += "&dr="+ encodeURIComponent(document.referrer);
               query += "&ds=web"; // event from
               query += "&aip=1"; //anonymize IP
-              query += "&z=" + Date.now().toString(); //to avoid caching of data
+              query += "&z=" + ts; //to avoid caching of data
               query += "&ul=" + navigator.language;
               query += "&dl=" + encodeURIComponent(document.location.origin + document.location.pathname);
               // query += "&dh=" + encodeURIComponent(document.location.origin);
