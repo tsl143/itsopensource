@@ -2,7 +2,7 @@
 While starting a…</p></section></article><article><header><h3 style="margin-bottom:0.4375rem"><a style="box-shadow:none" href="/lazyload-images-the-browser-way/">Lazyload images the browser way</a></h3><small>2020-02-21</small></header><section><p>One of the biggest performance wins for image-extensive webpages is . Normally, the browser fetches all the required resources from the…</p></section></article><article><header><h3 style="margin-bottom:0.4375rem"><a style="box-shadow:none" href="/sleep-function-in-javascript/">Sleep function in Javascript</a></h3><small>2020-02-16</small></header><section><p>There are times while writing javascript, when we might want to halt the execution of Javascript for a small period say 2 seconds. May be…</p></section></article><article><header><h3 style="margin-bottom:0.4375rem"><a style="box-shadow:none" href="/optional-chaining/">Optional Chaining</a></h3><small>2020-01-17</small></header><section><p>has bugged every javascript developer enough. While expecting a response from APIs, we need to add several  to make sure our code doesn’t…</p></section></article><article><header><h3 style="margin-bottom:0.4375rem"><a style="box-shadow:none" href="/get-started-with-web-wrokers/">Get started with web workers</a></h3><small>2019-12-28</small></header><section><p>Javascript is single-threaded ie. all of the javascript code written is executed in a single thread. All the functions are executed…</p></section></article><article><header><h3 style="margin-bottom:0.4375rem"><a style="box-shadow:none" href="/offline-caching-with-serviceworkers/">Offline caching with serviceworkers</a></h3><small>2019-12-15</small></header><section><p>Caching always has proven to be the winner when it comes to performance.
 Browser by default caches the resources on its end, but to get…</p></section></article><article><header><h3 style="margin-bottom:0.4375rem"><a style="box-shadow:none" href="/handle-cancel-click-on-file-input/">Handle Cancel Click on File Input</a></h3><small>2017-03-01</small></header><section><p>Ever Tried capturing cancel event on Browse file input type in HTML, tbh there is no direct way to do so :( But there is a workaround adding…</p></section></article></main></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/author/trishul";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-36c40d557a24116c35d3.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-c835e51e58eb4a584384.js"],"component---src-templates-tag-js":["/component---src-templates-tag-js-2028c4a698f639ea9d62.js"],"component---src-templates-author-js":["/component---src-templates-author-js-3654f3d625b77d995b50.js"],"component---src-pages-404-js":["/component---src-pages-404-js-31a64aa4d0648eac1c8c.js"],"component---src-pages-index-js":["/component---src-pages-index-js-243a263376f386d41bfe.js"]};/*]]>*/</script><script src="/webpack-runtime-a1149194a4172c23bb6d.js" async=""></script><script src="/styles-05ec49f1e97fde7879c1.js" async=""></script><script src="/app-36c40d557a24116c35d3.js" async=""></script><script src="/commons-c911fb3ff286546f301a.js" async=""></script><script src="/component---src-templates-author-js-3654f3d625b77d995b50.js" async=""></script></body><script>
             const ts = Date.now().toString();
-            window.onload = function() {
+            const sendTelemetry = () => {
               // Analytics
               let query = "v=1";
               query += "&tid=UA-155141542-1"; // tracking ID
@@ -21,4 +21,15 @@ Browser by default caches the resources on its end, but to get…</p></section><
               request.open("POST", "https://www.google-analytics.com/collect", true);
               request.send(query);
             };
+
+            // Send for the current page
+            sendTelemetry();
+            // hook pushState function to call sendTelemetry everytime something is pushed in history
+            (function(history){
+              var pushState = history.pushState;
+              history.pushState = function(state) {
+                sendTelemetry();
+                return pushState.apply(history, arguments);
+              };
+            })(window.history);
           </script></html>
