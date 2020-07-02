@@ -30,7 +30,7 @@ export default function HTML(props) {
         dangerouslySetInnerHTML={{
           __html: `
             const ts = Date.now().toString();
-            window.onload = function() {
+            const sendTelemetry = () => {
               // Analytics
               let query = "v=1";
               query += "&tid=UA-155141542-1"; // tracking ID
@@ -49,6 +49,17 @@ export default function HTML(props) {
               request.open("POST", "https://www.google-analytics.com/collect", true);
               request.send(query);
             };
+
+            // Send for the current page
+            sendTelemetry();
+            // hook pushState function to call sendTelemetry everytime something is pushed in history
+            (function(history){
+              var pushState = history.pushState;
+              history.pushState = function(state) {
+                sendTelemetry();
+                return pushState.apply(history, arguments);
+              };
+            })(window.history);
           `,
         }}
       />
