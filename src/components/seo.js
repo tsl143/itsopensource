@@ -9,8 +9,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { authors } from "../globals"
 
-function SEO({ description, lang, meta, title, titleTemplate }) {
+function SEO({ description, lang, meta, title, titleTemplate, slug = "", author = "trishul" }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -18,7 +19,8 @@ function SEO({ description, lang, meta, title, titleTemplate }) {
           siteMetadata {
             title
             description
-            author
+            author,
+            siteUrl
           }
         }
       }
@@ -26,6 +28,7 @@ function SEO({ description, lang, meta, title, titleTemplate }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const ogURL = site.siteMetadata.siteUrl + slug;
 
   if (title === site.siteMetadata.title) titleTemplate = `%s`
   else titleTemplate = `%s | ${site.siteMetadata.title}`
@@ -59,6 +62,10 @@ function SEO({ description, lang, meta, title, titleTemplate }) {
           content: `website`,
         },
         {
+          property: `og:url`,
+          content: ogURL,
+        },
+        {
           property: `og:image`,
           content: `/opensource_512.png`,
         },
@@ -68,7 +75,7 @@ function SEO({ description, lang, meta, title, titleTemplate }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: `@${authors[author].twitter}`,
         },
         {
           name: `twitter:title`,
