@@ -85,6 +85,10 @@ function SEO({ description, lang, meta, title, titleTemplate, slug = "", author 
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          property: `twitter:image`,
+          content: `/opensource_512.png`,
+        }
       ].concat(meta)}
     />
   )
