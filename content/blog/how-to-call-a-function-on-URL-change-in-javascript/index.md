@@ -16,7 +16,8 @@ Javascript does not provide any native listener to path change (not hashchange).
 
 ### Solution
 The `history` API maintains complete the navigation state. Whenever a new page is navigated `history.pushState` is called and page is added to the state. That means this event is called whenever the URL changes. We hooked our function on this, and done :)
-```
+
+```Javascript
 (function(history){
     var pushState = history.pushState;
     history.pushState = function(state) {
