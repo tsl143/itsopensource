@@ -11,7 +11,7 @@ author: trishul
 Modern JS frameworks tend not to reload the page but manipulate DOM and change URL path for internal navigation, for performance and smooth UX. But since there is no page reload, `window.onload` event does not get triggered for subsequent navigation. We run into a situation where we need to call a function whenever URL path changes (not the hash).
 
 ### Problem
-The `itsopensource.com` blog is built using [gatsby](https://www.gatsbyjs.org/), we wanted to add google analytics to this, but instead of using google tag manager, we tried to restrict what [data](https://github.com/tsl143/itsopensource/blob/master/src/html.js#L32) is sent to google and in this process, we need to send XHR request on every page load. We created a function `sendTelemetry` and called it on `window.onload`. This works as expected (partially), whenever the page is loaded the XHR is sent, but gatsby do not reload the page while changing the URL when any blog link is clicked, so XHR is sent only once per session and not on subsequent page loads.  
+The [`itsopensource.com`](https://itsopensource.com/) blog is built using [gatsby](https://www.gatsbyjs.org/), we wanted to add google analytics to this, but instead of using google tag manager, we tried to restrict what [data](https://github.com/tsl143/itsopensource/blob/master/src/html.js#L32) is sent to google and in this process, we need to send XHR request on every page load. We created a function `sendTelemetry` and called it on `window.onload`. This works as expected (partially), whenever the page is loaded the XHR is sent, but gatsby do not reload the page while changing the URL when any blog link is clicked, so XHR is sent only once per session and not on subsequent page loads.  
 Javascript does not provide any native listener to path change (not hashchange).
 
 ### Solution
@@ -27,7 +27,7 @@ The `history` API maintains complete the navigation state. Whenever a new page i
 })(window.history);
 ```
 
-### demo
+### Demo
 A quick demo can be the following:
 1. Open the browser console on this very page.
 2. Paste the above-written code snippet.
