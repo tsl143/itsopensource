@@ -8,7 +8,7 @@ tags:
   - how-to
 show: true
 author: shivam
-featuredImage: ./docker.png
+featuredImage: ../../assets/docker.png
 ---
 
 Dockerizing an application is simple, effective, but optimizing the size of Docker Image is the tricky part. Docker is easy to use but once the application starts scaling, the image size inflates exponentially. In general, the node docker image size of the applications is over 1 GB most of the time.

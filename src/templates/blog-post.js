@@ -53,7 +53,7 @@ class BlogPostTemplate extends React.Component {
               }
             </div>
           }
-          {featuredImgFluid && <Img fluid={featuredImgFluid} />}
+          {featuredImgFluid && <Img style={{marginBottom: '20px'}} fluid={featuredImgFluid} />}
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
             style={{
