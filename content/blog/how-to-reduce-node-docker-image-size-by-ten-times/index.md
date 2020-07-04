@@ -1,5 +1,5 @@
 ---
-title: 'How to Reduce Node Docker Image Size by Ten Times'
+title: 'How to Reduce Node Docker Image Size by 10X'
 date: "2020-07-03"
 description: Reduce Node Docker Image Size by Ten Times.
 tags:
@@ -10,26 +10,21 @@ show: true
 author: shivam
 ---
 
-If we generally see the node docker image size of the applications , its over 1 GB most of the time because of lots of reason. 
-
-Dockerizing an application is simple, but optimizing the size of Docker Image is the tricky part. Docker is easy to use but once your application reaches a certain level, you generally face these problems:
-
-* Long build durations
-* Large docker image sizes
+Dockerizing an application is simple, effective, but optimizing the size of Docker Image is the tricky part. Docker is easy to use but once the application starts scaling, the image size inflates exponentially. In general, the node docker image size of the applications is over 1 GB most of the time.
 
 ### Why the Size matters
 
-1. Bigger image takes more space means more expensive and time consuming to use those images with the time.
+1. Large docker image sizes - Bigger image size requires more space means increased expense.
 
-2. It takes longer time to push the images over network and impact your CI Pipeline badly.
+2. Long build durations - It takes a longer time to push the images over the network and results in CI Pipeline delays.
 
 ### Let’s Start The Optimization
 
-Here our [demo application](https://github.com/championshuttler/fluentbit-dashboard) built using the VueJS Application. 
+Here is our [demo application](https://github.com/championshuttler/fluentbit-dashboard) built using the VueJS Application. 
 
 Here is the initial Dockerfile.
 
-```console
+```BASH
 FROM node:10
 
 WORKDIR /app
@@ -51,13 +46,13 @@ The size of this image is:
 
 It is 1.34GB! Whoops!
 
-Lets start optimizing step by step
+Let's start optimizing step by step
 
-1) Use Multi-Stage Docker Builds
+1) Use **Multi-Stage** Docker Builds
 
-Multi-stage builds made easy to optimize Docker images by using multiple intermediate images in a single Dockerfile. You can read more about it [here](https://docs.docker.com/develop/develop-images/multistage-build/). By using multi-stage builds, we can install all dependencies in the build image and copy them to the runtime image.
+Multi-stage builds make it easy to optimize Docker images by using multiple **intermediate** images in a single Dockerfile. Read more about it [here](https://docs.docker.com/develop/develop-images/multistage-build/). By using multi-stage builds, we can install all dependencies in the build image and copy them to the leaner runtime image.
 
-```console
+```BASH
 FROM node:10 AS BUILD_IMAGE
 
 WORKDIR /app
@@ -85,19 +80,19 @@ Now the size of this image is 1.24GB:
 
 ![docker2](./docker2.png)
 
-2) Remove Development Dependencies and use Node Prune Tool
+2) Remove Development Dependencies and use **Node Prune** Tool
 
-node-prune is an open-source tool for removing unnecessary files from the node_modules folder. Most of the developers forget test files, markdown files, typing files and *.map files in Npm packages. By using node-prune we can safely delete them.
+node-prune is an open-source tool for removing unnecessary files from the node_modules folder. Test files, markdown files, typing files and *.map files in Npm packages are not required at all in the production environment generally, most of the developers do not remove them from the production package. By using node-prune it can safely be removed.
 
 We can use this to remove Development Dependencies:
 
-```console
+```BASH
 npm prune --production
 ```
 
 After making these changes `Dockerfile` will look like:
 
-```console
+```BASH
 FROM node:10 AS BUILD_IMAGE
 
 RUN curl -sfL https://install.goreleaser.com/github.com/tj/node-prune.sh | bash -s -- -b /usr/local/bin
@@ -133,11 +128,11 @@ By using this we reduced the overall size to 1.09GB
 
 ![docker3](./docker3.png)
 
-3) Choose Smaller Base Image As Possible
+3) Choose **Smaller Final Base Image**
 
-When dockerizing a node application, there are lots of [base images](https://hub.docker.com/_/node/) available we can choose from.
+When dockerizing a node application, there are lots of [base images](https://hub.docker.com/_/node/) available to choose from.
 
-Here we will use alpine image.
+Here we will use **alpine** image; alpine is a lean docker image with minimum packages but enough to run node applications.
 
 ```console
 FROM node:10 AS BUILD_IMAGE
@@ -171,13 +166,13 @@ RUN npm i -g http-server
 CMD http-server ./dist
 ```
 
-By using this `Dockerfile` the image size is dropped to `157MB` \o/
+By using this `Dockerfile` the image size dropped to `157MB` \o/
 
 
 ![docker4](./docker4.png)
 
 ### Conclusion
 
-By applying these 3 simple steps, we made our docker image size 10 times lesser.
+By applying these 3 simple steps, we reduced our docker image size by 10 times.
 
 Cheers!
