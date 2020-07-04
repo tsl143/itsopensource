@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource RSS Feed]]></title><description><![CDATA[Writing opensource journey one word at a time.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 03 Jul 2020 19:14:51 GMT</lastBuildDate><item><title><![CDATA[How to call a function on URL change in javascript]]></title><description><![CDATA[Modern JS frameworks tend not to reload the page but manipulate DOM and change URL path for internal navigation, for performance and smooth…]]></description><link>https://itsopensource.com/how-to-call-a-function-on-URL-change-in-javascript/</link><guid isPermaLink="false">https://itsopensource.com/how-to-call-a-function-on-URL-change-in-javascript/</guid><pubDate>Fri, 03 Jul 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Modern JS frameworks tend not to reload the page but manipulate DOM and change URL path for internal navigation, for performance and smooth UX. But since there is no page reload, &lt;code class=&quot;language-text&quot;&gt;window.onload&lt;/code&gt; event does not get triggered for subsequent navigation. We run into a situation where we need to call a function whenever URL path changes (not the hash).&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource RSS Feed]]></title><description><![CDATA[Writing opensource journey one word at a time.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 04 Jul 2020 08:48:46 GMT</lastBuildDate><item><title><![CDATA[How to call a function on URL change in javascript]]></title><description><![CDATA[Modern JS frameworks tend not to reload the page but manipulate DOM and change URL path for internal navigation, for performance and smooth…]]></description><link>https://itsopensource.com/how-to-call-a-function-on-URL-change-in-javascript/</link><guid isPermaLink="false">https://itsopensource.com/how-to-call-a-function-on-URL-change-in-javascript/</guid><pubDate>Fri, 03 Jul 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Modern JS frameworks tend not to reload the page but manipulate DOM and change URL path for internal navigation, for performance and smooth UX. But since there is no page reload, &lt;code class=&quot;language-text&quot;&gt;window.onload&lt;/code&gt; event does not get triggered for subsequent navigation. We run into a situation where we need to call a function whenever URL path changes (not the hash).&lt;/p&gt;
 &lt;h3&gt;Problem&lt;/h3&gt;
 &lt;p&gt;The &lt;a href=&quot;https://itsopensource.com/&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;itsopensource.com&lt;/code&gt;&lt;/a&gt; blog is built using &lt;a href=&quot;https://www.gatsbyjs.org/&quot;&gt;gatsby&lt;/a&gt;, we wanted to add google analytics to this, but instead of using google tag manager, we tried to restrict what &lt;a href=&quot;https://github.com/tsl143/itsopensource/blob/master/src/html.js#L32&quot;&gt;data&lt;/a&gt; is sent to google and in this process, we need to send XHR request on every page load. We created a function &lt;code class=&quot;language-text&quot;&gt;sendTelemetry&lt;/code&gt; and called it on &lt;code class=&quot;language-text&quot;&gt;window.onload&lt;/code&gt;. This works as expected (partially), whenever the page is loaded the XHR is sent, but gatsby do not reload the page while changing the URL when any blog link is clicked, so XHR is sent only once per session and not on subsequent page loads.&lt;br&gt;
 Javascript does not provide any native listener to path change (not hashchange).&lt;/p&gt;
@@ -22,7 +22,256 @@ Javascript does not provide any native listener to path change (not hashchange).
 &lt;/ol&gt;
 &lt;br&gt;
 &lt;p&gt;&lt;em&gt;The first choice for the title was &lt;code class=&quot;language-text&quot;&gt;how to hook a function on history.pushState&lt;/code&gt;.&lt;/em&gt;  &lt;/p&gt;
-&lt;p&gt;Reference: &lt;a href=&quot;https://stackoverflow.com/questions/4570093/how-to-get-notified-about-changes-of-the-history-via-history-pushstate&quot;&gt;stackoverflow&lt;/a&gt;  😉&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How to use console command effectively]]></title><description><![CDATA[is the most widely used debugging technique used by Javascript developers. While debugging  is sprinkled almost anywhere in the code, after…]]></description><link>https://itsopensource.com/how-to-format-browser-console/</link><guid isPermaLink="false">https://itsopensource.com/how-to-format-browser-console/</guid><pubDate>Wed, 24 Jun 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;console.log&lt;/code&gt; is the most widely used debugging technique used by Javascript developers. While debugging &lt;code class=&quot;language-text&quot;&gt;console.log&lt;/code&gt; is sprinkled almost anywhere in the code, after code execution, console panel is full of console messages, this blog lists some useful console commands which can help to format and declutter console panel for more meaningful console messages.&lt;/p&gt;
+&lt;p&gt;Reference: &lt;a href=&quot;https://stackoverflow.com/questions/4570093/how-to-get-notified-about-changes-of-the-history-via-history-pushstate&quot;&gt;stackoverflow&lt;/a&gt;  😉&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How to Reduce Node Docker Image Size by 10X]]></title><description><![CDATA[Dockerizing an application is simple, effective, but optimizing the size of Docker Image is the tricky part. Docker is easy to use but once…]]></description><link>https://itsopensource.com/how-to-reduce-node-docker-image-size-by-ten-times/</link><guid isPermaLink="false">https://itsopensource.com/how-to-reduce-node-docker-image-size-by-ten-times/</guid><pubDate>Fri, 03 Jul 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Dockerizing an application is simple, effective, but optimizing the size of Docker Image is the tricky part. Docker is easy to use but once the application starts scaling, the image size inflates exponentially. In general, the node docker image size of the applications is over 1 GB most of the time.&lt;/p&gt;
+&lt;h3&gt;Why the Size matters&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Large docker image sizes - Bigger image size requires more space means increased expense.&lt;/li&gt;
+&lt;li&gt;Long build durations - It takes a longer time to push the images over the network and results in CI Pipeline delays.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Let’s Start The Optimization&lt;/h3&gt;
+&lt;p&gt;Here is our &lt;a href=&quot;https://github.com/championshuttler/fluentbit-dashboard&quot;&gt;demo application&lt;/a&gt; built using the VueJS Application. &lt;/p&gt;
+&lt;p&gt;Here is the initial Dockerfile.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;FROM node:10
+
+WORKDIR /app
+
+COPY &lt;span class=&quot;token builtin class-name&quot;&gt;.&lt;/span&gt; /app
+
+EXPOSE &lt;span class=&quot;token number&quot;&gt;8080&lt;/span&gt;
+
+RUN &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; http-server -g
+
+RUN &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; run build
+
+CMD http-server ./dist&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The size of this image is:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1aba1e73be853f41e369a610752fa9ab/7241a/docker1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 7.667473769168684%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAVElEQVQI112MQQ7AIAgEARWMGPr/124LB9v0QIYMy9IVF9QUvAm+HRGBtRZUFWMMEFFNa628ux+fNDPMOd+sSAMzPwsVRaSYhb33U5j+/5z3zH3dDTdQKg8yosSQAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;docker1&quot;
+        title=&quot;docker1&quot;
+        src=&quot;/static/1aba1e73be853f41e369a610752fa9ab/799d3/docker1.png&quot;
+        srcset=&quot;/static/1aba1e73be853f41e369a610752fa9ab/00d96/docker1.png 148w,
+/static/1aba1e73be853f41e369a610752fa9ab/0b23c/docker1.png 295w,
+/static/1aba1e73be853f41e369a610752fa9ab/799d3/docker1.png 590w,
+/static/1aba1e73be853f41e369a610752fa9ab/2a3d6/docker1.png 885w,
+/static/1aba1e73be853f41e369a610752fa9ab/ae92f/docker1.png 1180w,
+/static/1aba1e73be853f41e369a610752fa9ab/7241a/docker1.png 2478w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;It is 1.34GB! Whoops!&lt;/p&gt;
+&lt;p&gt;Let’s start optimizing step by step&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Use &lt;strong&gt;Multi-Stage&lt;/strong&gt; Docker Builds&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Multi-stage builds make it easy to optimize Docker images by using multiple &lt;strong&gt;intermediate&lt;/strong&gt; images in a single Dockerfile. Read more about it &lt;a href=&quot;https://docs.docker.com/develop/develop-images/multistage-build/&quot;&gt;here&lt;/a&gt;. By using multi-stage builds, we can install all dependencies in the build image and copy them to the leaner runtime image.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;FROM node:10 AS BUILD_IMAGE
+
+WORKDIR /app
+
+COPY &lt;span class=&quot;token builtin class-name&quot;&gt;.&lt;/span&gt; /app
+
+EXPOSE &lt;span class=&quot;token number&quot;&gt;8080&lt;/span&gt;
+
+RUN &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; run build
+
+FROM node:10
+
+WORKDIR /app
+
+&lt;span class=&quot;token comment&quot;&gt;# copy from build image&lt;/span&gt;
+COPY --from&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;BUILD_IMAGE /app/dist ./dist
+COPY --from&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;BUILD_IMAGE /app/node_modules ./node_modules
+
+RUN &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; i -g http-server
+
+CMD http-server ./dist&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now the size of this image is 1.24GB:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6b9b07919be16cc2c5c399f5e2e6e50a/2e3fa/docker2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 6.401137980085349%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAABCAYAAADeko4lAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAP0lEQVQI1zWKQQrAQAjEFK2OCqWHfUn//7cpCD0EEoic8/K5L1YVNZUorGcGVZUiQgCcmW0zY3fT3dcjYp+fD1sKFWNaoEaJAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;docker2&quot;
+        title=&quot;docker2&quot;
+        src=&quot;/static/6b9b07919be16cc2c5c399f5e2e6e50a/799d3/docker2.png&quot;
+        srcset=&quot;/static/6b9b07919be16cc2c5c399f5e2e6e50a/00d96/docker2.png 148w,
+/static/6b9b07919be16cc2c5c399f5e2e6e50a/0b23c/docker2.png 295w,
+/static/6b9b07919be16cc2c5c399f5e2e6e50a/799d3/docker2.png 590w,
+/static/6b9b07919be16cc2c5c399f5e2e6e50a/2a3d6/docker2.png 885w,
+/static/6b9b07919be16cc2c5c399f5e2e6e50a/ae92f/docker2.png 1180w,
+/static/6b9b07919be16cc2c5c399f5e2e6e50a/2e3fa/docker2.png 2812w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;Remove Development Dependencies and use &lt;strong&gt;Node Prune&lt;/strong&gt; Tool&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;node-prune is an open-source tool for removing unnecessary files from the node_modules folder. Test files, markdown files, typing files and *.map files in Npm packages are not required at all in the production environment generally, most of the developers do not remove them from the production package. By using node-prune it can safely be removed.&lt;/p&gt;
+&lt;p&gt;We can use this to remove Development Dependencies:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; prune --production&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After making these changes &lt;code class=&quot;language-text&quot;&gt;Dockerfile&lt;/code&gt; will look like:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;FROM node:10 AS BUILD_IMAGE
+
+RUN &lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; -sfL https://install.goreleaser.com/github.com/tj/node-prune.sh &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;bash&lt;/span&gt; -s -- -b /usr/local/bin
+
+WORKDIR /app
+
+COPY &lt;span class=&quot;token builtin class-name&quot;&gt;.&lt;/span&gt; /app
+
+EXPOSE &lt;span class=&quot;token number&quot;&gt;8080&lt;/span&gt;
+
+RUN &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; run build
+
+&lt;span class=&quot;token comment&quot;&gt;# remove development dependencies&lt;/span&gt;
+RUN &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; prune --production
+
+&lt;span class=&quot;token comment&quot;&gt;# run node prune&lt;/span&gt;
+RUN /usr/local/bin/node-prune
+
+FROM node:10
+
+WORKDIR /app
+
+&lt;span class=&quot;token comment&quot;&gt;# copy from build image&lt;/span&gt;
+COPY --from&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;BUILD_IMAGE /app/dist ./dist
+COPY --from&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;BUILD_IMAGE /app/node_modules ./node_modules
+
+RUN &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; i -g http-server
+
+CMD http-server ./dist&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;By using this we reduced the overall size to 1.09GB&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/154740192b6235545546d6108aac8035/da73e/docker3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 8.76595744680851%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAV0lEQVQI1z1N0Q4AIQjS0vLMdv//tdzpVg8MERj0vg+Wb7AxNBSxAhGBOSfGGCCigohg711e771+mXH3mzMzkDCBuYF+prq5kKVTTLTW7kj6Z0RVi4/+ADpSKfNwxjqiAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;docker3&quot;
+        title=&quot;docker3&quot;
+        src=&quot;/static/154740192b6235545546d6108aac8035/799d3/docker3.png&quot;
+        srcset=&quot;/static/154740192b6235545546d6108aac8035/00d96/docker3.png 148w,
+/static/154740192b6235545546d6108aac8035/0b23c/docker3.png 295w,
+/static/154740192b6235545546d6108aac8035/799d3/docker3.png 590w,
+/static/154740192b6235545546d6108aac8035/2a3d6/docker3.png 885w,
+/static/154740192b6235545546d6108aac8035/ae92f/docker3.png 1180w,
+/static/154740192b6235545546d6108aac8035/da73e/docker3.png 2350w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;Choose &lt;strong&gt;Smaller Final Base Image&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;When dockerizing a node application, there are lots of &lt;a href=&quot;https://hub.docker.com/_/node/&quot;&gt;base images&lt;/a&gt; available to choose from.&lt;/p&gt;
+&lt;p&gt;Here we will use &lt;strong&gt;alpine&lt;/strong&gt; image; alpine is a lean docker image with minimum packages but enough to run node applications.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;console&quot;&gt;&lt;pre class=&quot;language-console&quot;&gt;&lt;code class=&quot;language-console&quot;&gt;FROM node:10 AS BUILD_IMAGE
+
+RUN curl -sfL https://install.goreleaser.com/github.com/tj/node-prune.sh | bash -s -- -b /usr/local/bin
+
+WORKDIR /app
+
+COPY . /app
+
+EXPOSE 8080
+
+RUN npm install &amp;amp;&amp;amp; npm run build
+
+# remove development dependencies
+RUN npm prune --production
+
+# run node prune
+RUN /usr/local/bin/node-prune
+
+FROM node:10-alpine
+
+WORKDIR /app
+
+# copy from build image
+COPY --from=BUILD_IMAGE /app/dist ./dist
+COPY --from=BUILD_IMAGE /app/node_modules ./node_modules
+
+RUN npm i -g http-server
+
+CMD http-server ./dist&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;By using this &lt;code class=&quot;language-text&quot;&gt;Dockerfile&lt;/code&gt; the image size dropped to &lt;code class=&quot;language-text&quot;&gt;157MB&lt;/code&gt; \o/&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5b1ac48790d94a09ececf55a1e75372c/0b70a/docker4.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 8.519793459552497%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAUklEQVQI122MwQ6AMAhDYXBgbgvG///XalEPJh5ewitN5dgDayU8DLrpda+i91601iAiBT0z6093d4wxMOdERNw9e8p/mNnHOc4RQlfV6rwwOwFM5Snxpb+FBgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;docker4&quot;
+        title=&quot;docker4&quot;
+        src=&quot;/static/5b1ac48790d94a09ececf55a1e75372c/799d3/docker4.png&quot;
+        srcset=&quot;/static/5b1ac48790d94a09ececf55a1e75372c/00d96/docker4.png 148w,
+/static/5b1ac48790d94a09ececf55a1e75372c/0b23c/docker4.png 295w,
+/static/5b1ac48790d94a09ececf55a1e75372c/799d3/docker4.png 590w,
+/static/5b1ac48790d94a09ececf55a1e75372c/2a3d6/docker4.png 885w,
+/static/5b1ac48790d94a09ececf55a1e75372c/ae92f/docker4.png 1180w,
+/static/5b1ac48790d94a09ececf55a1e75372c/0b70a/docker4.png 2324w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;By applying these 3 simple steps, we reduced our docker image size by 10 times.&lt;/p&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How to use console command effectively]]></title><description><![CDATA[is the most widely used debugging technique used by Javascript developers. While debugging  is sprinkled almost anywhere in the code, after…]]></description><link>https://itsopensource.com/how-to-format-browser-console/</link><guid isPermaLink="false">https://itsopensource.com/how-to-format-browser-console/</guid><pubDate>Wed, 24 Jun 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;console.log&lt;/code&gt; is the most widely used debugging technique used by Javascript developers. While debugging &lt;code class=&quot;language-text&quot;&gt;console.log&lt;/code&gt; is sprinkled almost anywhere in the code, after code execution, console panel is full of console messages, this blog lists some useful console commands which can help to format and declutter console panel for more meaningful console messages.&lt;/p&gt;
 &lt;h3&gt;&lt;center&gt; console.(log/info/warn/error) &lt;/center&gt;&lt;/h3&gt;
 &lt;h4&gt;Basic usage&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
