@@ -33,10 +33,10 @@ function SEO({ description, lang, meta, title, titleTemplate, slug = "", author 
   if (title === site.siteMetadata.title) titleTemplate = `%s`
   else titleTemplate = `%s | ${site.siteMetadata.title}`
 
-  let ogImg = `/opensource_512.png`;
+  let ogImg = `${site.siteMetadata.siteUrl}/opensource_512.png`;
   try {
     let fImg = featuredImg && featuredImg.split("/").pop();
-    if (fImg) ogImg = `/featured-images/${fImg}`;
+    if (fImg) ogImg = `${site.siteMetadata.siteUrl}/featured-images/${fImg}`;
   } catch(e) {
     console.error(`Featured image meta error : ${e}`)
   }
@@ -95,7 +95,7 @@ function SEO({ description, lang, meta, title, titleTemplate, slug = "", author 
           content: metaDescription,
         },
         {
-          property: `twitter:image`,
+          name: `twitter:image`,
           content: ogImg,
         }
       ].concat(meta)}
