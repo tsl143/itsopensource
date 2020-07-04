@@ -11,7 +11,7 @@ import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { authors } from "../globals"
 
-function SEO({ description, lang, meta, title, titleTemplate, slug = "", author = "trishul" }) {
+function SEO({ description, lang, meta, title, titleTemplate, slug = "", author = "trishul", featuredImg }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -32,6 +32,14 @@ function SEO({ description, lang, meta, title, titleTemplate, slug = "", author 
 
   if (title === site.siteMetadata.title) titleTemplate = `%s`
   else titleTemplate = `%s | ${site.siteMetadata.title}`
+
+  let ogImg = `/opensource_512.png`;
+  try {
+    let fImg = featuredImg && featuredImg.split("/").pop();
+    ogImg = `/featured-images/${fImg}`;
+  } catch(e) {
+    console.error(`Featured image meta error : ${e}`)
+  }
 
   return (
     <Helmet
@@ -67,7 +75,7 @@ function SEO({ description, lang, meta, title, titleTemplate, slug = "", author 
         },
         {
           property: `og:image`,
-          content: `/opensource_512.png`,
+          content: ogImg,
         },
         {
           name: `twitter:card`,
@@ -87,7 +95,7 @@ function SEO({ description, lang, meta, title, titleTemplate, slug = "", author 
         },
         {
           property: `twitter:image`,
-          content: `/opensource_512.png`,
+          content: ogImg,
         }
       ].concat(meta)}
     />
