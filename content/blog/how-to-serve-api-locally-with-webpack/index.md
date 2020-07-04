@@ -6,6 +6,7 @@ tags:
   - webpack
 show: true
 author: trishul
+featuredImage: ../../assets/webpack.png
 ---
 
 While developing a data driven web-app, the frontend may need to fetch data from various APIs provided by backend which may not be ready at the given time. In this case, we need to mock the response and serve it via dummy server, either local or remote. With Webpack this can be achieved without any dummy server. Webpack devserver allows custom handlers which can be used to serve the API response.  

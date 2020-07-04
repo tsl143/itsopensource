@@ -8,6 +8,7 @@ tags:
   - how-to
 show: true
 author: shivam
+featuredImage: ../../assets/docker.png
 ---
 
 Recently I started using Docker in my internship and sometimes you just mess up your docker images and containers, so you wanted to start from clean but first you need to remove all images and containers of Docker locally.
