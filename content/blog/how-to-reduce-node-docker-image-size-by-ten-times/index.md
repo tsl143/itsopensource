@@ -135,7 +135,7 @@ When dockerizing a node application, there are lots of [base images](https://hub
 
 Here we will use **alpine** image; alpine is a lean docker image with minimum packages but enough to run node applications.
 
-```console
+```BASH
 FROM node:10 AS BUILD_IMAGE
 
 RUN curl -sfL https://install.goreleaser.com/github.com/tj/node-prune.sh | bash -s -- -b /usr/local/bin
