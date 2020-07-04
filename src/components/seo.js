@@ -36,12 +36,13 @@ function SEO({ description, lang, meta, title, titleTemplate, slug = "", author 
   let ogImg = `/opensource_512.png`;
   try {
     let fImg = featuredImg && featuredImg.split("/").pop();
-    ogImg = `/featured-images/${fImg}`;
+    if (fImg) ogImg = `/featured-images/${fImg}`;
   } catch(e) {
     console.error(`Featured image meta error : ${e}`)
   }
 
   return (
+    <>
     <Helmet
       htmlAttributes={{
         lang,
@@ -99,6 +100,13 @@ function SEO({ description, lang, meta, title, titleTemplate, slug = "", author 
         }
       ].concat(meta)}
     />
+    {
+      // This is a check for uploading images in static/featured-images for meta
+      (process.env.NODE_ENV === "development") &&
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+      <img alt="metaImg check" width="1" height="1" style={{display: 'none'}} src={ogImg} onError={() => alert(`${ogImg} not uploaded`)} />
+    }
+    </>
   )
 }
 
