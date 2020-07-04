@@ -31,6 +31,8 @@ export default function HTML(props) {
           __html: `
             const ts = Date.now().toString();
             const sendTelemetry = () => {
+              // avoid localhost hits
+              if (window.location.href.includes("localhost")) return;
               // Analytics
               let query = "v=1";
               query += "&tid=UA-155141542-1"; // tracking ID
