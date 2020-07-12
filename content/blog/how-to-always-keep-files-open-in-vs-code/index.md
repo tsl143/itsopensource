@@ -17,7 +17,7 @@ The solution is way simpler than expected, just add the following line to your  
 (Code Menu > Preferences > Setting)
 
 
-```code
+```
 "workbench.editor.enablePreview": false
 ```
 
