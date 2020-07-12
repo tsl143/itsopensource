@@ -8,6 +8,7 @@ tags:
   - privacy
 show: true
 author: trishul
+featuredImage: ../../assets/data-protection.jpg
 ---
 
 Google Analytics is the most used web analytics service over the web, Google has made it pretty easy and effective in terms of implementation and dashboard UI. It gives detailed demographic data and many other features that justify its vast usage.
@@ -28,7 +29,7 @@ The most common and easiest way to enable google analytics on any website is by 
 
 ### Problem
 
-Adding a Tag manager is **allowing google to run some code on your website** whenever someone visits the website or do some action (I would request to read this line once more). Based on the options selected on the analytics UI, Google inserts the scripts into the website, sends the data back with `HTTP requests`. Data includes the complete URL(with query params) and many other details that may be classified as `Personal Identifiable Information(PII)`. [Konark Modi](https://twitter.com/kon), a privacy advocate, has written a detailed case study on how sensitive user data or PII is getting leaked to third parties, including Google Analytics, in [this blog](https://medium.com/free-code-camp/how-airlines-dont-care-about-your-privacy-case-study-emirates-com-6271b3b8474b).
+Adding a Tag manager is **allowing google to run some code on your website** whenever someone visits the website or do some action (I would request to read this line once more). Based on the options selected on the analytics UI, Google inserts the scripts into the website, sends the data back with `HTTP requests`. Data includes the complete URL(with query params) and many other details that may be classified as `Personal Identifiable Information(PII)`. [Konark Modi](https://twitter.com/konarkmodi), a privacy advocate, has written a detailed case study on how sensitive user data or PII is getting leaked to third parties, including Google Analytics, in [this blog](https://medium.com/free-code-camp/how-airlines-dont-care-about-your-privacy-case-study-emirates-com-6271b3b8474b).
 As a developer, we always want to have complete control over whatever is being served on our website. Google tag managers kind of blow this up.<br/><br/>
 ![Leak 1](./leak1.png)<br/>
 ![Leak 2](./leak2.png)
