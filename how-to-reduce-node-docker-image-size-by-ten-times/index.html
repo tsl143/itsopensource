@@ -186,33 +186,33 @@ CMD http-server ./dist</code></pre></div>
 </ol>
 <p>When dockerizing a node application, there are lots of <a href="https://hub.docker.com/_/node/">base images</a> available to choose from.</p>
 <p>Here we will use <strong>alpine</strong> image; alpine is a lean docker image with minimum packages but enough to run node applications.</p>
-<div class="gatsby-highlight" data-language="console"><pre class="language-console"><code class="language-console">FROM node:10 AS BUILD_IMAGE
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">FROM node:10 AS BUILD_IMAGE
 
-RUN curl -sfL https://install.goreleaser.com/github.com/tj/node-prune.sh | bash -s -- -b /usr/local/bin
+RUN <span class="token function">curl</span> -sfL https://install.goreleaser.com/github.com/tj/node-prune.sh <span class="token operator">|</span> <span class="token function">bash</span> -s -- -b /usr/local/bin
 
 WORKDIR /app
 
-COPY . /app
+COPY <span class="token builtin class-name">.</span> /app
 
-EXPOSE 8080
+EXPOSE <span class="token number">8080</span>
 
-RUN npm install &amp;&amp; npm run build
+RUN <span class="token function">npm</span> <span class="token function">install</span> <span class="token operator">&amp;&amp;</span> <span class="token function">npm</span> run build
 
-# remove development dependencies
-RUN npm prune --production
+<span class="token comment"># remove development dependencies</span>
+RUN <span class="token function">npm</span> prune --production
 
-# run node prune
+<span class="token comment"># run node prune</span>
 RUN /usr/local/bin/node-prune
 
 FROM node:10-alpine
 
 WORKDIR /app
 
-# copy from build image
-COPY --from=BUILD_IMAGE /app/dist ./dist
-COPY --from=BUILD_IMAGE /app/node_modules ./node_modules
+<span class="token comment"># copy from build image</span>
+COPY --from<span class="token operator">=</span>BUILD_IMAGE /app/dist ./dist
+COPY --from<span class="token operator">=</span>BUILD_IMAGE /app/node_modules ./node_modules
 
-RUN npm i -g http-server
+RUN <span class="token function">npm</span> i -g http-server
 
 CMD http-server ./dist</code></pre></div>
 <p>By using this <code class="language-text">Dockerfile</code> the image size dropped to <code class="language-text">157MB</code> \o/</p>

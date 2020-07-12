@@ -1,4 +1,89 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource RSS Feed]]></title><description><![CDATA[Writing opensource journey one word at a time.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 04 Jul 2020 15:17:51 GMT</lastBuildDate><item><title><![CDATA[How to call a function on URL change in javascript]]></title><description><![CDATA[Modern JS frameworks tend not to reload the page but manipulate DOM and change URL path for internal navigation, for performance and smooth…]]></description><link>https://itsopensource.com/how-to-call-a-function-on-URL-change-in-javascript/</link><guid isPermaLink="false">https://itsopensource.com/how-to-call-a-function-on-URL-change-in-javascript/</guid><pubDate>Fri, 03 Jul 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Modern JS frameworks tend not to reload the page but manipulate DOM and change URL path for internal navigation, for performance and smooth UX. But since there is no page reload, &lt;code class=&quot;language-text&quot;&gt;window.onload&lt;/code&gt; event does not get triggered for subsequent navigation. We run into a situation where we need to call a function whenever URL path changes (not the hash).&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource RSS Feed]]></title><description><![CDATA[Writing opensource journey one word at a time.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 12 Jul 2020 14:54:11 GMT</lastBuildDate><item><title><![CDATA[Best way to keep users safe while using Google Analytics]]></title><description><![CDATA[Google Analytics is the most used web analytics service over the web, Google has made it pretty easy and effective in terms of…]]></description><link>https://itsopensource.com/best-way-to-keep-users-safe-while-using-google-analytics/</link><guid isPermaLink="false">https://itsopensource.com/best-way-to-keep-users-safe-while-using-google-analytics/</guid><pubDate>Sat, 11 Jul 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Google Analytics is the most used web analytics service over the web, Google has made it pretty easy and effective in terms of implementation and dashboard UI. It gives detailed demographic data and many other features that justify its vast usage.
+The most common and easiest way to enable google analytics on any website is by adding the tag manager (the code snippet provided) to the website.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;&amp;lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;script&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-1&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token script&quot;&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token script&quot;&gt;&lt;span class=&quot;token language-javascript&quot;&gt;
+  window&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dataLayer &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; window&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dataLayer &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;gtag&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;dataLayer&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;arguments&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;gtag&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;js&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;token function&quot;&gt;gtag&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;config&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;UA-XXXXXXXXX-1&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Problem&lt;/h3&gt;
+&lt;p&gt;Adding a Tag manager is &lt;strong&gt;allowing google to run some code on your website&lt;/strong&gt; whenever someone visits the website or do some action (I would request to read this line once more). Based on the options selected on the analytics UI, Google inserts the scripts into the website, sends the data back with &lt;code class=&quot;language-text&quot;&gt;HTTP requests&lt;/code&gt;. Data includes the complete URL(with query params) and many other details that may be classified as &lt;code class=&quot;language-text&quot;&gt;Personal Identifiable Information(PII)&lt;/code&gt;. &lt;a href=&quot;https://twitter.com/kon&quot;&gt;Konark Modi&lt;/a&gt;, a privacy advocate, has written a detailed case study on how sensitive user data or PII is getting leaked to third parties, including Google Analytics, in &lt;a href=&quot;https://medium.com/free-code-camp/how-airlines-dont-care-about-your-privacy-case-study-emirates-com-6271b3b8474b&quot;&gt;this blog&lt;/a&gt;.
+As a developer, we always want to have complete control over whatever is being served on our website. Google tag managers kind of blow this up.&lt;br/&gt;&lt;br/&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 37.94285714285714%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAAsSAAALEgHS3X78AAAA/ElEQVQY042MiWqEMBRF8/+/ZztFtGr2uIyOxiWr9ollSmGgPRwu94W8h7Lsk2BKKQfbtlOylrKGzrns7r0QEsamaRkXVUVAY+xTlLzdkuQ9zwqMiZTqVNVde4crQqhheHgf/Em4tNY9RYSwoqpSmUEBGeOQZYmzvFCqYZRXJYEr8NUYZ439tVwUJWeMUKwn7byHp20zl1df1w3SvQKpbiL1iJt5WbxrF6dtPPa4RyDEH8IrkBhjIXzLrUkf5jaEZouT2004/gGigyfKOjLDsldb6K3vTTRhP44/RalcP+owET3l4yyWU7VqOkM5k82QGmsNheilN2s81vDtF86CxmTcyP4SAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Leak 1&quot;
+        title=&quot;Leak 1&quot;
+        src=&quot;/static/aea8f6f6f589d732daefaf4c628114b8/799d3/leak1.png&quot;
+        srcset=&quot;/static/aea8f6f6f589d732daefaf4c628114b8/00d96/leak1.png 148w,
+/static/aea8f6f6f589d732daefaf4c628114b8/0b23c/leak1.png 295w,
+/static/aea8f6f6f589d732daefaf4c628114b8/799d3/leak1.png 590w,
+/static/aea8f6f6f589d732daefaf4c628114b8/053f1/leak1.png 875w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;br/&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 3.2%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAABCAIAAABR8BlyAAAACXBIWXMAAAsSAAALEgHS3X78AAAARklEQVQI1wXB2w2AMAgAQPczvtqdasABjWClQGv0zxG86yJSQBoS9emIGwfkCWgGWoDHlXb73qepNyla221e+bxyFilW1H+b0itxuL5asAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Leak 2&quot;
+        title=&quot;Leak 2&quot;
+        src=&quot;/static/b6189442e19ff3336b225f97ef1a8d58/799d3/leak2.png&quot;
+        srcset=&quot;/static/b6189442e19ff3336b225f97ef1a8d58/00d96/leak2.png 148w,
+/static/b6189442e19ff3336b225f97ef1a8d58/0b23c/leak2.png 295w,
+/static/b6189442e19ff3336b225f97ef1a8d58/799d3/leak2.png 590w,
+/static/b6189442e19ff3336b225f97ef1a8d58/053f1/leak2.png 875w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3&gt;Solution&lt;/h3&gt;
+&lt;p&gt;This can be avoided by using &lt;strong&gt;Google Measurement protocol&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;From the &lt;a href=&quot;https://developers.google.com/analytics/devguides/collection/protocol/v1&quot;&gt;docs&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The Google Analytics Measurement Protocol allows developers to make HTTP requests to send raw user interaction data directly to Google Analytics servers&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;TLDR; Do not load google scripts but, create and send HTTP requests by yourself. This gives way more control over what you want to send to google and ensures your complete control over your website. You can send Requests for whatever action needs to be recorded for analytics. It can be just page visits, clicks, or any event.&lt;/p&gt;
+&lt;h4&gt;How&lt;/h4&gt;
+&lt;p&gt;Analytics tool receives the data via query parameters of the request, a typical request looks like this  &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;POST /collect HTTP/1.1
+Host: www.google-analytics.com
+
+payload_data&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Mandatory parameters are &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;v=1              // Version of the tool.
+&amp;amp;tid=UA-XXXXX-Y  // Tracking ID / Property ID.
+&amp;amp;cid=555         // Anonymous Client ID.
+&amp;amp;t=              // Hit Type&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Google provides a number of parameters in case you want more detailed analytics say for e-commerce, check the parameter guide &lt;a href=&quot;https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters&quot;&gt;here&lt;/a&gt;, some interesting parameters which can be controlled are&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;dr&lt;/code&gt; - Document referrer //  = document.referrer&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;dl&lt;/code&gt; - Location URL // = document.location.origin + document.location.pathname (also may be document.location.search)&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;aip&lt;/code&gt; - Anonymize IP, if present the IP address of the sender will be anonymized // = 1&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;npa&lt;/code&gt; - Disable advertising personalization - if enabled  it won’t be used when populating a remarketing audience for “past purchasers” // = 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Lesser&lt;/strong&gt; the parameters, &lt;strong&gt;lesser&lt;/strong&gt; the data sent, &lt;strong&gt;better&lt;/strong&gt; the privacy.&lt;/p&gt;
+&lt;p&gt;Google also provides a tool to check and create a proper hit via &lt;a href=&quot;https://ga-dev-tools.appspot.com/hit-builder/&quot;&gt;Hit Builder&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you find this a bit exhausting, then atleast follow the best practices to make sure You are not sending the user’s personal data to google.
+&lt;a href=&quot;https://support.google.com/analytics/answer/6366371&quot;&gt;https://support.google.com/analytics/answer/6366371&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;center&gt;--- Keep your users safe ---&lt;/center&gt;&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How to call a function on URL change in javascript]]></title><description><![CDATA[Modern JS frameworks tend not to reload the page but manipulate DOM and change URL path for internal navigation, for performance and smooth…]]></description><link>https://itsopensource.com/how-to-call-a-function-on-URL-change-in-javascript/</link><guid isPermaLink="false">https://itsopensource.com/how-to-call-a-function-on-URL-change-in-javascript/</guid><pubDate>Fri, 03 Jul 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Modern JS frameworks tend not to reload the page but manipulate DOM and change URL path for internal navigation, for performance and smooth UX. But since there is no page reload, &lt;code class=&quot;language-text&quot;&gt;window.onload&lt;/code&gt; event does not get triggered for subsequent navigation. We run into a situation where we need to call a function whenever URL path changes (not the hash).&lt;/p&gt;
 &lt;h3&gt;Problem&lt;/h3&gt;
 &lt;p&gt;The &lt;a href=&quot;https://itsopensource.com/&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;itsopensource.com&lt;/code&gt;&lt;/a&gt; blog is built using &lt;a href=&quot;https://www.gatsbyjs.org/&quot;&gt;gatsby&lt;/a&gt;, we wanted to add google analytics to this, but instead of using google tag manager, we tried to restrict what &lt;a href=&quot;https://github.com/tsl143/itsopensource/blob/master/src/html.js#L32&quot;&gt;data&lt;/a&gt; is sent to google and in this process, we need to send XHR request on every page load. We created a function &lt;code class=&quot;language-text&quot;&gt;sendTelemetry&lt;/code&gt; and called it on &lt;code class=&quot;language-text&quot;&gt;window.onload&lt;/code&gt;. This works as expected (partially), whenever the page is loaded the XHR is sent, but gatsby do not reload the page while changing the URL when any blog link is clicked, so XHR is sent only once per session and not on subsequent page loads.&lt;br&gt;
 Javascript does not provide any native listener to path change (not hashchange).&lt;/p&gt;
@@ -208,33 +293,33 @@ CMD http-server ./dist&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/ol&gt;
 &lt;p&gt;When dockerizing a node application, there are lots of &lt;a href=&quot;https://hub.docker.com/_/node/&quot;&gt;base images&lt;/a&gt; available to choose from.&lt;/p&gt;
 &lt;p&gt;Here we will use &lt;strong&gt;alpine&lt;/strong&gt; image; alpine is a lean docker image with minimum packages but enough to run node applications.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;console&quot;&gt;&lt;pre class=&quot;language-console&quot;&gt;&lt;code class=&quot;language-console&quot;&gt;FROM node:10 AS BUILD_IMAGE
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;FROM node:10 AS BUILD_IMAGE
 
-RUN curl -sfL https://install.goreleaser.com/github.com/tj/node-prune.sh | bash -s -- -b /usr/local/bin
+RUN &lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; -sfL https://install.goreleaser.com/github.com/tj/node-prune.sh &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;bash&lt;/span&gt; -s -- -b /usr/local/bin
 
 WORKDIR /app
 
-COPY . /app
+COPY &lt;span class=&quot;token builtin class-name&quot;&gt;.&lt;/span&gt; /app
 
-EXPOSE 8080
+EXPOSE &lt;span class=&quot;token number&quot;&gt;8080&lt;/span&gt;
 
-RUN npm install &amp;amp;&amp;amp; npm run build
+RUN &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; run build
 
-# remove development dependencies
-RUN npm prune --production
+&lt;span class=&quot;token comment&quot;&gt;# remove development dependencies&lt;/span&gt;
+RUN &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; prune --production
 
-# run node prune
+&lt;span class=&quot;token comment&quot;&gt;# run node prune&lt;/span&gt;
 RUN /usr/local/bin/node-prune
 
 FROM node:10-alpine
 
 WORKDIR /app
 
-# copy from build image
-COPY --from=BUILD_IMAGE /app/dist ./dist
-COPY --from=BUILD_IMAGE /app/node_modules ./node_modules
+&lt;span class=&quot;token comment&quot;&gt;# copy from build image&lt;/span&gt;
+COPY --from&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;BUILD_IMAGE /app/dist ./dist
+COPY --from&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;BUILD_IMAGE /app/node_modules ./node_modules
 
-RUN npm i -g http-server
+RUN &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; i -g http-server
 
 CMD http-server ./dist&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;By using this &lt;code class=&quot;language-text&quot;&gt;Dockerfile&lt;/code&gt; the image size dropped to &lt;code class=&quot;language-text&quot;&gt;157MB&lt;/code&gt; \o/&lt;/p&gt;
@@ -799,7 +884,7 @@ Consider an expression that defines a function named &lt;code class=&quot;langua
 Hope this helps 😊&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How to always keep files open in Visual Studio Code]]></title><description><![CDATA[Visual Code is an amazing editor and I use it for my everyday code. One thing bugs me every time is the files are not open permanently until…]]></description><link>https://itsopensource.com/how-to-always-keep-files-open-in-vs-code/</link><guid isPermaLink="false">https://itsopensource.com/how-to-always-keep-files-open-in-vs-code/</guid><pubDate>Sat, 18 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Visual Code is an amazing editor and I use it for my everyday code. One thing bugs me every time is the files are not open permanently until I use the shortcut &lt;code class=&quot;language-text&quot;&gt;cmd + k&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;enter&lt;/code&gt; or right-click and select &lt;code class=&quot;language-text&quot;&gt;keep open&lt;/code&gt; on the filename. This happens because the VS Code opens the files by default in &lt;code class=&quot;language-text&quot;&gt;preview mode&lt;/code&gt;, so whenever the new file name is clicked from explorer, the opened file closes and the new file is visible. But if you are equally frustrated by this behavior here is what you need to do.&lt;/p&gt;
 &lt;p&gt;The solution is way simpler than expected, just add the following line to your  &lt;code class=&quot;language-text&quot;&gt;setting.json&lt;/code&gt;
 (Code Menu &gt; Preferences &gt; Setting)&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;code&quot;&gt;&lt;pre class=&quot;language-code&quot;&gt;&lt;code class=&quot;language-code&quot;&gt;&amp;quot;workbench.editor.enablePreview&amp;quot;: false&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;quot;workbench.editor.enablePreview&amp;quot;: false&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;hr&gt;</content:encoded></item><item><title><![CDATA[Optional Chaining]]></title><description><![CDATA[has bugged every javascript developer enough. While expecting a response from APIs, we need to add several  to make sure our code doesn’t…]]></description><link>https://itsopensource.com/optional-chaining/</link><guid isPermaLink="false">https://itsopensource.com/optional-chaining/</guid><pubDate>Fri, 17 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;TypeError: Cannot read property &amp;#39;&amp;lt;property&amp;gt;&amp;#39; of undefined&lt;/code&gt; has bugged every javascript developer enough. While expecting a response from APIs, we need to add several &lt;code class=&quot;language-text&quot;&gt;&amp;amp;&amp;amp;&lt;/code&gt; to make sure our code doesn’t break. This may be not a problem while dealing with 2 levels of the nested object, but while dealing with large data objects this can be a nightmare. Unnecessary/redundant lines of code, change all occurrences if the structure of object changes, etc.&lt;/p&gt;
 &lt;p&gt;But we are now in 2020, the game has been changed with &lt;a href=&quot;https://github.com/tc39/proposal-optional-chaining&quot;&gt;Optional Chaining proposal&lt;/a&gt; Stage-4.&lt;/p&gt;
 &lt;p&gt;Now no more redundant lines, but adding &lt;code class=&quot;language-text&quot;&gt;?&lt;/code&gt; before &lt;code class=&quot;language-text&quot;&gt;.&lt;/code&gt; takes care of everything. This traverse the property chain one by one and returns &lt;code class=&quot;language-text&quot;&gt;undefined&lt;/code&gt; if the property doesn’t exist (instead of throwing &lt;code class=&quot;language-text&quot;&gt;TypeError&lt;/code&gt;), else return the value.&lt;/p&gt;
