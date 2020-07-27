@@ -77,16 +77,20 @@ const Bio = ({author: postWriter = ''}) => {
       <p>
         <strong>{author.name}</strong> {author.bio}.
         <br/> 
-		{(author.twitter == "") ? null : (
-          <a target="_blank" rel="noopener noreferrer" href={`https://twitter.com/${author.twitter}`}>
+        {
+          (author.twitter && author.twitter !== "") ?
+          (<a target="_blank" rel="noopener noreferrer" href={`https://twitter.com/${author.twitter}`}>
             @{author.twitter}
-          </a>
-		)}
-		{(author.drupal == "") ? null : (
-		  <div> Drupal ID:<a target="_blank" rel="noopener noreferrer" href={`https://drupal.org/u/${author.drupal}`}>
-            {author.drupal}</a>
-          </div>
-		)}
+          </a>):
+          null
+		    }
+        {
+          (author.drupal && author.drupal !== "") ?
+          (<div> Drupal Profile: <a target="_blank" rel="noopener noreferrer" href={`https://drupal.org/u/${author.drupal}`}>
+              {author.drupal}</a>
+          </div>):
+          null
+        }
       </p>
     </div>
   )
