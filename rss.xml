@@ -1,4 +1,279 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource RSS Feed]]></title><description><![CDATA[Writing opensource journey one word at a time.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 12 Jul 2020 16:46:18 GMT</lastBuildDate><item><title><![CDATA[Best way to keep users safe while using Google Analytics]]></title><description><![CDATA[Google Analytics is the most used web analytics service over the web, Google has made it pretty easy and effective in terms of…]]></description><link>https://itsopensource.com/best-way-to-keep-users-safe-while-using-google-analytics/</link><guid isPermaLink="false">https://itsopensource.com/best-way-to-keep-users-safe-while-using-google-analytics/</guid><pubDate>Sat, 11 Jul 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Google Analytics is the most used web analytics service over the web, Google has made it pretty easy and effective in terms of implementation and dashboard UI. It gives detailed demographic data and many other features that justify its vast usage.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource RSS Feed]]></title><description><![CDATA[Writing opensource journey one word at a time.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 27 Jul 2020 14:55:27 GMT</lastBuildDate><item><title><![CDATA[Decoupled DRUPAL 8 With JSON API]]></title><description><![CDATA[What are the benefits of decoupled architecture? A decoupled architecture does great work in reducing or completely eliminating problems…]]></description><link>https://itsopensource.com/decoupling-drupal-using-json-api/</link><guid isPermaLink="false">https://itsopensource.com/decoupling-drupal-using-json-api/</guid><pubDate>Mon, 27 Jul 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;What are the benefits of decoupled architecture?&lt;br&gt;
+A decoupled architecture does great work in reducing or completely eliminating problems that are a part of the monolithic content management systems.
+CMS data is exposed to and consumed by a front-end JavaScript framework. The framework can be React.js, Angular.js, and many more.&lt;/p&gt;
+&lt;h3&gt;Json API&lt;/h3&gt;
+&lt;p&gt;In JSON API, the consumer can get all the data with a single query, tracing relationships between objects and returning the desired output in a single shot.
+A single request from a consumer can return multiple entities. For the same API, different consumers may use different embedding patterns, depending on the requirement.
+All API can be customized according to the requirement which we can achieve by downloading and enabling JSON:API Extras module.&lt;/p&gt;
+&lt;h3&gt;Enable json API&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;Using Drush
+$ drush en serialization -y
+$ drush en jsonapi -y
+$ drush dl jsonapi_extras &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; drush en jsonapi_extras -y
+
+Using Drupal Console
+$ drupal module:install serialization
+$ drupal module:install jsonapi
+$ drupal module:download jsonapi_extras &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; drupal module:install jsonapi_extras&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Configuration&lt;/h3&gt;
+&lt;p&gt;JSON:API is a zero-configuration module that gives access to all Drupal entities for reading out of the box.
+You need to go to the module settings page &lt;em&gt;&lt;code class=&quot;language-text&quot;&gt;(/admin/config/services/jsonapi)&lt;/code&gt;&lt;/em&gt; and make the changes according to the requirement.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0ea3923ce30823e2102c4f07f822aa9f/26df7/json-api-1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 70.60546875%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACiklEQVQ4y6WP3U/TUBTAm5Doqw8aUxPnH+Hb/B/0qUIE4UEcIAElISYKIbhAtmDUKG4syKPvvhiffdBIjDEDNhhbu25re9uuW7cC2/p1e7wtU4EHP8JJfjnn3nPuL/dQbxaSZ76ur1/PFPlerdZg1GqNabU6jFZvMhtZltnc5ph0Js+ks4XDnCmcIM9kdks301n2RiK1dpaaHZu+mNv8fsDLCMplEfhSGdSqBqWKAJvZXchzJeBKIrC8AEXS9+uTbO/kIZ3e6iRX1y5TV8PX6NHJB/Wx0VGYmZ1x4/E4npicwJFIBA8P3yH5Lh4fv4dHRiK4r68XDwz0/6b/Fh4cvO0ODQ0Cyc1wOByihu8/pDc4QVerKqiqghFCnqLIniwjT5JETxAqHkJSkFm24JXLJU+oVIKzX5N53GwagJBsLC4shqjHj6ZprrCl83yOrJvDosSBKLKHkFoQfdggS6gIh/0uQZ/1kMxDkd8xYrFoiFpcmKcLXF7fLeSBr/AYqQgkRQJRFkEiVDUEWpej9RG8RqMKSK4YS0/jIerF82f03n5LrzX3QdYaeL9tw0HHAcsFcD34lwimXBcbKyupEPX65RJdre3pNa0KqixhTZVBVRTQ9To0mk2oNwxomzaYtgsdywEXY/A8j4ADMMaB0DRNI5FIhKhP71bpb3lZX/6Qg1fvM/jtxwLYtu0PBKK26UCbiDrkyy3TF5L3gfAXgdCyLCOZTIaoJ/PzdMe0dP/WcjB2XPyXBY/JjgmDH87NzdGWada6ww7pk63wH/FnfkLOTnflRiCMRqOXXNftwCmDOOxUKnWFmpqauiBJ0mdVVXOKomQI2f8k478lji+xWIymSPQQzhHOnxLf0fMDMjZzqK6Ei/AAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;json-api-1.png&quot;
+        title=&quot;json-api-1.png&quot;
+        src=&quot;/static/0ea3923ce30823e2102c4f07f822aa9f/799d3/json-api-1.png&quot;
+        srcset=&quot;/static/0ea3923ce30823e2102c4f07f822aa9f/00d96/json-api-1.png 148w,
+/static/0ea3923ce30823e2102c4f07f822aa9f/0b23c/json-api-1.png 295w,
+/static/0ea3923ce30823e2102c4f07f822aa9f/799d3/json-api-1.png 590w,
+/static/0ea3923ce30823e2102c4f07f822aa9f/2a3d6/json-api-1.png 885w,
+/static/0ea3923ce30823e2102c4f07f822aa9f/26df7/json-api-1.png 1024w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3&gt;Retrieving resources with JSON API&lt;/h3&gt;
+&lt;p&gt;JSON API specification recommends that all requests include an Accept header with the correct MIME type for JSON API,
+the JSON API module accepts requests without any request headers present.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Retrieving resource collections&lt;/strong&gt;&lt;br&gt;
+Key motivations for using JSON API instead of REST is the possibility of retrieving multiple resources using JSON API collections.
+There is only Views rest export to get the collection entities can be retrieved. In JSON API, simply issue a GET request against the following URL to retrieve a collection of entities eg for articles:
+&lt;code class=&quot;language-text&quot;&gt;/jsonapi/node/article&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Using JSON API specification, you can use certain query parameters to operate on the collections retrieved through the API.
+Eg :  page[limlit],sort
+&lt;code class=&quot;language-text&quot;&gt;/jsonapi/node/article?sort=nid&lt;/code&gt;
+&lt;code class=&quot;language-text&quot;&gt;/jsonapi/node/article?page[limit]=30&amp;amp;page[offset]=25&lt;/code&gt;
+&lt;code class=&quot;language-text&quot;&gt;/jsonapi/node/article?page[limit]=30&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Retrieving limited subsets of fields&lt;/strong&gt;&lt;br&gt;
+To capture only the title, created and modified timestamps, and body of the entity, you can provide fields query parameter.
+Note that with the parameter, the type and bundle must be included as well.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;/jsonapi/node/article?fields[node--article]=title,created&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Creating resources with JSON API&lt;/h3&gt;
+&lt;p&gt;The JSON API specification allows for individual resources to be created through an API.
+The following request headers are obligatory on all POST requests in order to generate a standard response:&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Accept: application/vnd.api+json&lt;/code&gt;
+&lt;code class=&quot;language-text&quot;&gt;Content-Type: application/vnd.api+json&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;To POST request that creates an article, use the same URL that we used to retrieve collections of articles:&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;/jsonapi/node/article&lt;/code&gt;
+For creating an article, you can include a relationship to a user to indicate that they were the one to create the article.
+The following payload reflects a relationship that connects the entity to an existing user ({{user_uuid}})
+whose authorship is assigned in this POST request.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;data&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;node--article&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;attributes&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;My snazzy new article&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;body&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token property&quot;&gt;&quot;value&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Hello world! Lorem ipsum dolor sit amet consectetur adipiscing elit&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token property&quot;&gt;&quot;format&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;plain_text&quot;&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;relationships&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;uid&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token property&quot;&gt;&quot;data&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;user--user&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;token property&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;{{user_uuid}}&quot;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This request will result in a 201 Created response code with the JSON API response of the created entity.
+Sample response from postman
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/57808751e45f43bfe01a44de3342d8bb/13585/postmanimage-1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 44.530493707647636%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA80lEQVQoz6WRW04EIRBF2ZvrcwVuxR834RamJd1AQ1MvoJmCiaMmY/zwhFC86nIpzLZtzrl1XZdl+VCsXayd0YYQ/CRMNEIKz2/H00t6fQ85rIYVESQSZkDAnA5nCSED8A3C1tr5idQOpReWEw8jmpkz5Ex6bMIIoj3LmDNXptbqPbn32c6T026k1sIUL5c9QQKpTff+YEp075yRUtQVeh/35BIB6hMKciGuoAMq2tfaHiR7b0jKcB6jIN5W7yfal9X+OFnLosrgXAwx6mNVq1Qe9n8IfUed6qJ+k0EtjF49qiUHMpDAGMjw+jsqof9g+j+4ApbnDNA4ZiMhAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;postmanimage-1.png&quot;
+        title=&quot;postmanimage-1.png&quot;
+        src=&quot;/static/57808751e45f43bfe01a44de3342d8bb/799d3/postmanimage-1.png&quot;
+        srcset=&quot;/static/57808751e45f43bfe01a44de3342d8bb/00d96/postmanimage-1.png 148w,
+/static/57808751e45f43bfe01a44de3342d8bb/0b23c/postmanimage-1.png 295w,
+/static/57808751e45f43bfe01a44de3342d8bb/799d3/postmanimage-1.png 590w,
+/static/57808751e45f43bfe01a44de3342d8bb/2a3d6/postmanimage-1.png 885w,
+/static/57808751e45f43bfe01a44de3342d8bb/13585/postmanimage-1.png 1033w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c9ea6e007ad6762d304ee985829e20b4/d54e7/postmanimage-2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 50.967117988394584%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABI0lEQVQoz4VQW3KDMAzkpL1IT9Qb9Cz96iSTTJOAwQ89LNvQNRk+m+4IGVvSrqRhWRbvPfzj8Zg63OTcOI7OuRhj2NETvMcxL+H9k94+0tc1pOgHZhaRlBIT4SEhbbrhikpVRUiY6oFS6zW0b9ckUU1+wD1bBswMPyjIQv3Q/PyqSlvbemDbdgOP0JDcSETQJ+WUCBy1tlbKhpSeupVSRIVM1BTskhUqkNUUh33eZd6BwUCEnjOl7QAoGrC77vcuipkwD2qltrUwh8uFZydEkO6drdtrYCmDGKpr0ezP5/l2j5ElF1aYrS8JEIVynxJN+Mv1xxFs8rwE2qN/4BjiqdyKyHw6j3cXQ2JWtbr9h66c0XRt1YzdjD2ZKlYN6tdlzy3+AnyjRXW/LXMUAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;postmanimage-1.png&quot;
+        title=&quot;postmanimage-1.png&quot;
+        src=&quot;/static/c9ea6e007ad6762d304ee985829e20b4/799d3/postmanimage-2.png&quot;
+        srcset=&quot;/static/c9ea6e007ad6762d304ee985829e20b4/00d96/postmanimage-2.png 148w,
+/static/c9ea6e007ad6762d304ee985829e20b4/0b23c/postmanimage-2.png 295w,
+/static/c9ea6e007ad6762d304ee985829e20b4/799d3/postmanimage-2.png 590w,
+/static/c9ea6e007ad6762d304ee985829e20b4/2a3d6/postmanimage-2.png 885w,
+/static/c9ea6e007ad6762d304ee985829e20b4/d54e7/postmanimage-2.png 1034w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3&gt;Updating resources with JSON API&lt;/h3&gt;
+&lt;p&gt;PATCH requests also require the following headers.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Accept: application/vnd.api+json
+Content-Type: application/vnd.api+json&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;We use &lt;code class=&quot;language-text&quot;&gt;PATCH&lt;/code&gt; to modifies an article, find the UUID of the article in question and append it to the end of the
+URL, as follows:
+&lt;code class=&quot;language-text&quot;&gt;/jsonapi/node/article/{{node_uuid}}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;And include a request payload that contains only the fields that you intend to modify and the UUID of the entity in question:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;data&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;node--article&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;{{node_uuid}}&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;attributes&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Change in article&quot;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b580d62d51f8cfdf4a4b9ea355743a46/b16a2/patch-1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 44.66019417475728%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA80lEQVQoz6WQSXLEIAxFOWoOlhvkJF05QxbJLoY2ZhJIApyPV13ZdKryGCVLX8KGiFJKIlK5FqKSM5fUUmDMEpenFKbCzDHG723L8RBkxLDvu0EmjnZRMYmwVebGvEzcF4RkVR2jf/rx/sVbaKpijuMIIXjvncVw7n5fu3PW2mXAvG4IiylRjq+38vJWbh+xht0ILyCu6BylSi7e8lXu+sLa6pzz/IXKSdmIKuLwZhakr9WFu8K9gGeg297nA2PMMae0arQPIQr27g7yqRFrhlQf5zOggsqdWTjlhl+EpHEJYz0DfRmE994f5P4EQvEic/6DH/HJDCoYlsmcAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;patch-1.png&quot;
+        title=&quot;patch-1.png&quot;
+        src=&quot;/static/b580d62d51f8cfdf4a4b9ea355743a46/799d3/patch-1.png&quot;
+        srcset=&quot;/static/b580d62d51f8cfdf4a4b9ea355743a46/00d96/patch-1.png 148w,
+/static/b580d62d51f8cfdf4a4b9ea355743a46/0b23c/patch-1.png 295w,
+/static/b580d62d51f8cfdf4a4b9ea355743a46/799d3/patch-1.png 590w,
+/static/b580d62d51f8cfdf4a4b9ea355743a46/2a3d6/patch-1.png 885w,
+/static/b580d62d51f8cfdf4a4b9ea355743a46/b16a2/patch-1.png 1030w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/af7675c3774fcc6d2a510a677e4899ab/b16a2/patch-2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 48.15533980582524%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABD0lEQVQoz4VQW3LDIAz0DXuInqzfPVBPEAMOHl4GJISciqTxJNMP74DQIHa1YrLWrutqtFFKGWNka6Ml11ovyyLH4945n6P7uaSPr/T5HZ29Bu8nIgKA3jsgtobVW4QCIPkANWTutxfsj9DqrcFU4Q8ou1asRcREBxGlRDhWkw50D526LCKGgjlN25ZyzlvNW87j9XjWduajlVwgDhmk4UQSlpACQZ289ynG1ZhVG5nEBV+3xNSGuSeejvdDEe6+JpYic7pcolIlxoKEtGcQl2+j/ofwJhmCiZJS1nqXZNxekTrz/tLnjDzP2iYbqvBdrKfMg8xCjvMcl2sJoZUqcufUo7McEGMKSUy8/dAZ+Rcj20Yf4fH7kQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;patch-2.png&quot;
+        title=&quot;patch-2.png&quot;
+        src=&quot;/static/af7675c3774fcc6d2a510a677e4899ab/799d3/patch-2.png&quot;
+        srcset=&quot;/static/af7675c3774fcc6d2a510a677e4899ab/00d96/patch-2.png 148w,
+/static/af7675c3774fcc6d2a510a677e4899ab/0b23c/patch-2.png 295w,
+/static/af7675c3774fcc6d2a510a677e4899ab/799d3/patch-2.png 590w,
+/static/af7675c3774fcc6d2a510a677e4899ab/2a3d6/patch-2.png 885w,
+/static/af7675c3774fcc6d2a510a677e4899ab/b16a2/patch-2.png 1030w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3&gt;Deleting resources with JSON API&lt;/h3&gt;
+&lt;p&gt;We can delete the artcile which we have created using &lt;code class=&quot;language-text&quot;&gt;DELETE&lt;/code&gt; method
+Headers :
+&lt;code class=&quot;language-text&quot;&gt;Content-Type: application/vnd.api+json&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;With DELETE requests no payload is required. We need to add the correct resource using its UUID and use the &lt;code class=&quot;language-text&quot;&gt;Delete&lt;/code&gt; method for that URL.
+&lt;code class=&quot;language-text&quot;&gt;/jsonapi/node/article/{{node_uuid}}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;It will result in a 204 No Content response code .&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c1743a5ab9b9088cd4965f91c7ee973b/13585/delete-content.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 47.62826718296225%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABNElEQVQoz6WRS07EMAyGc6rSzmKEoNFIpRuOxFm4BRfgEqwYjdQmmcZ5NK++cFtmhcQCPlnWH8eOnYQURZGvFNldfjqd6rqmZXl/PNZP1aE4FHlxS8izLKuqitKSPj6UZUkpJYwxpbTRCjrGxRUEN7zt2kbxBqTgQnRdp7UGgKZpzudzx1u4Ms7ay+VCtDYxxnmep2kcp2mexlXvtoZWUMw3hFs+5dgHDI5ECCGlZDscjbf8ttpo21VLAKUUDvjyZp9f7fsH9CAItvXe7z5E30vhLYSNhMQ4xLj8YB7i7AxJA+7GLW3zWBM8ir0+Bj/GdcSd/Q7fLjhiFFhrtTXorTEDkhJu7R2wAE9wOFHyMUWXvE8Bh5msDgoIPqMxRm+gsH3vrMFuy6/gazrXk+Uf/L0Yv+0Lk94YQzO7Ac0AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;delete-content.png&quot;
+        title=&quot;delete-content.png&quot;
+        src=&quot;/static/c1743a5ab9b9088cd4965f91c7ee973b/799d3/delete-content.png&quot;
+        srcset=&quot;/static/c1743a5ab9b9088cd4965f91c7ee973b/00d96/delete-content.png 148w,
+/static/c1743a5ab9b9088cd4965f91c7ee973b/0b23c/delete-content.png 295w,
+/static/c1743a5ab9b9088cd4965f91c7ee973b/799d3/delete-content.png 590w,
+/static/c1743a5ab9b9088cd4965f91c7ee973b/2a3d6/delete-content.png 885w,
+/static/c1743a5ab9b9088cd4965f91c7ee973b/13585/delete-content.png 1033w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;With the evolution of web-based APIs, this json format is a better approach than XML.
+JSON:API has a great experience by making the Drupal entities (users, comments and more) available via a web service API.
+URLs can be manipulated as per the requirement to access the entity types and bundles using HTTP methods.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Best way to keep users safe while using Google Analytics]]></title><description><![CDATA[Google Analytics is the most used web analytics service over the web, Google has made it pretty easy and effective in terms of…]]></description><link>https://itsopensource.com/best-way-to-keep-users-safe-while-using-google-analytics/</link><guid isPermaLink="false">https://itsopensource.com/best-way-to-keep-users-safe-while-using-google-analytics/</guid><pubDate>Sat, 11 Jul 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Google Analytics is the most used web analytics service over the web, Google has made it pretty easy and effective in terms of implementation and dashboard UI. It gives detailed demographic data and many other features that justify its vast usage.
 The most common and easiest way to enable google analytics on any website is by adding the tag manager (the code snippet provided) to the website.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;&amp;lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;&lt;/span&gt;
 &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;script&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-1&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token script&quot;&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
