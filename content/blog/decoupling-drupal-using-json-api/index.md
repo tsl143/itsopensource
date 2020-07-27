@@ -6,6 +6,7 @@ tags:
   - php
 show: true
 author: dipali
+featuredImage: ../../assets/drupal-json-api.png
 ---
 What are the benefits of decoupled architecture?  
 A decoupled architecture does great work in reducing or completely eliminating problems that are a part of the monolithic content management systems.
