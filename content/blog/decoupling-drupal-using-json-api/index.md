@@ -4,7 +4,7 @@ date: "2020-07-27"
 description: Dynamic features, efficient data exchange and much more is the result of decoupled Drupal 8 with JSON API
 tags:
   - php
-show: false
+show: true
 author: dipali
 ---
 What are the benefits of decoupled architecture?  
