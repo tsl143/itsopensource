@@ -29,18 +29,21 @@ const Bio = ({author: postWriter = ''}) => {
   let author = {
     slug: '',
     name: '',
-    twitter: ''
+    twitter: '',
+	drupal: ''
   };
   if (authors[postWriter]) {
     author.name = authors[postWriter].name;
     author.slug = postWriter;
     author.twitter = authors[postWriter].twitter;
+	author.drupal = authors[postWriter].drupal;
     author.bio = authors[postWriter].bio;
   } else {
     const { author: blogWriter, social } = data.site.siteMetadata;
     author.name = blogWriter;
     author.slug = 'trishul';
     author.twitter = social.twitter;
+	author.drupal = social.drupal;
   }
 
   return (
@@ -73,10 +76,17 @@ const Bio = ({author: postWriter = ''}) => {
       </Link>
       <p>
         <strong>{author.name}</strong> {author.bio}.
-        <br/>
-        <a target="_blank" rel="noopener noreferrer" href={`https://twitter.com/${author.twitter}`}>
-          @{author.twitter}
-        </a>
+        <br/> 
+		{(author.twitter == "") ? null : (
+          <a target="_blank" rel="noopener noreferrer" href={`https://twitter.com/${author.twitter}`}>
+            @{author.twitter}
+          </a>
+		)}
+		{(author.drupal == "") ? null : (
+		  <div> Drupal ID:<a target="_blank" rel="noopener noreferrer" href={`https://drupal.org/u/${author.drupal}`}>
+            {author.drupal}</a>
+          </div>
+		)}
       </p>
     </div>
   )
