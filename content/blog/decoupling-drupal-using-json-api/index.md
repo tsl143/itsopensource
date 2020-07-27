@@ -8,7 +8,8 @@ show: true
 author: dipali
 featuredImage: ../../assets/drupal-json-api.png
 ---
-What are the benefits of decoupled architecture?  
+
+### Benefits of decoupled architecture
 A decoupled architecture does great work in reducing or completely eliminating problems that are a part of the monolithic content management systems.
 CMS data is exposed to and consumed by a front-end JavaScript framework. The framework can be React.js, Angular.js, and many more.
 
