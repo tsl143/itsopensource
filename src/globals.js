@@ -5,7 +5,7 @@ export const authors = {
     twitter: "trishulgoel"
   },
   shivam: {
-    bio: " is a full stack developer, Linux Guy, Mozillian by Heart ❤️",
+    bio: " is a full stack developer, Linux Guy, Mozillian by ❤️",
     name: "Shivam Singhal",
     twitter: "idkhtml"
   },
