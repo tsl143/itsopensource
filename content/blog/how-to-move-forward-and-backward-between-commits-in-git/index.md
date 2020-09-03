@@ -13,7 +13,7 @@ featuredImage: ../../assets/git.jpg
 
 We always keep moving forward and backward between commits in `git`. Once you checked out a previous hash `git log` no more shows the next commits, we end up rebasing or resetting, but git provides a way to see all the commits, and we can checkout the next commits too from a previous state.
 
-The simple and most easy way to do that is to use:
+The simple and easiest way to do this is:
 
 ```bash
 git log --online --all
