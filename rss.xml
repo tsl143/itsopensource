@@ -1,4 +1,104 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource RSS Feed]]></title><description><![CDATA[Writing opensource journey one word at a time.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 31 Aug 2020 08:18:15 GMT</lastBuildDate><item><title><![CDATA[Decoupled DRUPAL 8 With JSON API]]></title><description><![CDATA[Benefits of decoupled architecture A decoupled architecture does great work in reducing or completely eliminating problems that are a part…]]></description><link>https://itsopensource.com/decoupling-drupal-using-json-api/</link><guid isPermaLink="false">https://itsopensource.com/decoupling-drupal-using-json-api/</guid><pubDate>Mon, 27 Jul 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Benefits of decoupled architecture&lt;/h3&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource RSS Feed]]></title><description><![CDATA[Writing opensource journey one word at a time.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 03 Sep 2020 12:26:46 GMT</lastBuildDate><item><title><![CDATA[How to move forward and backward between commits in git]]></title><description><![CDATA[We always keep moving forward and backward between commits in . Once you checked out a previous hash  no more shows the next commits, we end…]]></description><link>https://itsopensource.com/how-to-move-forward-and-backward-between-commits-in-git/</link><guid isPermaLink="false">https://itsopensource.com/how-to-move-forward-and-backward-between-commits-in-git/</guid><pubDate>Thu, 01 Oct 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;We always keep moving forward and backward between commits in &lt;code class=&quot;language-text&quot;&gt;git&lt;/code&gt;. Once you checked out a previous hash &lt;code class=&quot;language-text&quot;&gt;git log&lt;/code&gt; no more shows the next commits, we end up rebasing or resetting, but git provides a way to see all the commits, and we can checkout the next commits too from a previous state.&lt;/p&gt;
+&lt;p&gt;The simple and easiest way to do this is:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; log --online --all&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Consider this example:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/3d180b53c6be361b57596b348ff7c94f/e7068/1.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 47.1875%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIDBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAchFmVJB/8QAGBAAAgMAAAAAAAAAAAAAAAAAACIBEDH/2gAIAQEAAQUCUUUnK//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABcQAAMBAAAAAAAAAAAAAAAAAAAgQUL/2gAIAQEABj8Cpoqf/8QAHBAAAQMFAAAAAAAAAAAAAAAAAQARISAxoeHw/9oACAEBAAE/ITDVHhlK2Yov/9oADAMBAAIAAwAAABAjD//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABYRAAMAAAAAAAAAAAAAAAAAAAEQMf/aAAgBAgEBPxARf//EABsQAAEFAQEAAAAAAAAAAAAAAAEAESExkRBx/9oACAEBAAE/ECcGnQhvBQCSFF3vf//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;1&quot;
+        title=&quot;1&quot;
+        src=&quot;/static/3d180b53c6be361b57596b348ff7c94f/88218/1.jpg&quot;
+        srcset=&quot;/static/3d180b53c6be361b57596b348ff7c94f/7237a/1.jpg 148w,
+/static/3d180b53c6be361b57596b348ff7c94f/0cfdf/1.jpg 295w,
+/static/3d180b53c6be361b57596b348ff7c94f/88218/1.jpg 590w,
+/static/3d180b53c6be361b57596b348ff7c94f/77d57/1.jpg 885w,
+/static/3d180b53c6be361b57596b348ff7c94f/5a917/1.jpg 1180w,
+/static/3d180b53c6be361b57596b348ff7c94f/e7068/1.jpg 1280w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here if we check out to commit id &lt;code class=&quot;language-text&quot;&gt;95613ab Fix more TOC links&lt;/code&gt; and then see the git history with &lt;code class=&quot;language-text&quot;&gt;git log&lt;/code&gt; or &lt;code class=&quot;language-text&quot;&gt;git log --oneline&lt;/code&gt; you will only see:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ca936ccee9ab3215538872a94cb7ca46/e7068/2.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 59.765625%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMBBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAeNKkgwf/8QAFxAAAwEAAAAAAAAAAAAAAAAAAAEREP/aAAgBAQABBQKjKx7/AP/EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABYQAAMAAAAAAAAAAAAAAAAAABAgMf/aAAgBAQAGPwIVP//EAB0QAAIBBAMAAAAAAAAAAAAAAAABERAhQVFhgZH/2gAIAQEAAT8hbbY0vPZzPS2Saf/aAAwDAQACAAMAAAAQAw//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAgEBPxCn/8QAGxABAAICAwAAAAAAAAAAAAAAAQARIUEQUYH/2gAIAQEAAT8QCdehYDKpfUVq1ooymGmjcbNocf/Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;2&quot;
+        title=&quot;2&quot;
+        src=&quot;/static/ca936ccee9ab3215538872a94cb7ca46/88218/2.jpg&quot;
+        srcset=&quot;/static/ca936ccee9ab3215538872a94cb7ca46/7237a/2.jpg 148w,
+/static/ca936ccee9ab3215538872a94cb7ca46/0cfdf/2.jpg 295w,
+/static/ca936ccee9ab3215538872a94cb7ca46/88218/2.jpg 590w,
+/static/ca936ccee9ab3215538872a94cb7ca46/77d57/2.jpg 885w,
+/static/ca936ccee9ab3215538872a94cb7ca46/5a917/2.jpg 1180w,
+/static/ca936ccee9ab3215538872a94cb7ca46/e7068/2.jpg 1280w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;As we see here we missed the commits ahead of &lt;code class=&quot;language-text&quot;&gt;95613ab&lt;/code&gt;. You can see the HEAD with &lt;code class=&quot;language-text&quot;&gt;git show-ref --head&lt;/code&gt; but it will not show the commits in between the &lt;code class=&quot;language-text&quot;&gt;HEAD&lt;/code&gt; and the commit you checked out. So if you do &lt;code class=&quot;language-text&quot;&gt;git log --oneline --all&lt;/code&gt; you will get the whole history with the commit where the &lt;code class=&quot;language-text&quot;&gt;HEAD&lt;/code&gt; is right now.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b422ca73c94b45cb892fddb92436f327/e7068/3.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75.859375%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAMBAgX/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAHJpChokP/EABcQAAMBAAAAAAAAAAAAAAAAAAAgISL/2gAIAQEAAQUChDKf/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGRAAAgMBAAAAAAAAAAAAAAAAADIBIJGh/9oACAEBAAY/Am4NODzlP//EABsQAAIBBQAAAAAAAAAAAAAAAAABERAxQeHw/9oACAEBAAE/IYjcGsycNhjp/9oADAMBAAIAAwAAABAwD//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABYRAAMAAAAAAAAAAAAAAAAAAAEQMf/aAAgBAgEBPxARf//EAB0QAQACAQUBAAAAAAAAAAAAAAEAEXEQMWHB8OH/2gAIAQEAAT8QbQ+eZsB+8yvrQLHojRq1zp//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;3&quot;
+        title=&quot;3&quot;
+        src=&quot;/static/b422ca73c94b45cb892fddb92436f327/88218/3.jpg&quot;
+        srcset=&quot;/static/b422ca73c94b45cb892fddb92436f327/7237a/3.jpg 148w,
+/static/b422ca73c94b45cb892fddb92436f327/0cfdf/3.jpg 295w,
+/static/b422ca73c94b45cb892fddb92436f327/88218/3.jpg 590w,
+/static/b422ca73c94b45cb892fddb92436f327/77d57/3.jpg 885w,
+/static/b422ca73c94b45cb892fddb92436f327/5a917/3.jpg 1180w,
+/static/b422ca73c94b45cb892fddb92436f327/e7068/3.jpg 1280w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Let us know if you know the better solution for this problem.&lt;/p&gt;
+&lt;p&gt;Cheers.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Decoupled DRUPAL 8 With JSON API]]></title><description><![CDATA[Benefits of decoupled architecture A decoupled architecture does great work in reducing or completely eliminating problems that are a part…]]></description><link>https://itsopensource.com/decoupling-drupal-using-json-api/</link><guid isPermaLink="false">https://itsopensource.com/decoupling-drupal-using-json-api/</guid><pubDate>Mon, 27 Jul 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Benefits of decoupled architecture&lt;/h3&gt;
 &lt;p&gt;A decoupled architecture does great work in reducing or completely eliminating problems that are a part of the monolithic content management systems.
 CMS data is exposed to and consumed by a front-end JavaScript framework. The framework can be React.js, Angular.js, and many more.&lt;/p&gt;
 &lt;h3&gt;Json API&lt;/h3&gt;
