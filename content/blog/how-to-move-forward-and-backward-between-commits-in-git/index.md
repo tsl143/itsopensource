@@ -19,7 +19,7 @@ The simple and easiest way to do this is:
 git log --online --all
 ```
 
-Lets see one example:
+Consider this example:
 
 ![](1.jpg)
 
