@@ -1,6 +1,6 @@
 ---
 title: 'How to move forward and backward between commits in git'
-date: "2020-10-01"
+date: "2020-09-01"
 description: How to move forward and backward between commits in git
 tags:
   - git
