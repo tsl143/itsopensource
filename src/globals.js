@@ -14,6 +14,10 @@ export const authors = {
     name: "Dipali Goel",
     drupal: "dipaligoel25"
   },
+  pallavi: {
+    bio: " is a automation test lead and eager to share and Thirsty to learn",
+    name: "Pallavi Goel"
+  },
   sonia: {
     bio: " is an outreachy intern with Mozilla 🦊, FOSS enthusiast and open web ❤️",
     name: "Sonia Singla",
