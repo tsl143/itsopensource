@@ -1,4 +1,4 @@
-export const authors = {
+﻿export const authors = {
   trishul: {
     bio: " is a professional frontend developer; writes React code for living and volunteers for Mozilla to justify his existence",
     name: "Trishul Goel",
@@ -15,7 +15,7 @@ export const authors = {
     drupal: "dipaligoel25"
   },
   pallavi: {
-    bio: " is a automation test lead and eager to share and Thirsty to learn",
+    bio: " is an automation test lead",
     name: "Pallavi Goel"
   },
   sonia: {
