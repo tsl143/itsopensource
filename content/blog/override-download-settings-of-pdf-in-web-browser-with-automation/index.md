@@ -13,7 +13,7 @@ author: pallavi
 ---
 
 ### Changing pdf download settings in web browser using python-selenium 
-Suppose in Firefox the default setting is:  whenever a pdf opens then download it in 'Downloads' folder.
+Suppose in browser the default setting is:  whenever a pdf opens then download it in 'Downloads' folder.
 But while running the automation script, we need to open the pdf in a browser rather the downloading it.
 
 ### Solution
