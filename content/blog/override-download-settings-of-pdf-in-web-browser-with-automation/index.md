@@ -44,9 +44,9 @@ plugins.always\_open\_pdf\_externally = False : pdf will be opened in browser wh
 plugins.always\_open\_pdf\_externally = True: pdf will be downloaded in the specified location while script execution
 		  
 
-`NOTE: 
+**NOTE:**  
 This setting will be only valid for your automation session. Once tear down happens, browser 
-will regain its original pdf settings.`
+will regain its original pdf settings.
 
 
 So easy! Now you see how simple it is to change download settings of pdf in web browser by automation.
