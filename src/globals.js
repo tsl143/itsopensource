@@ -15,7 +15,7 @@
     drupal: "dipaligoel25"
   },
   pallavi: {
-    bio: " is an automation test lead",
+    bio: " is an automation test lead and eager to share and learn",
     name: "Pallavi Goel"
   },
   sonia: {
