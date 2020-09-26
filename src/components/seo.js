@@ -9,8 +9,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { authors } from "../globals"
 
-function SEO({ description, lang, meta, title, titleTemplate }) {
+function SEO({ description, lang, meta, title, titleTemplate, slug = "", author = "trishul", featuredImg }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -18,7 +19,8 @@ function SEO({ description, lang, meta, title, titleTemplate }) {
           siteMetadata {
             title
             description
-            author
+            author,
+            siteUrl
           }
         }
       }
@@ -26,11 +28,21 @@ function SEO({ description, lang, meta, title, titleTemplate }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const ogURL = site.siteMetadata.siteUrl + slug;
 
   if (title === site.siteMetadata.title) titleTemplate = `%s`
   else titleTemplate = `%s | ${site.siteMetadata.title}`
 
+  let ogImg = `${site.siteMetadata.siteUrl}/opensource_512.png`;
+  try {
+    let fImg = featuredImg && featuredImg.split("/").pop();
+    if (fImg) ogImg = `${site.siteMetadata.siteUrl}/featured-images/${fImg}`;
+  } catch(e) {
+    console.error(`Featured image meta error : ${e}`)
+  }
+
   return (
+    <>
     <Helmet
       htmlAttributes={{
         lang,
@@ -59,12 +71,20 @@ function SEO({ description, lang, meta, title, titleTemplate }) {
           content: `website`,
         },
         {
+          property: `og:url`,
+          content: ogURL,
+        },
+        {
+          property: `og:image`,
+          content: ogImg,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: `@${authors[author].twitter}`,
         },
         {
           name: `twitter:title`,
@@ -74,8 +94,19 @@ function SEO({ description, lang, meta, title, titleTemplate }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `twitter:image`,
+          content: ogImg,
+        }
       ].concat(meta)}
     />
+    {
+      // This is a check for uploading images in static/featured-images for meta
+      (process.env.NODE_ENV === "development") &&
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+      <img alt="metaImg check" width="1" height="1" style={{display: 'none'}} src={ogImg} onError={() => alert(`${ogImg} not uploaded`)} />
+    }
+    </>
   )
 }
 

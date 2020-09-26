@@ -6,22 +6,11 @@
  */
 
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 import { rhythm } from "../utils/typography"
 
-const authors = {
-  trishul: {
-    bio: "who is a professional frontend developer; writes React code for living and volunteers for Mozilla to justify his existence",
-    name: "Trishul Goel",
-    twitter: "trishulgoel"
-  },
-  shivam: {
-    bio: "who is a full stack developer; Linux Guy. Mozillian by Heart ❤️",
-    name: "Shivam Singhal",
-    twitter: "idkhtml"
-  },
-}
+import { authors } from "../globals"
 
 const Bio = ({author: postWriter = ''}) => {
   const data = useStaticQuery(graphql`
@@ -40,18 +29,21 @@ const Bio = ({author: postWriter = ''}) => {
   let author = {
     slug: '',
     name: '',
-    twitter: ''
+    twitter: '',
+	drupal: ''
   };
   if (authors[postWriter]) {
     author.name = authors[postWriter].name;
     author.slug = postWriter;
     author.twitter = authors[postWriter].twitter;
+	author.drupal = authors[postWriter].drupal;
     author.bio = authors[postWriter].bio;
   } else {
     const { author: blogWriter, social } = data.site.siteMetadata;
     author.name = blogWriter;
     author.slug = 'trishul';
     author.twitter = social.twitter;
+	author.drupal = social.drupal;
   }
 
   return (
@@ -61,13 +53,15 @@ const Bio = ({author: postWriter = ''}) => {
         marginBottom: rhythm(2.5),
       }}
     >
-      <div
+      <Link
+        to={`/author/${author.slug}`}
         style={{
           minWidth: 50,
           minHeight: 50,
           marginRight: rhythm(1 / 2),
           marginBottom: 0,
-          overflow: `hidden`
+          overflow: `hidden`,
+          boxShadow: 'none'
         }}
       >
         <img
@@ -79,13 +73,24 @@ const Bio = ({author: postWriter = ''}) => {
           }}
           src={`/${author.slug}.jpg`}
         />
-      </div>
+      </Link>
       <p>
-        Written by <strong>{author.name}</strong> {author.bio}.
-        <br/>
-        <a target="_blank" rel="noopener noreferrer" href={`https://twitter.com/${author.twitter}`}>
-          @{author.twitter}
-        </a>
+        <strong>{author.name}</strong> {author.bio}.
+        <br/> 
+        {
+          (author.twitter && author.twitter !== "") ?
+          (<a target="_blank" rel="noopener noreferrer" href={`https://twitter.com/${author.twitter}`}>
+            @{author.twitter}
+          </a>):
+          null
+		    }
+        {
+          (author.drupal && author.drupal !== "") ?
+          (<div> Drupal Profile: <a target="_blank" rel="noopener noreferrer" href={`https://drupal.org/u/${author.drupal}`}>
+              {author.drupal}</a>
+          </div>):
+          null
+        }
       </p>
     </div>
   )

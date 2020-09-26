@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -11,14 +12,18 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
+    const { previous, next, slug } = this.props.pageContext
     const tags = post.frontmatter.tags || []
+    const featuredImgFluid = post.frontmatter.featuredImage && post.frontmatter.featuredImage.childImageSharp.fluid
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
+          slug={slug}
+          author={post.frontmatter.author}
+          featuredImg={featuredImgFluid && featuredImgFluid.src}
         />
         <article>
           <header>
@@ -44,10 +49,11 @@ class BlogPostTemplate extends React.Component {
             tags.length > 0 &&
             <div className="tags">
               {
-                tags.map(t => <Link  className="tag" to={`/tags/${t.toLowerCase()}`}  key={t} onClick={this.openTags}>{t}</Link>)
+                tags.map(t => <Link  className="tag" to={`/tags/${t.toLowerCase()}`} key={t}>{t}</Link>)
               }
             </div>
           }
+          {featuredImgFluid && <Img style={{marginBottom: '20px'}} fluid={featuredImgFluid} />}
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
             style={{
@@ -109,6 +115,13 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description,
         author
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

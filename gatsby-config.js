@@ -3,7 +3,7 @@ module.exports = {
   siteMetadata: {
     title: `itsopensource`,
     author: `Trishul Goel`,
-    description: `Yet another blog about opensource.`,
+    description: `Writing opensource journey one word at a time.`,
     siteUrl: `https://itsopensource.com/`,
     social: {
       twitter: `trishulgoel`,
@@ -49,11 +49,57 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-feed`,
     {
-      resolve: "gatsby-plugin-tags",
+      resolve: `gatsby-plugin-feed`,
       options: {
-        templatePath: `${__dirname}/src/templates/tag.js`,
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields { slug }
+                      frontmatter {
+                        title
+                        date
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "itsopensource RSS Feed"
+          },
+        ],
       },
     },
     `gatsby-plugin-react-helmet`,
