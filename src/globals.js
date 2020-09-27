@@ -23,4 +23,9 @@
     name: "Sonia Singla",
     twitter: "soniasinglas"
   },
+  faye: {
+    bio: " is an open source fangirl working as a Community Manager for an open source IT monitoring software.",
+    name: "Faye",
+    twitter: "fayetandog"
+  },
 }
