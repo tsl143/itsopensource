@@ -1,4 +1,116 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource RSS Feed]]></title><description><![CDATA[Writing opensource journey one word at a time.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 14 Sep 2020 09:31:30 GMT</lastBuildDate><item><title><![CDATA[Override download settings of pdf in web browser with automation]]></title><description><![CDATA[Changing pdf download settings in web browser using python-selenium Suppose in browser the default setting is:  whenever a pdf opens then…]]></description><link>https://itsopensource.com/override-download-settings-of-pdf-in-web-browser-with-automation/</link><guid isPermaLink="false">https://itsopensource.com/override-download-settings-of-pdf-in-web-browser-with-automation/</guid><pubDate>Sun, 13 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Changing pdf download settings in web browser using python-selenium&lt;/h3&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource RSS Feed]]></title><description><![CDATA[Writing opensource journey one word at a time.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 27 Sep 2020 18:34:36 GMT</lastBuildDate><item><title><![CDATA[What is the difference between Docker and a Virtual Machine]]></title><description><![CDATA[While in principle they are very similar, it might be more common to know about Virtual Machines than Docker Containers. Virtual Machines…]]></description><link>https://itsopensource.com/what-is-the-difference-between-docker-and-a-virtual-machine/</link><guid isPermaLink="false">https://itsopensource.com/what-is-the-difference-between-docker-and-a-virtual-machine/</guid><pubDate>Sat, 26 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;While in principle they are very similar, it might be more common to know about Virtual Machines than Docker Containers. Virtual Machines are like Inception, but with computers; you’re running another computer inside your computer. A usual use-case for this setup that’s applicable even to people not working in tech, is for example, you have a Windows machine (your Host OS) and you want to somehow have Ubuntu (your Guest OS) just to test a software that only runs on Linux machines. You just want to quickly try it out, so you don’t want to go through the process of installing another OS in your system (dual booting).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;ubuntu-vm.png&quot; alt=&quot;Running an Ubuntu session using VirtualBox&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Now let’s discuss the underlying technology a bit. A virtual machine is a system which emulates a computer system. It has its own CPU, memory, hard disk, network and other hardware resources which are managed by a ‘virtualization layer’. This layer then translates these requests to the physical hardware (host computer).&lt;/p&gt;
+&lt;p&gt;If you have tried running a VM in your machine, you know how your machine started heating up. This whole process is resource-intensive, because hey, you’re practically running a full version of another machine! That’s definitely something you won’t do when you want to solve a bigger use-case that requires this setup.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 400px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a36cdb7beaa411e06c9fcb56decfd989/a8246/vm-architecture.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAADEklEQVQ4y5VVaXPbNhD1//8zbfOlx0yPzNRJJ47i2I3t2JZl6iApSrwJkjj5uliJlhTnSzEDAVjsvn1vsZLOQGMYBozruB/HaOPpHL43jmPO9pbvA1n7KoDtsmdw1zSvfM6OWdkig/r6Bf37t7T+i+7tb1B313ynbj5DXn7gtf35B/Tnf0BdT16RYIacrSphwhX08xTqyyX011vo6QPtr2CiFeTVR8gP51BXE7q7gVk8wzzPYLOU9gGzfpE8GA2zfMagNe3NTpZSh9qS7YQJyfQx7EN7G4ew2+Qg2Q8TLRmQA5SEur+hGtWQF++4DDbdoH/3F+TkH1C6kwRe3WvAcM5A49DBFN2fv6D99Q3JnezK8EBlCJ7guo4kSgx9zyRsElP84hvAZQBXVzvJJMcJwazsdoOBAFxZwhUFMzHhkkDWsOuIz3p6D7MaAfe95TObKGRQm2f04jnU7TU7y8sLvtezR8iP71/kvUiuS+6Qb2q4OJHs7ZyEMpvlrhyuJdbZFiZenfSpZRLpKaAmGc7XZMyqFdkW0PMZ5PUneiTqT3ogTQ/ktmvfaweKDZXq8Ci7i8EXlS5gqYZEf6BCD9RrAz2E+XwB+3jHPnYxh4witH6GEfo4Rh4sUWXl2IcDfJeFcYYiSpCFCaq8RlF12BQd4qLHPJeYbTs8JQ2micA0rrHOBNJcIBcKm9YgqPShsVvtMKsMy+3oQ9IUZsD5qsNP9zX+Xrb4PWjx5rHBj3R+Kg18eE1MWjsg7SxCYQ6A2g2ISoWaMmW1oqlRNhobsm3pvCklorRHWilUnUFK9iKTED6mkCS3R5P5H4z9d9kZhzIWECRNCQ1JIH61FNysW4ikpd50UGSvIoGeQLxPTXctAXE82bW0e4a9QUtO9abFfJIgus0Q32WcpKba+fPyaov1Q47ksUAaVFjf51h82iC4WDOzntgbtQf0G59BkKztU8n7YtXw6hk0SYdsUaMmpm3ek1/Hvh6ko3II8hHHkn0vKqqfpcfxe2fH6djmpyNna/ze8vnkm0J273vS2P93HP81HNv+A0i6BT5kmlt8AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Virtual Machine Simple Architecture&quot;
+        title=&quot;Virtual Machine Simple Architecture&quot;
+        src=&quot;/static/a36cdb7beaa411e06c9fcb56decfd989/a8246/vm-architecture.png&quot;
+        srcset=&quot;/static/a36cdb7beaa411e06c9fcb56decfd989/00d96/vm-architecture.png 148w,
+/static/a36cdb7beaa411e06c9fcb56decfd989/0b23c/vm-architecture.png 295w,
+/static/a36cdb7beaa411e06c9fcb56decfd989/a8246/vm-architecture.png 400w&quot;
+        sizes=&quot;(max-width: 400px) 100vw, 400px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;What if my colleagues also want to try that software? Do they also have to install the same heavy thing on their system? What if their hardware can’t handle it?&lt;/p&gt;
+&lt;p&gt;That’s where Docker comes in. It’s like milk, but the leanest version with the least amount of fat that you can find (sort of).&lt;/p&gt;
+&lt;p&gt;With Docker, you can run applications on your host operating system (e.g. Windows), in what is called a Container. A container is almost similar to an operating system minus the graphical user interface (the stuff you can click). It technically functions just like running a session on a VM, but here’s the magic: unlike in a VM where you have to run a session of an entire OS to use an application, with Docker, you are able to run the application in light-weight containers AND control it from the host OS. The part where you see another OS running? The part where you turn on Ubuntu on your VM Manager that you installed on your Windows machine? That part has been scrapped, making the whole setup way lighter. Instead, you just write some commands on the command line and you go directly into running your application.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Whuuuut?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Let’s try to visualize that with this image, compared to our previous one.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/8570b603ddc9ec9226dcfc0c3e0b0ceb/11d19/docker-vm.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACnElEQVQoz5WTW0hUQRjHZ7PopSCoKLPVLCUwNAoKCbo8BAWJFpUEgUVCWGAX6fYglfQQpVCZFUZSRA92oyINKyqvtFqmpqKZVuuqy+rh7HFd9+h6zvk1e+ilt/rgz8wwH7/5f/PNCGSYhhEZqKh4z+zYLYjUPERaKSLrA47nXSypf4gofsac5n5yau5RVZRMZloaG9atJSU5mYSEJKIXRXPkyDGEaVmEJqdsYGVVNYmrtrJsczbObSdx7r1E4uWrrDp7nJjcfFKLy9h55xr7cyRkaTwLFi7C4RC2hBDs2L4d4dYm+eQJ4hmHzuYOmupqaGtupMVVR7urhornldS/raatvpamt29oaWjk5uVCkpYn4nTG4hAOZkRNt4G7M3cjDNNiyjCJFG0M9KJrqu1YnwgTDOmowXFMuaeH5VrX7UpePConPj6OmFgnIuIuapoN3LVzFwKsyC3aiVPKT7QRL5qm2fL5fAQCAZli4ldVVEUhEDboeXSXp6uTuLR6E1lL1nNowUYer1lJZ+EZ6VDyJqS9SQkMKYMowz7UwDiBYJCRCGR0FF1WMRock3CNUZk73lCGsiKFhrgM3i3ORE/YA3kZUFuMuPvkOycu1HL+SiP5pV2cK/dR8MCDt3+QwNAQqsdLX5+Xkf4hlF8e/MqYdFhC+7xEWmZuwTsrHTM6ndDpDMLt9xElx25zY+5y3q+Yj6ukkKAZxvX6M8Pd3wj3udE73Ey09aK29uL/0oO/tZuRulbUlw0EKl3orxoJv27C6HRhaW7EqaNP2Bp9kOykLA7su0VuSSeHL35Bcw9h9fdi+BX+J8THDo07VQNcf/GDovIeCsq+cq28i8lgCFMZxtD8dtss+RIs848ic/kZ/pIpJZsn/uVUy7L+2eFvKpW0q++Cxf0AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Docker vs VM Visualized&quot;
+        title=&quot;Docker vs VM Visualized&quot;
+        src=&quot;/static/8570b603ddc9ec9226dcfc0c3e0b0ceb/799d3/docker-vm.png&quot;
+        srcset=&quot;/static/8570b603ddc9ec9226dcfc0c3e0b0ceb/00d96/docker-vm.png 148w,
+/static/8570b603ddc9ec9226dcfc0c3e0b0ceb/0b23c/docker-vm.png 295w,
+/static/8570b603ddc9ec9226dcfc0c3e0b0ceb/799d3/docker-vm.png 590w,
+/static/8570b603ddc9ec9226dcfc0c3e0b0ceb/11d19/docker-vm.png 800w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The game-changing advantage of Docker is that it allows you to package any software with all of its dependencies into a single standardized unit called image.&lt;/p&gt;
+&lt;p&gt;Virtual machines run on a host OS and make guest OS available inside each VM, each OS needs to be booted individually. On the other hand, Docker containers are hosted on a single docker engine on a host OS. All the containers share the docker instance. Sharing the engine between containers makes them light and decreases the boot time. While Docker Containers boot in a few seconds, VMs take a few minutes to boot. &lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 500px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/632533cd83014f756c2c557efb650694/7217d/docker-architecture.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAADOklEQVQ4y31U23LbNhD1//9IX/uWl3YyTTJpLm6StnZsy5ZEieL9KvECkAB4egBKltzJBDM7BBbYs+fsErgCxzRNzua5wWlM44hJa0zGzMa1aQ4w+xqTFLiMPcVfnZx2qDiAzhIMD7eQXz5iXD/N36cHiD//cHP57TPEh7fQZYH/D4tz9ZyB2VXgQ+cpAe4x3N1AbVYMzKHjEDqNoaKdY2eaBuawxzRI6Kqc/aI/M7QLtdtQnoHyPajQd5umrqCLzPlAETqJMK4WR9kVk/4L087gVt0ZsO+czHH54GRagOGfvyA+vXPSVLDFcPOVst9AbdduPS6+uxgL2r/5zSk715AMh/sbiI/vMFqZZGVrZs2yVFEA8Z41/PzelcDWsv31Fwcq/75G//Z3F3MGZMdG78lR10ngWI2LO/qly2wbpVhH0+yPsh+dbBvjFLGGuiouJHetk6HzzElygN7S1VQnsQO0nbZ100mIkWossAo2THwLReAXgFayjudG6IQdyyNajKljR7MApkro5x9QVmS3IlsmyZnU99nAkDXfklRzApxsAyHWKcRTDHHvQ3is4TpDt6oh4x4ilGgfcvTennMBEfSc1xCRhKwmNJ7CUJozw3GvIVIDozhvac0EzYtQfpJIX3eIXzWIXnUYq/kCQMP9Ru7LifRHyESdARUBVapYaA1d07iWlUIbj6h3A/b+gAOtCeZ1xXm1HZB5EuFaIlqxeePF1euVwbYYkOwV0n62qFUIOoVMavjtiEU94K4gAH0RLaAvFUzK2PWB4N0Fw6LX8PaDcwx6zlQKjddei+uwxyOTfY0FbjOJ47W/uL9wyZNLwD1ZLKsB7WiQczMjGz8TuPYafCDoMumxSQU8+nYlWZJpwPMhbce91fqAjoyfAQdKzP0GDQ+39WyCB8ZuRMXOtgU7SwYNv1XYcn9ASn+xPUDxnOT5rhRnQEnnIe0Q3uTO0scK2bJGzeDSPyCgz1r4vUCyqFBsDu6M/y11oCNrKZrhDGgXddSiyXoHYq0KGuzpa3PhQEsqaPPesW3S3jHqKome7Oz5obuQbMwEwU7ZTEraF3p68Whezl+YOdrza398YH80fgT0s3Ha/w+8yv3ekIrIWAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Docker Architecture&quot;
+        title=&quot;Docker Architecture&quot;
+        src=&quot;/static/632533cd83014f756c2c557efb650694/7217d/docker-architecture.png&quot;
+        srcset=&quot;/static/632533cd83014f756c2c557efb650694/00d96/docker-architecture.png 148w,
+/static/632533cd83014f756c2c557efb650694/0b23c/docker-architecture.png 295w,
+/static/632533cd83014f756c2c557efb650694/7217d/docker-architecture.png 500w&quot;
+        sizes=&quot;(max-width: 500px) 100vw, 500px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Now that we have that background, let’s take a look at some real examples of how these can be applied:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Virtual machine&lt;/strong&gt;
+You have a Windows machine and want to try out GIMP on Ubuntu. Here’s how the process will look like:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Install an Ubuntu VM on a Windows machine&lt;/li&gt;
+&lt;li&gt;Go inside the VM window and operate Ubuntu&lt;/li&gt;
+&lt;li&gt;Install GIMP there and use it.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The host OS (Windows) is totally unaware of what is being done inside VM (Ubuntu).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Docker&lt;/strong&gt;
+You use Wordpress.com and discovered that there is an open source version of it that you can run yourself, so you want to test it out on your own computer first. Now, setting up a Wordpress site has dependencies, that is, your system needs to have Apache, MySQL database and PHP installed.&lt;/p&gt;
+&lt;p&gt;Using Docker, here’s how the process will look like.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a container using a &lt;a href=&quot;https://hub.docker.com/_/wordpress&quot;&gt;Wordpress image&lt;/a&gt;. We’re able to jump directly to this step because the Wordpress image has already been packaged by the Docker community. It contains all the dependencies needed to run Wordpress.&lt;/li&gt;
+&lt;li&gt;Run Wordpress on your browser!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In a nutshell, Docker containers support OS virtualization, and VM supports hardware virtualization.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Override download settings of pdf in web browser with automation]]></title><description><![CDATA[Changing pdf download settings in web browser using python-selenium Suppose in browser the default setting is:  whenever a pdf opens then…]]></description><link>https://itsopensource.com/override-download-settings-of-pdf-in-web-browser-with-automation/</link><guid isPermaLink="false">https://itsopensource.com/override-download-settings-of-pdf-in-web-browser-with-automation/</guid><pubDate>Sun, 13 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Changing pdf download settings in web browser using python-selenium&lt;/h3&gt;
 &lt;p&gt;Suppose in browser the default setting is:  whenever a pdf opens then download it in ‘Downloads’ folder.
 But while running the automation script, we need to open the pdf in a browser rather the downloading it.&lt;/p&gt;
 &lt;h3&gt;Solution&lt;/h3&gt;
