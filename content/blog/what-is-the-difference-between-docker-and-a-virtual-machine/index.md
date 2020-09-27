@@ -6,6 +6,8 @@ tags:
   - docker
 show: true
 author: faye
+featuredImage: ../../assets/docker-vm.png
+
 ---
 
 While in principle they are very similar, it might be more common to know about Virtual Machines than Docker Containers. Virtual Machines are like Inception, but with computers; you’re running another computer inside your computer. A usual use-case for this setup that’s applicable even to people not working in tech, is for example, you have a Windows machine (your Host OS) and you want to somehow have Ubuntu (your Guest OS) just to test a software that only runs on Linux machines. You just want to quickly try it out, so you don’t want to go through the process of installing another OS in your system (dual booting).
