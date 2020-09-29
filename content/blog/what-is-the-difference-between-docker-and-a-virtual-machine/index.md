@@ -12,7 +12,7 @@ featuredImage: ../../assets/docker-vm.png
 
 While in principle they are very similar, it might be more common to know about Virtual Machines than Docker Containers. Virtual Machines are like Inception, but with computers; you’re running another computer inside your computer. A usual use-case for this setup that’s applicable even to people not working in tech, is for example, you have a Windows machine (your Host OS) and you want to somehow have Ubuntu (your Guest OS) just to test a software that only runs on Linux machines. You just want to quickly try it out, so you don’t want to go through the process of installing another OS in your system (dual booting).
 
-![Running an Ubuntu session using VirtualBox](ubuntu-vm.png)
+![Running an Ubuntu session using VirtualBox](ubuntu-vm.jpg)
 
 Now let’s discuss the underlying technology a bit. A virtual machine is a system which emulates a computer system. It has its own CPU, memory, hard disk, network and other hardware resources which are managed by a ‘virtualization layer’. This layer then translates these requests to the physical hardware (host computer).
 
@@ -27,7 +27,7 @@ That’s where Docker comes in. It’s like milk, but the leanest version with t
 
 With Docker, you can run applications on your host operating system (e.g. Windows), in what is called a Container. A container is almost similar to an operating system minus the graphical user interface (the stuff you can click). It technically functions just like running a session on a VM, but here’s the magic: unlike in a VM where you have to run a session of an entire OS to use an application, with Docker, you are able to run the application in light-weight containers AND control it from the host OS. The part where you see another OS running? The part where you turn on Ubuntu on your VM Manager that you installed on your Windows machine? That part has been scrapped, making the whole setup way lighter. Instead, you just write some commands on the command line and you go directly into running your application.
 
-__Whuuuut?__
+_Whuuuut?_
 
 Let’s try to visualize that with this image, compared to our previous one.
 
@@ -42,6 +42,7 @@ Virtual machines run on a host OS and make guest OS available inside each VM, ea
 Now that we have that background, let’s take a look at some real examples of how these can be applied:
 
 **Virtual machine**
+
 You have a Windows machine and want to try out GIMP on Ubuntu. Here’s how the process will look like:
 1. Install an Ubuntu VM on a Windows machine
 2. Go inside the VM window and operate Ubuntu
@@ -50,6 +51,7 @@ You have a Windows machine and want to try out GIMP on Ubuntu. Here’s how the 
 The host OS (Windows) is totally unaware of what is being done inside VM (Ubuntu).
 
 **Docker**
+
 You use Wordpress.com and discovered that there is an open source version of it that you can run yourself, so you want to test it out on your own computer first. Now, setting up a Wordpress site has dependencies, that is, your system needs to have Apache, MySQL database and PHP installed.
 
 Using Docker, here’s how the process will look like.
