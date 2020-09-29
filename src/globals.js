@@ -24,7 +24,7 @@
     twitter: "soniasinglas"
   },
   faye: {
-    bio: " is an open source fangirl working as a Community Manager for an open source IT monitoring software.",
+    bio: " works as a Community Manager for an open source IT monitoring software. Here she tries to write about tech topics for non-technical people who works in tech organizations",
     name: "Faye",
     twitter: "fayetandog"
   },
