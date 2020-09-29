@@ -1,5 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource RSS Feed]]></title><description><![CDATA[Writing opensource journey one word at a time.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 27 Sep 2020 18:34:36 GMT</lastBuildDate><item><title><![CDATA[What is the difference between Docker and a Virtual Machine]]></title><description><![CDATA[While in principle they are very similar, it might be more common to know about Virtual Machines than Docker Containers. Virtual Machines…]]></description><link>https://itsopensource.com/what-is-the-difference-between-docker-and-a-virtual-machine/</link><guid isPermaLink="false">https://itsopensource.com/what-is-the-difference-between-docker-and-a-virtual-machine/</guid><pubDate>Sat, 26 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;While in principle they are very similar, it might be more common to know about Virtual Machines than Docker Containers. Virtual Machines are like Inception, but with computers; you’re running another computer inside your computer. A usual use-case for this setup that’s applicable even to people not working in tech, is for example, you have a Windows machine (your Host OS) and you want to somehow have Ubuntu (your Guest OS) just to test a software that only runs on Linux machines. You just want to quickly try it out, so you don’t want to go through the process of installing another OS in your system (dual booting).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;ubuntu-vm.png&quot; alt=&quot;Running an Ubuntu session using VirtualBox&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource RSS Feed]]></title><description><![CDATA[Writing opensource journey one word at a time.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 29 Sep 2020 11:14:19 GMT</lastBuildDate><item><title><![CDATA[What is the difference between Docker and a Virtual Machine]]></title><description><![CDATA[While in principle they are very similar, it might be more common to know about Virtual Machines than Docker Containers. Virtual Machines…]]></description><link>https://itsopensource.com/what-is-the-difference-between-docker-and-a-virtual-machine/</link><guid isPermaLink="false">https://itsopensource.com/what-is-the-difference-between-docker-and-a-virtual-machine/</guid><pubDate>Sat, 26 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;While in principle they are very similar, it might be more common to know about Virtual Machines than Docker Containers. Virtual Machines are like Inception, but with computers; you’re running another computer inside your computer. A usual use-case for this setup that’s applicable even to people not working in tech, is for example, you have a Windows machine (your Host OS) and you want to somehow have Ubuntu (your Guest OS) just to test a software that only runs on Linux machines. You just want to quickly try it out, so you don’t want to go through the process of installing another OS in your system (dual booting).&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/44eafcd1b741ccc88a5bf2b7440aea18/f67cc/ubuntu-vm.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAABQACBP/EABYBAQEBAAAAAAAAAAAAAAAAAAMCBP/aAAwDAQACEAMQAAAB4lCsaJUjJR//xAAaEAACAgMAAAAAAAAAAAAAAAABAgADEBEh/9oACAEBAAEFAgRKERxcoVjybx//xAAYEQACAwAAAAAAAAAAAAAAAAACEQEQEv/aAAgBAwEBPwGTFLNf/8QAGREAAgMBAAAAAAAAAAAAAAAAAAEREjJh/9oACAECAQE/AaOdCXT/xAAaEAACAgMAAAAAAAAAAAAAAAAAARARITLB/9oACAEBAAY/AtUZRXRT/8QAHBAAAgICAwAAAAAAAAAAAAAAAREAIRBBMVHh/9oACAEBAAE/IfER9HzokRLACtEZUjjd4//aAAwDAQACAAMAAAAQqx//xAAYEQEBAQEBAAAAAAAAAAAAAAABEQBR8P/aAAgBAwEBPxB0he+Motm//8QAGREBAAIDAAAAAAAAAAAAAAAAAQARMYHw/9oACAECAQE/EM63biBTH//EAB0QAQADAAEFAAAAAAAAAAAAAAEAESExQVFhcbH/2gAIAQEAAT8QehfRWq/sYAcDsh5gsO2C4Leb6w6Is3WWOp9wBOJ//9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Running an Ubuntu session using VirtualBox&quot;
+        title=&quot;Running an Ubuntu session using VirtualBox&quot;
+        src=&quot;/static/44eafcd1b741ccc88a5bf2b7440aea18/88218/ubuntu-vm.jpg&quot;
+        srcset=&quot;/static/44eafcd1b741ccc88a5bf2b7440aea18/7237a/ubuntu-vm.jpg 148w,
+/static/44eafcd1b741ccc88a5bf2b7440aea18/0cfdf/ubuntu-vm.jpg 295w,
+/static/44eafcd1b741ccc88a5bf2b7440aea18/88218/ubuntu-vm.jpg 590w,
+/static/44eafcd1b741ccc88a5bf2b7440aea18/f67cc/ubuntu-vm.jpg 800w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Now let’s discuss the underlying technology a bit. A virtual machine is a system which emulates a computer system. It has its own CPU, memory, hard disk, network and other hardware resources which are managed by a ‘virtualization layer’. This layer then translates these requests to the physical hardware (host computer).&lt;/p&gt;
 &lt;p&gt;If you have tried running a VM in your machine, you know how your machine started heating up. This whole process is resource-intensive, because hey, you’re practically running a full version of another machine! That’s definitely something you won’t do when you want to solve a bigger use-case that requires this setup.&lt;/p&gt;
 &lt;p&gt;&lt;span
@@ -33,7 +61,7 @@
 &lt;p&gt;What if my colleagues also want to try that software? Do they also have to install the same heavy thing on their system? What if their hardware can’t handle it?&lt;/p&gt;
 &lt;p&gt;That’s where Docker comes in. It’s like milk, but the leanest version with the least amount of fat that you can find (sort of).&lt;/p&gt;
 &lt;p&gt;With Docker, you can run applications on your host operating system (e.g. Windows), in what is called a Container. A container is almost similar to an operating system minus the graphical user interface (the stuff you can click). It technically functions just like running a session on a VM, but here’s the magic: unlike in a VM where you have to run a session of an entire OS to use an application, with Docker, you are able to run the application in light-weight containers AND control it from the host OS. The part where you see another OS running? The part where you turn on Ubuntu on your VM Manager that you installed on your Windows machine? That part has been scrapped, making the whole setup way lighter. Instead, you just write some commands on the command line and you go directly into running your application.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Whuuuut?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Whuuuut?&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Let’s try to visualize that with this image, compared to our previous one.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -95,16 +123,16 @@
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Now that we have that background, let’s take a look at some real examples of how these can be applied:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Virtual machine&lt;/strong&gt;
-You have a Windows machine and want to try out GIMP on Ubuntu. Here’s how the process will look like:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Virtual machine&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You have a Windows machine and want to try out GIMP on Ubuntu. Here’s how the process will look like:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Install an Ubuntu VM on a Windows machine&lt;/li&gt;
 &lt;li&gt;Go inside the VM window and operate Ubuntu&lt;/li&gt;
 &lt;li&gt;Install GIMP there and use it.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;The host OS (Windows) is totally unaware of what is being done inside VM (Ubuntu).&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Docker&lt;/strong&gt;
-You use Wordpress.com and discovered that there is an open source version of it that you can run yourself, so you want to test it out on your own computer first. Now, setting up a Wordpress site has dependencies, that is, your system needs to have Apache, MySQL database and PHP installed.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Docker&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You use Wordpress.com and discovered that there is an open source version of it that you can run yourself, so you want to test it out on your own computer first. Now, setting up a Wordpress site has dependencies, that is, your system needs to have Apache, MySQL database and PHP installed.&lt;/p&gt;
 &lt;p&gt;Using Docker, here’s how the process will look like.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Create a container using a &lt;a href=&quot;https://hub.docker.com/_/wordpress&quot;&gt;Wordpress image&lt;/a&gt;. We’re able to jump directly to this step because the Wordpress image has already been packaged by the Docker community. It contains all the dependencies needed to run Wordpress.&lt;/li&gt;
