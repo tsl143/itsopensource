@@ -27,7 +27,7 @@ That’s where Docker comes in. It’s like milk, but the leanest version with t
 
 With Docker, you can run applications on your host operating system (e.g. Windows), in what is called a Container. A container is almost similar to an operating system minus the graphical user interface (the stuff you can click). It technically functions just like running a session on a VM, but here’s the magic: unlike in a VM where you have to run a session of an entire OS to use an application, with Docker, you are able to run the application in light-weight containers AND control it from the host OS. The part where you see another OS running? The part where you turn on Ubuntu on your VM Manager that you installed on your Windows machine? That part has been scrapped, making the whole setup way lighter. Instead, you just write some commands on the command line and you go directly into running your application.
 
-__Whuuuut?__
+_Whuuuut?_
 
 Let’s try to visualize that with this image, compared to our previous one.
 
@@ -51,6 +51,7 @@ You have a Windows machine and want to try out GIMP on Ubuntu. Here’s how the 
 The host OS (Windows) is totally unaware of what is being done inside VM (Ubuntu).
 
 **Docker**
+
 You use Wordpress.com and discovered that there is an open source version of it that you can run yourself, so you want to test it out on your own computer first. Now, setting up a Wordpress site has dependencies, that is, your system needs to have Apache, MySQL database and PHP installed.
 
 Using Docker, here’s how the process will look like.
