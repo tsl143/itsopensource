@@ -11,7 +11,7 @@ author: shivam
 featuredImage: ../../assets/git.jpg
 ---
 
-If you work with the repositories hosted on Github , you have to deal with lot of Pull requests daily generally, and the process to checkout the PR's locally in your machie is quite not easy, you have to see the PR's id and also the branch name.
+If you work with the repositories hosted on Github , you have to deal with lot of Pull requests daily generally, and the process to checkout the PR's locally in your machine is quite not easy, you have to see the PR's id and also the branch name.
 
 ```bash
 git fetch origin pull/ID/head:BRANCHNAME
