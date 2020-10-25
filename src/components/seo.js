@@ -33,10 +33,11 @@ function SEO({ description, lang, meta, title, titleTemplate, slug = "", author 
   if (title === site.siteMetadata.title) titleTemplate = `%s`
   else titleTemplate = `%s | ${site.siteMetadata.title}`
 
-  let ogImg = `${site.siteMetadata.siteUrl}/opensource_512.png`;
+  const siteUrl = (process.env.NODE_ENV === "development") ? 'http://localhost:8000' : site.siteMetadata.siteUrl;
+  let ogImg = `${siteUrl}/opensource_512.png`;
   try {
-    let fImg = featuredImg && featuredImg.split("/").pop();
-    if (fImg) ogImg = `${site.siteMetadata.siteUrl}/featured-images/${fImg}`;
+    const fImg = featuredImg && featuredImg.split("/").pop();
+    if (fImg) ogImg = `${siteUrl}/featured-images/${fImg}`;
   } catch(e) {
     console.error(`Featured image meta error : ${e}`)
   }
