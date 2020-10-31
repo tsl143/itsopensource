@@ -9,13 +9,13 @@ author: trishul
 ---
  
 ### Problem
-It's very common while building any project we use certain third party libraries, in the case of Javascript; npm packages, which recursively use more packages, and eventually your code includes a huge chunk of foreign code.  
+It's very common while building any project we use certain third party libraries, in the case of Javascript; `npm packages`, which recursively use more packages, and eventually your code includes a huge chunk of third party code.  
 There is nothing wrong with it, there is no point re-inventing the wheel. We include the required library, make our code work, write tests. Deploy to a staging environment, pass through automation and finally deploy to production.  
 
 The problem is when a library tries to load remote content on our website. It can be an image, font, style, or even Javascript. This content bypasses all our tests, checks, and is executed directly on production. Even worse we don't know where the content is being served from.
 
 ### Content Security Policy 
-CSP is a [W3C specification](https://www.w3.org/TR/CSP3/) that helps to avoid XSS attacks. CSP enables developers to define rules for fetching the resources(images, javascript, fonts, etc.) on the client browser. Developers can define policies to allow/restrict loading any resource, restrict resources to load only from certain domains, and disallow from any other domain. For example, you can write a CSP to restrict browsers to load images only from `example.com`, any images from other domains will be not loaded and would throw errors. In addition to resources, CSP also offers control over the embeds.  
+`Content Security Policy` (`CSP`) is a [W3C specification](https://www.w3.org/TR/CSP3/) that helps to avoid `XSS` attacks. CSP enables developers to define rules for fetching the resources(images, javascript, fonts, etc.) on the client browser. Developers can define policies to allow/restrict loading any resource, restrict resources to load only from certain domains, and disallow from any other domain. For example, you can write a CSP to restrict browsers to load images only from `example.com`, any images from other domains will be not loaded and would throw errors. In addition to resources, CSP also offers control over the embeds.  
 In the following example, the CSP forces to load images/scripts only from self domain and prevents the loading of images from other domains.
 
 ![CSP block](csp1.png)
