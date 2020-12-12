@@ -91,4 +91,4 @@ Content-Security-Policy-Report-Only: __Policy__ + report-uri
  
 ### Resources
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
-- https://owasp.org/www-community/attacks/Content_Security_Policy
+- https://csplite.com/csp/?rub=0&cat=0
