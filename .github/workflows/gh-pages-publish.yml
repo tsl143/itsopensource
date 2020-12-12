@@ -18,4 +18,4 @@ jobs:
       - run: git config user.name "Trishul Goel" && git config user.email "trishul.goel@gmail.com"
       - run: npm run deploy
         env:
-          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GH_TOKEN: ${{secrets.SECRET_GITHUB_TOKEN}}
