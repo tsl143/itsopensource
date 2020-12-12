@@ -15,6 +15,7 @@ jobs:
         with:
           node-version: 12
       - run: npm ci
+      - run: git config user.name "Trishul Goel" && git config user.email "trishul.goel@gmail.com"
       - run: npm run deploy
         env:
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}

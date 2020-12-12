@@ -89,6 +89,6 @@ In case you are not sure what all resources are being required for running your 
 Content-Security-Policy-Report-Only: __Policy__ + report-uri
 ```
  
-### Resources
+### Resources -
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 - https://csplite.com/csp/?rub=0&cat=0
