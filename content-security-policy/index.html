@@ -99,7 +99,7 @@ In the following example, the CSP forces to load images/scripts only from self d
 <p>Before defining a CSP you should be completely aware of all the resources and respective origin required for your webapp, else some vital resources may be blocked and eventually random bugs.
 In case you are not sure what all resources are being required for running your web page smoothly, you can implement the CSP in reporting mode, in this way the violations will be reported but no resource will be blocked, once you are sure what are the resources really required, you can implement CSP. To do this instead of <code class="language-text">Content-Security-Policy</code> we need to use <code class="language-text">Content-Security-Policy-Report-Only</code> header. </p>
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">Content-Security-Policy-Report-Only: __Policy__ + report-uri</code></pre></div>
-<h3>Resources -</h3>
+<h3>Resources</h3>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP</a></li>
 <li><a href="https://csplite.com/csp/?rub=0&#x26;cat=0">https://csplite.com/csp/?rub=0&#x26;cat=0</a></li>
