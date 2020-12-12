@@ -1,5 +1,5 @@
 ---
-title: 'Creating accordions with native html'
+title: 'Creating accordions with native HTML'
 date: "2020-12-07"
 tags:
   - html
