@@ -18,7 +18,7 @@ And the best part... it is supported by all the modern browsers (obviously excep
 
 ### Using `<details>` tag
 
-There are two elements here: `<details>` and `<summary>`. `<details>` is the wrapper for all the content you want to show and hide, and <summary> contains the — well, the summary and title of the section. `<summary>` is optional, if you do not add it, the browser will use some default text. For example, in Firefox and Chrome, it is `Details`. Below is a sample HTML markup:
+There are two elements here: `<details>` and `<summary>`. `<details>` is the wrapper for all the content you want to show and hide, and `<summary>` contains the — well, the summary and title of the section. `<summary>` is optional, if you do not add it, the browser will use some default text. For example, in Firefox and Chrome, it is `Details`. Below is a sample HTML markup:
 
 ```html
 <details>
