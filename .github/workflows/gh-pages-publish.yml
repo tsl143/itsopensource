@@ -1,6 +1,6 @@
 # This workflow will run tests using node and then publish to github pages
 
-name: gh-pages publisher
+name: gh-pages publisher  🚀
 
 on:
   push:
