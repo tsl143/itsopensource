@@ -1,5 +1,5 @@
 ---
-title: 'Creating disclosure widget with details html tag'
+title: 'Creating accordions with native html'
 date: "2020-12-07"
 tags:
   - html
