@@ -1,5 +1,5 @@
 ---
-title: 'Publish github pages with GitHub Actions'
+title: 'Publish GitHub pages with GitHub Actions'
 date: "2020-12-12"
 tags:
  - automation
@@ -13,7 +13,7 @@ featuredImage: ../../assets/github-actions.png
 GitHub pages are the best way to host static blogs like `Gatsby`. One of the most common ways to do this is, maintain your code in main/master branch, build it, and then push the code to `gh-pages` branch.
 There are various CI that easily automate this process like Travis CI, CircleCI, etc.
 With GitHub actions, this would be a piece of cake, and without depending on any third-party provider. From the docs: 
-> Automate, customize, and execute your software development workflows right in your repository with GitHub Actions`  
+> Automate, customize, and execute your software development workflows right in your repository with GitHub Actions  
 
 If you are not sure what are GitHub actions please visit [here](https://github.com/features/actions).
 
@@ -22,7 +22,7 @@ If you are not sure what are GitHub actions please visit [here](https://github.c
 #### Prerequisites
 1. You have a static blog(let's say gatsby) setup, the code for your blog is in master branch.
 2. You have a build script in your package.json
-3. You have setup your github pages (or pointed to your custom domain) in `gh-pages` branch.
+3. You have setup your GitHub pages (or pointed to your custom domain) in `gh-pages` branch.
 
 #### Process
 
