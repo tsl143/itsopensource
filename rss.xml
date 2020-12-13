@@ -1,4 +1,141 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource RSS Feed]]></title><description><![CDATA[Writing opensource journey one word at a time.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 12 Dec 2020 13:21:57 GMT</lastBuildDate><item><title><![CDATA[Creating accordions with native HTML]]></title><description><![CDATA[Accordions are one of the most commonly used UI components for any website. For example FAQs section of the website, where only the question…]]></description><link>https://itsopensource.com/creating-accordions-with-native-html/</link><guid isPermaLink="false">https://itsopensource.com/creating-accordions-with-native-html/</guid><pubDate>Mon, 07 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Accordions are one of the most commonly used UI components for any website. For example FAQs section of the website, where only the question is shown, and when clicked the answer just opens up.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource RSS Feed]]></title><description><![CDATA[Writing opensource journey one word at a time.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 13 Dec 2020 10:59:35 GMT</lastBuildDate><item><title><![CDATA[Publish github pages with GitHub Actions]]></title><description><![CDATA[GitHub pages are the best way to host static blogs like . One of the most common ways to do this is, maintain your code in main/master…]]></description><link>https://itsopensource.com/publish-github-pages-with-github-actions/</link><guid isPermaLink="false">https://itsopensource.com/publish-github-pages-with-github-actions/</guid><pubDate>Sat, 12 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;
+GitHub pages are the best way to host static blogs like &lt;code class=&quot;language-text&quot;&gt;Gatsby&lt;/code&gt;. One of the most common ways to do this is, maintain your code in main/master branch, build it, and then push the code to &lt;code class=&quot;language-text&quot;&gt;gh-pages&lt;/code&gt; branch.
+There are various CI that easily automate this process like Travis CI, CircleCI, etc.
+With GitHub actions, this would be a piece of cake, and without depending on any third-party provider. From the docs: &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Automate, customize, and execute your software development workflows right in your repository with GitHub Actions`  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If you are not sure what are GitHub actions please visit &lt;a href=&quot;https://github.com/features/actions&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;&lt;center&gt; Workflow &lt;/center&gt;&lt;/h2&gt;
+&lt;h4&gt;Prerequisites&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;You have a static blog(let’s say gatsby) setup, the code for your blog is in master branch.&lt;/li&gt;
+&lt;li&gt;You have a build script in your package.json&lt;/li&gt;
+&lt;li&gt;You have setup your github pages (or pointed to your custom domain) in &lt;code class=&quot;language-text&quot;&gt;gh-pages&lt;/code&gt; branch.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Process&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;&lt;center&gt; Step 1 &lt;/center&gt;&lt;/strong&gt;&lt;br&gt;
+Install &lt;a href=&quot;https://www.npmjs.com/package/gh-pages&quot;&gt;gh-pages npm package&lt;/a&gt; in your project, this is a small utility package which helps to publish your code to gh-pages branch.
+You can skip this step in case you want to push all contents from master to &lt;code class=&quot;language-text&quot;&gt;gh-pages&lt;/code&gt; branch.  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;center&gt;Step 2 &lt;/center&gt;&lt;/strong&gt;&lt;br&gt;
+Add a deploy script in your &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt;. This script should do 2 jobs&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Build the project, make it ready for being published.&lt;/li&gt;
+&lt;li&gt;Push the changes to the &lt;code class=&quot;language-text&quot;&gt;gh-pages&lt;/code&gt; branch.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;For example, this pushes the code to &lt;code class=&quot;language-text&quot;&gt;gh-pages&lt;/code&gt; via npm package.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;quot;deploy&amp;quot;: &amp;quot;gatsby build &amp;amp;&amp;amp; gh-pages -d public -r https://$GH_TOKEN@github.com/&amp;lt;username&amp;gt;/&amp;lt;repository_name&amp;gt;.git&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;&lt;center&gt;Step 3 &lt;/center&gt;&lt;/strong&gt;&lt;br&gt;
+Generate an access token and add it to secret of your repository.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create an access token: goto &lt;a href=&quot;https://github.com/settings/tokens&quot;&gt;https://github.com/settings/tokens&lt;/a&gt;, create a new token, give it access for repo and workflow.  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/30aebc71ae3bcb4ee8e555ba47aa0951/7527b/action1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 64.86486486486486%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAABiklEQVQ4y5VTi26DMBDj/79wk7pOK6+WR0igQCCAd05L12ml2yKZC0Hn+M5HkB6P+DiEOAiiKMYhjDx4lqRH/HcFbdtCawNjao+6rqGN8bGW2HcdbN+j7y/R2h6DgHvmdvKdOMt+GAYEZam8ulDUhTeFId5ThdeowluisUsq7GIlUWN/NHiR831aiQARIhcTldZymUVQlKW/gWue5xumBd8w30Vi2SqZ7AdRFsUJoiSFHUY4N2F07gecYFnIdsHyAAGlnk4ZsryAm6Y/N3/ZkBjkReHVpeJo0zS+H3Xd+D2NMd0E3S8eqp1RnuVdzpYthdYOyAvpo7i2Okb3CjErF9WZqnFSZ6SFNL6xONsZjX1CyAcV3ZvDpSqNUlUopAJjNMbBYp7cL224EpIoimMkYgqVzmIjydjXTNQz0pQ16RFuhBwAlhgnie/ZOj4rIdtxynJfxZr0VCHVtKIwkyQO+Tg6T8iS17IJ7nm+pfBrbMS5NCuhlLrdwsRKfkfi8ic0fj9e55AiHpEx7xM7t/KD5W1yaQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;access token&quot;
+        title=&quot;access token&quot;
+        src=&quot;/static/30aebc71ae3bcb4ee8e555ba47aa0951/fcda8/action1.png&quot;
+        srcset=&quot;/static/30aebc71ae3bcb4ee8e555ba47aa0951/12f09/action1.png 148w,
+/static/30aebc71ae3bcb4ee8e555ba47aa0951/e4a3f/action1.png 295w,
+/static/30aebc71ae3bcb4ee8e555ba47aa0951/fcda8/action1.png 590w,
+/static/30aebc71ae3bcb4ee8e555ba47aa0951/7527b/action1.png 754w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;Add this token to secret of your repository: goto &lt;code class=&quot;language-text&quot;&gt;https://github.com/&amp;lt;username&amp;gt;/&amp;lt;repository_name&amp;gt;/settings/secrets/actions&lt;/code&gt;, click &lt;code class=&quot;language-text&quot;&gt;new repository secret&lt;/code&gt;.  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9109d16686926974e4becbfa4d63c8cd/bf433/action2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 47.972972972972975%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAAAo0lEQVQoz6WRQQ7CMAwE+2q+wUv4AXdewYFTIJS0QbSkiZ2ldkUl4EKblUaWfBit7OrUEM62hjEGF2uRc4ZE5lIkVfMIGGJECEFZI/oQOufQeo+m9SomZiSiGRr5NyKtpBWLJCWdxQ2v9Q1d3/80W0SapjZ8humGsohjy7XMwkhpfbMvVJgZYOKidm9UaHuH+9DpQ6gAuaMKN4ctdsf9/PbSvAB4SBPcsHbajQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;secret token&quot;
+        title=&quot;secret token&quot;
+        src=&quot;/static/9109d16686926974e4becbfa4d63c8cd/fcda8/action2.png&quot;
+        srcset=&quot;/static/9109d16686926974e4becbfa4d63c8cd/12f09/action2.png 148w,
+/static/9109d16686926974e4becbfa4d63c8cd/e4a3f/action2.png 295w,
+/static/9109d16686926974e4becbfa4d63c8cd/fcda8/action2.png 590w,
+/static/9109d16686926974e4becbfa4d63c8cd/efc66/action2.png 885w,
+/static/9109d16686926974e4becbfa4d63c8cd/bf433/action2.png 971w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;center&gt;Step 4 &lt;/center&gt;&lt;/strong&gt;  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a workflow file, you need to create a file in following path: &lt;code class=&quot;language-text&quot;&gt;.github/workflows/&amp;lt;some-name-you-like&amp;gt;.yml&lt;/code&gt;, its important to have &lt;code class=&quot;language-text&quot;&gt;.yml&lt;/code&gt; extension and have exact same path.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Following action file is complete enough to publish &lt;code class=&quot;language-text&quot;&gt;gh-pages&lt;/code&gt;, every time a new commit is merged in master branch. ✅&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yml&quot;&gt;&lt;pre class=&quot;language-yml&quot;&gt;&lt;code class=&quot;language-yml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; gh&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;pages publisher 🚀
+
+&lt;span class=&quot;token key atrule&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;token key atrule&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; master &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;token key atrule&quot;&gt;jobs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;token key atrule&quot;&gt;publish-gh-pages&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;runs-on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ubuntu&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;latest
+  &lt;span class=&quot;token key atrule&quot;&gt;steps&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+     &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; actions/checkout@v2
+     &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; actions/setup&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;node@v1
+     &lt;span class=&quot;token key atrule&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;node-version&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;12&lt;/span&gt;
+     &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; npm ci
+     &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; git config user.name &quot;&amp;lt;user name&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&quot; &lt;span class=&quot;token important&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git config user.email &quot;user email&quot;
+     &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; npm run deploy
+     &lt;span class=&quot;token key atrule&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;GH_TOKEN&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;secrets.SECRET_GITHUB_TOKEN&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This script is pretty self-explanatory, it performs the following tasks.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It specifies to work only on &lt;code class=&quot;language-text&quot;&gt;push&lt;/code&gt; on &lt;code class=&quot;language-text&quot;&gt;master&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Sets up a &lt;code class=&quot;language-text&quot;&gt;node 12&lt;/code&gt; environment&lt;/li&gt;
+&lt;li&gt;Installs dependencies via &lt;code class=&quot;language-text&quot;&gt;npm ci&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Sets up git requirements for username and email (required to do a push to branch)&lt;/li&gt;
+&lt;li&gt;Run the deploy script&lt;/li&gt;
+&lt;li&gt;In case you don’t use gh-pages npm package, you can write another step for git push to gh-pages branch.&lt;/li&gt;
+&lt;li&gt;At last, we set up env variable &lt;code class=&quot;language-text&quot;&gt;GH_TOKEN&lt;/code&gt; from our action secret (which you set up in step 3), this env variable would be available in &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Step 5 -&lt;/strong&gt;&lt;br&gt;
+Commit this file and see your first &lt;code class=&quot;language-text&quot;&gt;GitHub Action&lt;/code&gt; in action (sorry for the pun 🙈)&lt;/p&gt;
+&lt;p&gt;You can see the actions running here: &lt;code class=&quot;language-text&quot;&gt;https://github.com/&amp;lt;username&amp;gt;/&amp;lt;repository_name&amp;gt;/actions&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Workflow file for &lt;a href=&quot;https://itsopensource.com&quot;&gt;itsopensource.com&lt;/a&gt; can be viewed &lt;a href=&quot;https://github.com/tsl143/itsopensource/blob/master/.github/workflows/gh-pages-publish.yml&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Hope this helps 🙏🙏🙏&lt;/p&gt;
+&lt;p&gt;Cheers.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Creating accordions with native HTML]]></title><description><![CDATA[Accordions are one of the most commonly used UI components for any website. For example FAQs section of the website, where only the question…]]></description><link>https://itsopensource.com/creating-accordions-with-native-html/</link><guid isPermaLink="false">https://itsopensource.com/creating-accordions-with-native-html/</guid><pubDate>Mon, 07 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Accordions are one of the most commonly used UI components for any website. For example FAQs section of the website, where only the question is shown, and when clicked the answer just opens up.
 Generally, we handle this by creating 2 &lt;code class=&quot;language-text&quot;&gt;divs&lt;/code&gt; and adding some javascript to handle the open and close of the accordion. But recently I stumbled upon this hidden gem in HTML that eliminates the need of all this - &lt;a href=&quot;https://developer.mozilla.org/docs/Web/HTML/Element/details&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;details&amp;gt;&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;We can simply design a simple FAQ or summary section with &lt;code class=&quot;language-text&quot;&gt;&amp;lt;details&amp;gt;&lt;/code&gt; HTML tag without using Javascript!!! 🤯🤯🤯.
 And the best part… it is supported by all the modern browsers (obviously except IE :( ) - &lt;a href=&quot;https://caniuse.com/?search=details&quot;&gt;browser compatibility&lt;/a&gt;.  &lt;/p&gt;
