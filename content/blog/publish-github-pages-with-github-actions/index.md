@@ -1,5 +1,5 @@
 ---
-title: 'Publish github pages with GitHub Actions'
+title: 'Publish GitHub Pages with GitHub Actions'
 date: "2020-12-12"
 tags:
  - automation
