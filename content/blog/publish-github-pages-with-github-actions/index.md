@@ -83,13 +83,17 @@ This script is pretty self-explanatory, it performs the following tasks.
    - In case you don't use gh-pages npm package, you can write another step for git push to gh-pages branch.
    - At last, we set up env variable `GH_TOKEN` from our action secret (which you set up in step 3), this env variable would be available in `package.json`
 
-**Step 5 -**  
-Commit this file and see your first `GitHub Action` in action (sorry for the pun 🙈)
+**<center>Step 5 </center>**  
+Commit this file and see your first `action` in action (sorry for the pun 🙈 )
 
-You can see the actions running here: `https://github.com/<username>/<repository_name>/actions`.
+---
+<center>Hope this helps 🙏🙏🙏</center>
 
-Workflow file for [itsopensource.com](https://itsopensource.com) can be viewed [here](https://github.com/tsl143/itsopensource/blob/master/.github/workflows/gh-pages-publish.yml).
+---
 
-Hope this helps 🙏🙏🙏
+<br/>
 
-Cheers.
+
+- You can see the actions running here: `https://github.com/<username>/<repository_name>/actions`.
+
+- Workflow file for [itsopensource.com](https://itsopensource.com) can be viewed [here](https://github.com/tsl143/itsopensource/blob/master/.github/workflows/gh-pages-publish.yml).
