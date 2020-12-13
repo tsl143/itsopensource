@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource RSS Feed]]></title><description><![CDATA[Writing opensource journey one word at a time.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 13 Dec 2020 11:08:40 GMT</lastBuildDate><item><title><![CDATA[Publish github pages with GitHub Actions]]></title><description><![CDATA[GitHub pages are the best way to host static blogs like . One of the most common ways to do this is, maintain your code in main/master…]]></description><link>https://itsopensource.com/publish-github-pages-with-github-actions/</link><guid isPermaLink="false">https://itsopensource.com/publish-github-pages-with-github-actions/</guid><pubDate>Sat, 12 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource RSS Feed]]></title><description><![CDATA[Writing opensource journey one word at a time.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 13 Dec 2020 11:24:51 GMT</lastBuildDate><item><title><![CDATA[Publish GitHub pages with GitHub Actions]]></title><description><![CDATA[GitHub pages are the best way to host static blogs like . One of the most common ways to do this is, maintain your code in main/master…]]></description><link>https://itsopensource.com/publish-github-pages-with-github-actions/</link><guid isPermaLink="false">https://itsopensource.com/publish-github-pages-with-github-actions/</guid><pubDate>Sat, 12 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;
 GitHub pages are the best way to host static blogs like &lt;code class=&quot;language-text&quot;&gt;Gatsby&lt;/code&gt;. One of the most common ways to do this is, maintain your code in main/master branch, build it, and then push the code to &lt;code class=&quot;language-text&quot;&gt;gh-pages&lt;/code&gt; branch.
 There are various CI that easily automate this process like Travis CI, CircleCI, etc.
 With GitHub actions, this would be a piece of cake, and without depending on any third-party provider. From the docs: &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Automate, customize, and execute your software development workflows right in your repository with GitHub Actions`  &lt;/p&gt;
+&lt;p&gt;Automate, customize, and execute your software development workflows right in your repository with GitHub Actions  &lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;If you are not sure what are GitHub actions please visit &lt;a href=&quot;https://github.com/features/actions&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;&lt;center&gt; Workflow &lt;/center&gt;&lt;/h2&gt;
@@ -11,7 +11,7 @@ With GitHub actions, this would be a piece of cake, and without depending on any
 &lt;ol&gt;
 &lt;li&gt;You have a static blog(let’s say gatsby) setup, the code for your blog is in master branch.&lt;/li&gt;
 &lt;li&gt;You have a build script in your package.json&lt;/li&gt;
-&lt;li&gt;You have setup your github pages (or pointed to your custom domain) in &lt;code class=&quot;language-text&quot;&gt;gh-pages&lt;/code&gt; branch.&lt;/li&gt;
+&lt;li&gt;You have setup your GitHub pages (or pointed to your custom domain) in &lt;code class=&quot;language-text&quot;&gt;gh-pages&lt;/code&gt; branch.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4&gt;Process&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;&lt;center&gt; Step 1 &lt;/center&gt;&lt;/strong&gt;&lt;br&gt;
