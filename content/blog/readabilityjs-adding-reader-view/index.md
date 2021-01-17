@@ -1,5 +1,5 @@
 ---
-title: 'ReadabilityJS - adding Reader View Mode to websites'
+title: 'ReadabilityJS - adding Reader View Mode in websites'
 date: "2021-01-17"
 tags:
  - accessibility
