@@ -23,3 +23,8 @@ Here are some commands you can run:
 2. Make a new folder in `content/` with the blog name (all lowercase and replace space with `-`) and create a `index.md` file in that folder with the content of the blog similar to this blog [file](https://github.com/tsl143/itsopensource/blob/master/content/blog/get-started-with-web-wrokers/index.md), This is a markdown file so you can use all MD styling (visit [this](https://daringfireball.net/projects/markdown/syntax) for help)
 
 Thank for the contribution.
+
+
+### Attributions
+We are not good at designing graphics so we just use open graphics from -  
+Images <a href="http://www.freepik.com">Designed by studiogstock / Freepik</a>
