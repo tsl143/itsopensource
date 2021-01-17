@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Readability</title>
+</head>
+<body>
+    <div class="btns">
+        <button id="toText">To text</button>
+        <button id="toHTML">To HTML</button>
+    </div>
+    <div id="holder">
+        <div class="desc">
+            <div class="imgHolder"><img src="https://source.unsplash.com/random/200x150"/></div>
+            <div><h3>Title  </h3><h4>Sub Title  </h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+        </div>
+        <div class="desc">
+            <div class="imgHolder"><img src="https://source.unsplash.com/random/201x151"/></div>
+            <div><h3>Title  </h3><h4>Sub Title  </h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+        </div>
+        <div class="desc">
+            <div class="imgHolder"><img src="https://source.unsplash.com/random/202x152"/></div>
+            <div><h3>Title  </h3><h4>Sub Title  </h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+        </div>
+        <div class="desc">
+            <div class="imgHolder"><img src="https://source.unsplash.com/random/203x153"/></div>
+            <div><h3>Title  </h3><h4>Sub Title  </h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/gh/mozilla/readability/Readability.js" type="application/javascript"></script>
+<script>
+    const documentClone = document.cloneNode(true); 
+    const article = new Readability(documentClone).parse();
+    const holderClone = document.getElementById('holder').cloneNode(true);
+    document.getElementById('toText').addEventListener('click', () => document.getElementById('holder').innerHTML = `<pre>${article.textContent}</pre>`);
+    document.getElementById('toHTML').addEventListener('click', () => document.getElementById('holder').innerHTML = holderClone.innerHTML);
+</script>
+</html>

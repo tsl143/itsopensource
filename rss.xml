@@ -1,4 +1,99 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource RSS Feed]]></title><description><![CDATA[Writing opensource journey one word at a time.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 13 Dec 2020 11:24:51 GMT</lastBuildDate><item><title><![CDATA[Publish GitHub pages with GitHub Actions]]></title><description><![CDATA[GitHub pages are the best way to host static blogs like . One of the most common ways to do this is, maintain your code in main/master…]]></description><link>https://itsopensource.com/publish-github-pages-with-github-actions/</link><guid isPermaLink="false">https://itsopensource.com/publish-github-pages-with-github-actions/</guid><pubDate>Sat, 12 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource RSS Feed]]></title><description><![CDATA[Writing opensource journey one word at a time.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 17 Jan 2021 19:49:41 GMT</lastBuildDate><item><title><![CDATA[ReadabilityJS - adding Reader View for websites]]></title><description><![CDATA[One of the features I absolutely love in Firefox is . This removes all the clutter and present the content in text format for better…]]></description><link>https://itsopensource.com/readabilityjs-adding-reader-view/</link><guid isPermaLink="false">https://itsopensource.com/readabilityjs-adding-reader-view/</guid><pubDate>Sun, 17 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;
+One of the features I absolutely love in Firefox is &lt;code class=&quot;language-text&quot;&gt;Firefox Reader View&lt;/code&gt;. This removes all the clutter and present the content in text format for better readability and relief for eyes(It also removes the ad banners 😉 ).&lt;/p&gt;
+&lt;p&gt;Not all the browsers (Chrome needs special flag to enable this 😐 ) have a redability mode thus, providing an option for reader mode within your website would be a huge help to your users and would make your webpage more accessible.  &lt;/p&gt;
+&lt;p&gt;The good news is you do not have to implement this on your own, Mozilla has a standalone version of the readability library used for Firefox Reader View - &lt;a href=&quot;https://github.com/mozilla/readability&quot;&gt;&lt;strong&gt;Readability.js&lt;/strong&gt;&lt;/a&gt;.&lt;br&gt;
+The usage is pretty simple and straight forward:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;We need to include the readability.js in our code in either of 2 ways:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Download the file via &lt;a href=&quot;https://github.com/mozilla/readability/releases&quot;&gt;https://github.com/mozilla/readability/releases&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Install npm package - &lt;a href=&quot;https://www.npmjs.com/package/@mozilla/readability&quot;&gt;https://www.npmjs.com/package/@mozilla/readability&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create a new &lt;code class=&quot;language-text&quot;&gt;Readabilty&lt;/code&gt; object from DOM document node&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; article &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Readability&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;document&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This article object will have following properties&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;title&lt;/code&gt;: article title&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;content&lt;/code&gt;: HTML string of processed article content&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;textContent&lt;/code&gt;: text content of the article (all HTML removed)&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;length&lt;/code&gt;: length of an article, in characters&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;excerpt&lt;/code&gt;: article description, or short excerpt from the content&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;byline&lt;/code&gt;: author metadata&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;dir&lt;/code&gt;: content direction (LTR or RTL)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Note&lt;/em&gt; Readability morphs the actual object so better to pass a clone node.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;cont documentClone &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;cloneNode&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+cont article &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Readability&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;documentClone&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;Substitute this &lt;code class=&quot;language-text&quot;&gt;article.textContent&lt;/code&gt; in the desired div and done 😎&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;See this in action here - &lt;a href=&quot;https://itsopensource.com/demos/readability&quot;&gt;https://itsopensource.com/demos/readability&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;center&gt;HTML View&lt;/center&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;  &lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/85c72003e8f4f49d3eca4602b5e591b3/9cab2/html.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 60.13513513513513%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsSAAALEgHS3X78AAACIUlEQVQoz41TO4sTYRSd3tbCxsJGsBMRQQsRRFEXEREECysrt9rdNAsmZIXIxhVU/ANiYemyjYu1xAUbJc9JMpPHbBKTSSbvTB6TxOOcGyYEqx04c89357vn3u9+d5RWq4VqtQrTNFGp/AHX7XZbQH5yLGKUyWSCgT2E49rxaITp1MHItYPBwOVTOI5zIlCHUHr2CHlrAlU38P3HT0SOfkOt9qGmkuj2eq74GMPhUJIQ5IRt20tO/3g8Fqs0Wh28349gI/wJmztvEf7wEe8+HyKnZaFpOnRdRzabRT6fF57JZJDL5QSapomvUCig0+mIqFIz69jdDeHG2lNcvP4Ym1tb8Pl8slFVVUE6nRZLYc9H4VQqhUQiIdyyrIUglV/vheH3BxAMBuEP+HFwsL8MZNAqKMAEFKcQ97BSHl0E+fr/cWZ/5cZ6bg+73e4S9LEAwvOR9/v9ZS+VQb+Ho8g36JlfqBkJ2I0sOmYBxvGx3Np8PsdsNhOQr65Xwb1SYbNpYSe0jVfhF9h4/gQvA+v4evjFPUoaxWLRnc0KDMMQWy6XhdMSpVJJwDnmrYugadZw+8E9nL1wHmdOn8K5S5exvh1Aya2QvfLAfrFX3uVw7fnZ22azuZjDer2OW2t3cPXaFTx7dBN3H95H6M2eBMZiMUE8HhebTCYRjUblYshp+Y1gv6VCNrLRaIBHZ9MtNxOzeb8jwaS0qz7GcFTI+et5g/8PP1NTrfYayFwAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;HTML view&quot;
+        title=&quot;HTML view&quot;
+        src=&quot;/static/85c72003e8f4f49d3eca4602b5e591b3/fcda8/html.png&quot;
+        srcset=&quot;/static/85c72003e8f4f49d3eca4602b5e591b3/12f09/html.png 148w,
+/static/85c72003e8f4f49d3eca4602b5e591b3/e4a3f/html.png 295w,
+/static/85c72003e8f4f49d3eca4602b5e591b3/fcda8/html.png 590w,
+/static/85c72003e8f4f49d3eca4602b5e591b3/9cab2/html.png 864w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;center&gt;Text View&lt;/center&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;  &lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/544a4f228aa2058fd233d61355f4c31c/66caf/text.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.10810810810811%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsSAAALEgHS3X78AAABR0lEQVQoz52S25KCQAxE+f9ftFBEFOWqKHgD4p5QbbG77ss+dCWTZDJJ9wT7/d4Oh4Ptdjur69qqqvo3uB/c73d7PB6OYRi+YRzHt5X/Cco9n08LrtertW1nZVlaURQOXsuyzIHPBmmaWp7nfsaqlhxbMh1DBWEY2mazsfV6bXEc22q1cst5uVxaFEVGDWfVUqMYtcROp9PUcLFYvBtxmSSNVIydP6YH5FPLndvtNjUkwdgEkySx7XbrArEiMahomsYnOB6Pb0sMez6fPXa5XKaGEAn6vv8TcwF0/mQROOi67kuU1glmGgFBJAI+xHOeiwfIsSHT+oTww4qsB+CKtVmfHDFxi1UtvigCvxrOuaNQvhqQ5zFyNJOPpUZ/2VWmWKrxwHwiVhUNrKwVta7iiOMN4Y/PDZeyfIHpw7dOtISbC/gzRjNqX0+wijIEE+xiAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;text view&quot;
+        title=&quot;text view&quot;
+        src=&quot;/static/544a4f228aa2058fd233d61355f4c31c/fcda8/text.png&quot;
+        srcset=&quot;/static/544a4f228aa2058fd233d61355f4c31c/12f09/text.png 148w,
+/static/544a4f228aa2058fd233d61355f4c31c/e4a3f/text.png 295w,
+/static/544a4f228aa2058fd233d61355f4c31c/fcda8/text.png 590w,
+/static/544a4f228aa2058fd233d61355f4c31c/66caf/text.png 853w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Reference: &lt;a href=&quot;https://github.com/mozilla/readability&quot;&gt;https://github.com/mozilla/readability&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Publish GitHub pages with GitHub Actions]]></title><description><![CDATA[GitHub pages are the best way to host static blogs like . One of the most common ways to do this is, maintain your code in main/master…]]></description><link>https://itsopensource.com/publish-github-pages-with-github-actions/</link><guid isPermaLink="false">https://itsopensource.com/publish-github-pages-with-github-actions/</guid><pubDate>Sat, 12 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;
 GitHub pages are the best way to host static blogs like &lt;code class=&quot;language-text&quot;&gt;Gatsby&lt;/code&gt;. One of the most common ways to do this is, maintain your code in main/master branch, build it, and then push the code to &lt;code class=&quot;language-text&quot;&gt;gh-pages&lt;/code&gt; branch.
 There are various CI that easily automate this process like Travis CI, CircleCI, etc.
 With GitHub actions, this would be a piece of cake, and without depending on any third-party provider. From the docs: &lt;/p&gt;
