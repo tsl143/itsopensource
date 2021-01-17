@@ -1,10 +1,10 @@
 ---
-title: 'ReadabilityJS - adding Reader View for websites'
+title: 'ReadabilityJS - adding Reader View Mode for websites'
 date: "2021-01-17"
 tags:
  - accessibility
  - javascript
- - mozilla
+ - firefox
 show: true
 author: trishul
 featuredImage: ../../assets/readability.png
