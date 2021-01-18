@@ -29,8 +29,8 @@ The usage is pretty simple and straight forward:</p>
 <li><code class="language-text">dir</code>: content direction (LTR or RTL)</li>
 </ul>
 <p><em>Note</em> Readability morphs the actual object so better to pass a clone node.</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">cont documentClone <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">cloneNode</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-cont article <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Readability</span><span class="token punctuation">(</span>documentClone<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> documentClone <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">cloneNode</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> article <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Readability</span><span class="token punctuation">(</span>documentClone<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 </li>
 <li>Substitute this <code class="language-text">article.textContent</code> in the desired div and done 😎</li>
 </ol>
