@@ -35,8 +35,8 @@ The usage is pretty simple and straight forward:
 
     _Note_ Readability morphs the actual object so better to pass a clone node.
     ```JS
-    cont documentClone = document.cloneNode(true);
-    cont article = new Readability(documentClone).parse();
+    const documentClone = document.cloneNode(true);
+    const article = new Readability(documentClone).parse();
     ```
 3. Substitute this `article.textContent` in the desired div and done 😎
 
