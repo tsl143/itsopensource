@@ -13,7 +13,7 @@ featuredImage: ../../assets/readability.png
  
 One of the features I absolutely love in Firefox is `Firefox Reader View`. This removes all the clutter and present the content in text format for better readability and relief for eyes(It also removes the ad banners 😉 ).
 
-Not all the browsers (Chrome needs special flag to enable this 😐 ) have a redability mode thus, providing an option for reader mode within your website would be a huge help to your users and would make your webpage more accessible.  
+Not all the browsers (Chrome needs special flag to enable this 😐 ) have a readability mode thus, providing an option for reader mode within your website would be a huge help to your users and would make your webpage more accessible.  
 
 The good news is you do not have to implement this on your own, Mozilla has a standalone version of the readability library used for Firefox Reader View - [**Readability.js**](https://github.com/mozilla/readability).  
 The usage is pretty simple and straight forward:
