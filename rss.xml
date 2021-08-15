@@ -1,4 +1,49 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource RSS Feed]]></title><description><![CDATA[Writing opensource journey one word at a time.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 18 Jan 2021 09:37:17 GMT</lastBuildDate><item><title><![CDATA[ReadabilityJS - adding Reader View Mode to websites]]></title><description><![CDATA[One of the features I absolutely love in Firefox is . This removes all the clutter and present the content in text format for better…]]></description><link>https://itsopensource.com/readabilityjs-adding-reader-view/</link><guid isPermaLink="false">https://itsopensource.com/readabilityjs-adding-reader-view/</guid><pubDate>Sun, 17 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[itsopensource RSS Feed]]></title><description><![CDATA[Writing opensource journey one word at a time.]]></description><link>https://itsopensource.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 15 Aug 2021 10:26:18 GMT</lastBuildDate><item><title><![CDATA[Identifying non ES5 packages]]></title><description><![CDATA[To the delight of Frontend developers around the globe, Microsoft finally decided to kill its dreaded browser Internet explorer. But it’s…]]></description><link>https://itsopensource.com/identifying-non-es5-packages/</link><guid isPermaLink="false">https://itsopensource.com/identifying-non-es5-packages/</guid><pubDate>Sun, 15 Aug 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;To the delight of Frontend developers around the globe, Microsoft finally decided to kill its dreaded browser Internet explorer. But it’s not done yet, and still we need to support IE in  our Frontend builds, due to which almost all our JS bundles are transpiled in ES5 formats.&lt;br&gt;
+We generally exclude all the node modules from the transpilation process as we believe all the npm packages serve ES5 packages, which is not true for every package (learned that hard way ☹️).  &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    test&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token regex&quot;&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token regex-source language-regex&quot;&gt;\.(ts|tsx|js)$&lt;/span&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    loader&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;babel-loader&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    exclude&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token regex&quot;&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token regex-source language-regex&quot;&gt;node_modules&lt;/span&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For example, I am working with an e-commerce app and we have to support IE11 atleast for this app, one fine day our app stopped working on IE and we spent almost 2 days figuring out what’s wrong. Turned out a developer introduced new state management library &lt;code class=&quot;language-text&quot;&gt;recoil&lt;/code&gt;, which is an amazing tool. But, it does not serve ES5 build. This broke our application on IE.&lt;br&gt;
+To fix this all we need to do is, not exclude these packages from our transpilation and done.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    test&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token regex&quot;&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token regex-source language-regex&quot;&gt;\.(ts|tsx|js)$&lt;/span&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    loader&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;babel-loader&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    exclude&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token regex&quot;&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token regex-source language-regex&quot;&gt;[\\/]node_modules[\\/](?!(config|recoil)[\\/])&lt;/span&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;But still, we need to find manually which packages are not being served as ES5. While figuring out this problem I stumbled upon an amazing tool that automatically identifies all non-ES5 packages for us in the node modules &lt;a href=&quot;https://www.npmjs.com/package/are-you-es5&quot;&gt;are-you-es5&lt;/a&gt;. And in bonus, it provides a regex to exclude these packages from our excluding node modules from transpilation. &lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1f5e67550b529ed51552a737e5ab0270/d30ee/are-you-es5.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 40.54054054054054%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAAs2AAALNgG/CNh6AAABCklEQVQY05WRy0rEQBBFO8l0T57dST8r6UxIIjHu5gvciTAwa1euRgb0E9wKrvxpi/gACQqexaWrqLpFVZOouKHmRNSZqAdSPgbtkR1ofBvTAw1VuKGb+Is0TVHzPGeMhQvEzycxPvOLF3X1qi7f5P4J7h3cGTg72EMmUs55WZZSStQsy5RSqNgfRRE5crbTbOzLFgqwbAeiU53jbku2CU2CICB/cM0SK7WrWyEkF1Iba8BWqvouCFaQf/FrT+O9MQYXq+saT4KLYSiEsNZqrdcWP4zahWEY5nkex3Gapr7v0ehDvffOObuAXtVCURSfzQCAo7CiaZqu61DxjbfFPFZjiFfFX0FdT34HE94bi7FtCg0AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;usage&quot;
+        title=&quot;usage&quot;
+        src=&quot;/static/1f5e67550b529ed51552a737e5ab0270/fcda8/are-you-es5.png&quot;
+        srcset=&quot;/static/1f5e67550b529ed51552a737e5ab0270/12f09/are-you-es5.png 148w,
+/static/1f5e67550b529ed51552a737e5ab0270/e4a3f/are-you-es5.png 295w,
+/static/1f5e67550b529ed51552a737e5ab0270/fcda8/are-you-es5.png 590w,
+/static/1f5e67550b529ed51552a737e5ab0270/efc66/are-you-es5.png 885w,
+/static/1f5e67550b529ed51552a737e5ab0270/d30ee/are-you-es5.png 980w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[ReadabilityJS - adding Reader View Mode to websites]]></title><description><![CDATA[One of the features I absolutely love in Firefox is . This removes all the clutter and present the content in text format for better…]]></description><link>https://itsopensource.com/readabilityjs-adding-reader-view/</link><guid isPermaLink="false">https://itsopensource.com/readabilityjs-adding-reader-view/</guid><pubDate>Sun, 17 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;
 One of the features I absolutely love in Firefox is &lt;code class=&quot;language-text&quot;&gt;Firefox Reader View&lt;/code&gt;. This removes all the clutter and present the content in text format for better readability and relief for eyes(It also removes the ad banners 😉 ).&lt;/p&gt;
 &lt;p&gt;Not all the browsers (Chrome needs special flag to enable this 😐 ) have a readability mode thus, providing an option for reader mode within your website would be a huge help to your users and would make your webpage more accessible.  &lt;/p&gt;
 &lt;p&gt;The good news is you do not have to implement this on your own, Mozilla has a standalone version of the readability library used for Firefox Reader View - &lt;a href=&quot;https://github.com/mozilla/readability&quot;&gt;&lt;strong&gt;Readability.js&lt;/strong&gt;&lt;/a&gt;.&lt;br&gt;
