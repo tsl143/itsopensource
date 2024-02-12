@@ -9,7 +9,7 @@ author: trishul
 featuredImage: ../../assets/rainbow.png
 ---
  
-Some designers can not get enough of colors and want the text not to be in solid color but rainbow colors. This traditional developers achieve by using a PNG image, something like this:
+Some designers can not get enough of colors and want the text not to be in solid color but rainbow colors. Traditionally developers achieve this by using a PNG image, something like this:
 ![Rainbow Text](./rainbow.png)
 
 But with modern day CSS, this can be achieved with just few CSS rules. 
