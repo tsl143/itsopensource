@@ -1,6 +1,6 @@
 ﻿export const authors = {
   trishul: {
-    bio: " is a professional frontend developer; writes React code for living and volunteers for Mozilla to justify his existence",
+    bio: " is a frontend developer, loves to talk about modern Javascript, frontend architecture, opensource, promotes PWAs (#teamWeb) and is expert in developing browser extensions.",
     name: "Trishul Goel",
     twitter: "trishulgoel"
   },
